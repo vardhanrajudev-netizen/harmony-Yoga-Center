@@ -9,7 +9,7 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
   const directWhatsAppUrl = "https://wa.me/917036711097?text=Hi!%20I%20would%20like%20to%20reserve%20my%20free%203-day%20trial%20passes%20for%20the%20Harmony%20Yoga%20Center%20program.";
 
   return (
-    <section id="contact" className="relative py-[56px] md:py-[72px] lg:py-[100px] bg-white overflow-hidden">
+    <section id="contact" className="relative py-[56px] md:py-[72px] lg:py-[100px] bg-premium-light-alt overflow-hidden">
       {/* Structural Accent blur details */}
       <div className="absolute top-1/2 left-[-150px] w-96 h-96 rounded-full bg-brand-gold/10 filter blur-3xl pointer-events-none" />
 
@@ -19,7 +19,7 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
           id="cta-lux-container"
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative rounded-3xl bg-linear-to-br from-[#0F766E] to-[#0A4E49] p-8 sm:p-14 text-center border-2 border-brand-gold/3 shadow-2xl overflow-hidden"
         >
@@ -92,7 +92,7 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.25 }}
               variants={{
                 hidden: { opacity: 0 },
                 visible: {

@@ -1,16 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MapPin, Mail, Phone, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, Instagram, Facebook, Youtube } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   const navigate = useNavigate();
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://instagram.com/harmonyyoga', label: 'Instagram' },
-    { icon: Facebook, href: 'https://facebook.com/harmonyyoga', label: 'Facebook' },
-    { icon: Youtube, href: 'https://youtube.com/harmonyyoga', label: 'YouTube' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/harmonyyoga', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/harmony_yogacenter/?hl=en', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/anji.sykam', label: 'Facebook' },
+    { icon: Youtube, href: 'https://www.youtube.com/@Harmony-yoga-center/', label: 'YouTube' },
   ];
 
   const handleLinkClick = (
@@ -27,7 +27,7 @@ export default function Footer() {
       id="footer-section"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: false, amount: 0.25 }}
       transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
       className="relative bg-[#021a17] text-[#FAF9F6] overflow-hidden border-t border-brand-gold/15 shadow-[0_-12px_40px_-5px_rgba(212,163,115,0.07)]"
       style={{
@@ -39,45 +39,20 @@ export default function Footer() {
           
           {/* Column 1: Logo & Socials */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="relative flex items-center gap-3.5 group select-none shrink-0 border-none inline-flex" id="footer-logo">
-              <div className="absolute -inset-2 bg-gradient-to-r from-brand-emerald/20 to-brand-gold/15 rounded-full filter blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              
-              <div 
-                onClick={(e) => handleLinkClick(e, '/')}
-                className="relative flex items-center justify-center rounded-full bg-brand-emerald text-brand-ivory hover:bg-brand-gold transition-colors duration-300 shrink-0 shadow-lg border border-white/5 cursor-pointer"
-                style={{ width: '42px', height: '42px' }}
-              >
-                <span className="font-serif font-bold text-sm text-brand-ivory">H</span>
-              </div>
-              
-              <div className="flex flex-col select-none whitespace-nowrap justify-center cursor-pointer font-sans" style={{ gap: '1px' }} onClick={(e) => handleLinkClick(e, '/')}>
-                <div className="flex items-baseline gap-1.5" style={{ lineHeight: '1.0' }}>
-                  <span 
-                    className="font-serif font-bold text-white tracking-tight"
-                    style={{ fontSize: '24px', fontFamily: '"Cormorant Garamond", serif', fontWeight: 700 }}
-                  >
-                    Harmony
-                  </span>
-                  <span 
-                    className="font-serif italic font-light text-white/90"
-                    style={{ fontSize: '13px', fontFamily: '"Cormorant Garamond", serif' }}
-                  >
-                    Yoga Center
-                  </span>
-                </div>
-                <span 
-                  className="font-sans font-bold text-brand-gold uppercase block tracking-[2px]"
-                  style={{ 
-                    fontSize: '8px', 
-                    fontFamily: '"Inter", sans-serif',
-                    lineHeight: '1.1',
-                    marginTop: '2px'
-                  }}
-                >
-                  PREMIUM WELLNESS SANCTUARY
-                </span>
-              </div>
-            </div>
+            <motion.div 
+              animate={{
+                filter: [
+                  'drop-shadow(0 0 0px rgba(227,183,119,0))',
+                  'drop-shadow(0 0 8px rgba(227,183,119,0.45))',
+                  'drop-shadow(0 0 0px rgba(227,183,119,0))'
+                ]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative border-none inline-flex" 
+              id="footer-logo"
+            >
+              <Logo variant="footer" onClick={(e) => handleLinkClick(e, '/')} />
+            </motion.div>
 
             <p className="text-sm font-sans text-white/80 max-w-sm leading-relaxed">
               Harmony Yoga Center helps individuals transform their health naturally through expert yoga programs, physical diagnostic alignments, and holistic dietary wisdom.
@@ -94,8 +69,10 @@ export default function Footer() {
                     rel="noreferrer noopener"
                     whileHover={{ 
                       scale: 1.1,
-                      y: -3,
-                      boxShadow: '0 0 15px rgba(227,183,119,0.3)'
+                      y: -4,
+                      rotate: 8,
+                      boxShadow: '0 0 20px rgba(227,183,119,0.5)',
+                      borderColor: '#E3B777',
                     }}
                     className="w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-md flex items-center justify-center text-white/85 hover:text-brand-gold hover:border-brand-gold/40 transition-colors"
                   >
@@ -121,14 +98,16 @@ export default function Footer() {
                 { name: 'Media Gallery', path: '/gallery' },
               ].map((link) => (
                 <li key={link.name}>
-                  <a
+                  <motion.a
                     href="#"
                     onClick={(e) => handleLinkClick(e, link.path)}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     className="font-medium text-white/80 hover:text-brand-gold transition-colors duration-300 inline-block text-xs uppercase tracking-wide cursor-pointer relative group/link"
                   >
                     <span>{link.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#E3B777] group-hover/link:w-full transition-all duration-300 ease-out" />
-                  </a>
+                  </motion.a>
                 </li>
               ))}
             </ul>
@@ -148,14 +127,16 @@ export default function Footer() {
                 { name: 'FAQ Solutions', path: '/resources/faq' },
               ].map((link) => (
                 <li key={link.name}>
-                  <a
+                  <motion.a
                     href="#"
                     onClick={(e) => handleLinkClick(e, link.path)}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     className="font-medium text-white/80 hover:text-brand-gold transition-colors duration-300 inline-block text-xs uppercase tracking-wide cursor-pointer relative group/link"
                   >
                     <span>{link.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#E3B777] group-hover/link:w-full transition-all duration-300 ease-out" />
-                  </a>
+                  </motion.a>
                 </li>
               ))}
             </ul>
@@ -181,10 +162,10 @@ export default function Footer() {
               <li className="flex items-center gap-2.5 text-xs">
                 <Mail className="h-4 w-4 text-[#E3B777] shrink-0" />
                 <a 
-                  href="mailto:contact@harmonyyoga.in" 
+                  href="mailto:harmonyyogacenter11@gmail.com" 
                   className="hover:text-brand-gold transition-colors font-semibold"
                 >
-                  contact@harmonyyoga.in
+                  harmonyyogacenter11@gmail.com
                 </a>
               </li>
               <li className="pt-1 select-none">

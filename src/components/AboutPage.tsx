@@ -54,18 +54,18 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="pt-[var(--navbar-height,80px)] bg-brand-ivory min-h-screen relative overflow-hidden"
+      className="pt-[var(--navbar-height,80px)] bg-premium-light min-h-screen relative overflow-hidden"
       id="about-page-container"
     >
       <SEO 
-        title="About Master S. Yoga Anjaneyulu | Harmony Yoga Center"
-        description="Learn about Master S. Yoga Anjaneyulu (M.Sc. Yoga Science) and his 7+ years of clinical yogic research into slimming and endocrine normalization in Vijayawada."
+        title="About Master S. Anjaneyulu | Harmony Yoga Center"
+        description="Learn about Master S. Anjaneyulu (M.Sc. Yoga Science) and his 7+ years of clinical yogic research into slimming and endocrine normalization in Vijayawada."
         path="/about"
       />
 
-      {/* Absolute Decorative Background Elements */}
-      <div className="absolute right-0 top-[10%] w-[500px] h-[500px] rounded-full bg-[#CFE8D5]/20 blur-3xl pointer-events-none" />
-      <div className="absolute -left-1/4 bottom-[15%] w-[400px] h-[400px] rounded-full bg-brand-gold-bright/5 blur-3xl pointer-events-none" />
+      {/* Absolute Decorative Background Elements with continuous ambient drift */}
+      <div className="absolute right-0 top-[10%] w-[500px] h-[500px] rounded-full bg-[#CFE8D5]/20 blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute -left-1/4 bottom-[15%] w-[400px] h-[400px] rounded-full bg-brand-gold-bright/5 blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Banner Section */}
       <section className="relative py-20 lg:py-28 px-6 sm:px-10 lg:px-16" id="about-hero-section">
@@ -103,7 +103,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Meet S. Yoga Anjaneyulu Section (The Master Biography) */}
+      {/* Meet S. Anjaneyulu Section (The Master Biography) */}
       <section className="py-16 bg-white/60 border-y border-brand-sage/10 px-6 sm:px-10 lg:px-16" id="about-trainer-showcase">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -117,7 +117,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 <div className="relative rounded-2xl overflow-hidden shadow-xl bg-brand-ivory border border-brand-sage/30">
                   <img
                     src="/assets/images/trainer-yoga.jpeg"
-                    alt="S. Yoga Anjaneyulu"
+                    alt="S. Anjaneyulu"
                     className="w-full aspect-[4/5] object-cover filter grayscale-[15%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
                     referrerPolicy="no-referrer"
                   />
@@ -140,7 +140,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 THE FOUNDER & MASTER COACH
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-emerald leading-tight">
-                S. Yoga Anjaneyulu
+                S. Anjaneyulu
               </h2>
               <p className="text-xs sm:text-sm font-semibold uppercase text-brand-charcoal/50 tracking-wider font-sans -mt-3">
                 M.Sc. Yoga Science & Natural Healing Therapy
@@ -148,10 +148,10 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
               
               <div className="space-y-4 text-sm text-brand-charcoal/80 leading-relaxed font-sans">
                 <p>
-                  With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Yoga Anjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
+                  With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Anjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
                 </p>
                 <p>
-                  At Harmony, S. Yoga Anjaneyulu actively consults with every client. By establishing customized daily 30-minute sequences, he stimulates metabolic functions without resorting to aggressive food diets or joint-straining workouts.
+                  At Harmony, S. Anjaneyulu actively consults with every client. By establishing customized daily 30-minute sequences, he stimulates metabolic functions without resorting to aggressive food diets or joint-straining workouts.
                 </p>
               </div>
 
@@ -162,7 +162,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   "Yoga shouldn't be about executing painful shapes on a mat. It is a precise science of internal organ activation. Guided sequence timing regulates the nervous complex, sparking the thyroid to manage natural energy synthesis."
                 </p>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-emerald mt-2">
-                  — S. Yoga Anjaneyulu, Founder
+                  — S. Anjaneyulu, Founder
                 </span>
               </div>
 
@@ -209,7 +209,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.25 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
                   className="bg-white p-8 rounded-2xl border border-brand-sage/30 shadow-2xs hover:shadow-xs transition-all duration-300 relative group overflow-hidden"
@@ -287,7 +287,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             Are You Ready to Begin Your Realignment?
           </h2>
           <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto">
-            Book an introductory clinical consultation and 1-on-1 trial class directly with our master therapist S. Yoga Anjaneyulu.
+            Book an introductory clinical consultation and 1-on-1 trial class directly with our master therapist S. Anjaneyulu.
           </p>
           <div className="pt-4 flex justify-center">
             <button

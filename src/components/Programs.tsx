@@ -98,7 +98,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
   };
 
   return (
-    <section id="programs" className="py-[56px] md:py-[72px] lg:py-[100px] bg-white relative overflow-hidden">
+    <section id="programs" className="py-[56px] md:py-[72px] lg:py-[100px] bg-premium-light relative overflow-hidden">
       {/* Decorative background vectors for boutique fitness feel */}
       <div className="absolute top-10 left-10 w-[400px] h-[400px] rounded-full bg-brand-gold/5 filter blur-3xl opacity-30 pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full bg-brand-sage/10 filter blur-3xl opacity-40 pointer-events-none" />
@@ -128,7 +128,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, amount: 0.25 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-8 justify-center"
             id="programs-cards-grid"
           >
@@ -141,8 +141,8 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                   variants={cardVariants}
                   whileHover={{ 
                     y: -10,
-                    borderColor: 'rgba(180, 127, 67, 0.4)', // Warm gold accent glow highlights border
-                    boxShadow: '0 24px 50px -12px rgba(15, 118, 110, 0.12), 0 0 0 1px rgba(184, 127, 67, 0.15)'
+                    borderColor: '#0F766E', // Emerald border glow
+                    boxShadow: '0 24px 50px -12px rgba(15, 118, 110, 0.22), 0 0 0 1.5px #0F766E'
                   }}
                   className="group flex flex-col rounded-3xl bg-brand-ivory/50 border border-brand-sage/40 overflow-hidden hover:bg-white transition-all duration-500 shadow-xs"
                 >

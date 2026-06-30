@@ -12,9 +12,9 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
+      // HMR is disabled during deployment via DISABLE_HMR env var.
+      // File watching is disabled when needed to save CPU cycles and prevent flashing.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };

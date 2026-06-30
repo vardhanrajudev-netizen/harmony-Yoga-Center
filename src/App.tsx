@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
@@ -32,6 +32,13 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState('Weight Loss Programs');
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const handleOpenBooking = (programName?: string) => {
     if (programName && typeof programName === 'string') {
       setSelectedProgram(programName);
@@ -52,6 +59,12 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-brand-ivory font-sans" id="studio-app-root">
       
+      {/* Scroll Progress Indicator */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-emerald via-brand-gold-bright to-brand-gold origin-left z-50 shadow-[0_1px_10px_rgba(229,169,59,0.7)]"
+        style={{ scaleX }}
+      />
+      
       {/* 1. Transparent Translucent Navbar with Multi-Page Routing */}
       <Navbar onBookClick={() => handleOpenBooking()} />
 
@@ -61,10 +74,10 @@ export default function App() {
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             >
               <Routes location={location}>
                 <Route path="/" element={<HomePage onBookClick={handleOpenBooking} />} />

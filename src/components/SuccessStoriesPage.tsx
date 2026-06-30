@@ -82,7 +82,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       timeline: '8 Weeks',
       metricBefore: 'Unstable posture & severe spine pain',
       metricAfter: 'Full skeletal recovery & mobility',
-      quote: "Sitting in front of a laptop for ten hours daily left me with crippling lumbar stiffness. Under S. Yoga Anjaneyulu's direct clinical oversight, my posture metrics are fully back to center. Unbelievable relief.",
+      quote: "Sitting in front of a laptop for ten hours daily left me with crippling lumbar stiffness. Under S. Anjaneyulu's direct clinical oversight, my posture metrics are fully back to center. Unbelievable relief.",
       image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
       statLabel: 'Spine Decompression',
       statValue: '100% Pain-free',
@@ -115,7 +115,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="pt-[var(--navbar-height,80px)] bg-brand-ivory min-h-screen relative overflow-hidden"
+      className="pt-[var(--navbar-height,80px)] bg-premium-light min-h-screen relative overflow-hidden"
       id="success-stories-page"
     >
       <SEO 
@@ -124,9 +124,9 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
         path="/success-stories"
       />
 
-      {/* Decorative Blur Overlays */}
-      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-brand-sage/10 blur-3xl pointer-events-none" />
-      <div className="absolute -left-1/4 bottom-1/4 w-80 h-80 rounded-full bg-[#E3B777]/5 blur-3xl pointer-events-none" />
+      {/* Decorative Blur Overlays with continuous luxury ambient movement */}
+      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-brand-sage/10 blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute -left-1/4 bottom-1/4 w-80 h-80 rounded-full bg-[#E3B777]/5 blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Header Banner */}
       <section className="py-16 md:py-24 px-6 text-center select-none" id="success-hero">
@@ -177,7 +177,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
               key={idx}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, amount: 0.25 }}
               transition={{ duration: 0.7 }}
               className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white border border-brand-sage/20 rounded-3xl p-8 sm:p-10 shadow-3xs relative overflow-hidden`}
               id={`story-case-${idx}`}
@@ -254,7 +254,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
             Achieve Your Personal Clinical Best
           </h2>
           <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-sm mx-auto">
-            Work directly with S. Yoga Anjaneyulu to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
+            Work directly with S. Anjaneyulu to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
           </p>
           <div className="pt-4 flex justify-center">
             <button

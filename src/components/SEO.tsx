@@ -49,7 +49,7 @@ export default function SEO({ title, description, path, schema }: SEOProps) {
     metaDesc.setAttribute('content', description);
 
     // 3. Update Canonical URL
-    const canonicalBase = 'https://harmonyyogacenter.com';
+    const canonicalBase = 'https://harmonyyoga.in';
     const canonicalUrl = `${canonicalBase}${path}`;
     const linkCanonical = getOrCreateLink('canonical');
     linkCanonical.setAttribute('href', canonicalUrl);

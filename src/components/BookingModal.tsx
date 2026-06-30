@@ -311,7 +311,7 @@ export default function BookingModal({ isOpen, onClose, selectedProgram = 'Weigh
                   <div className="space-y-2">
                     <h4 className="font-display text-2xl font-bold text-brand-emerald">Breathe & Relax, {formData.name.split(' ')[0]}!</h4>
                     <p className="text-sm text-brand-charcoal/85 max-w-sm mx-auto leading-relaxed">
-                      Your VIP passes are now active! S. Yoga Anjaneyulu and team will message you on <span className="font-semibold text-brand-emerald">{formData.phone}</span> in the next 15 minutes to coordinate your initial session.
+                      Your VIP passes are now active! S. Anjaneyulu and team will message you on <span className="font-semibold text-brand-emerald">{formData.phone}</span> in the next 15 minutes to coordinate your initial session.
                     </p>
                   </div>
 

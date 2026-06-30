@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, Play, X, Heart, ShieldCheck, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Star, Play, X, Heart, ShieldCheck, Sparkles, ChevronDown, ChevronUp, Quote } from 'lucide-react';
 import { Testimonial } from '../types';
 
 const testimonial01 = '/assets/images/testimonial-01.mp4';
@@ -43,7 +43,7 @@ export default function Testimonials() {
       age: 29,
       weightLost: '8.2 Kg',
       rating: 5,
-      quote: "As an IT professional, I barely had time for exercise. The 30-minute daily slimming routines designed by S. Yoga Anjaneyulu changed everything. I lost 8.2 Kg in 2 months without fatigue, and my stress handles literally vanished.",
+      quote: "As an IT professional, I barely had time for exercise. The 30-minute daily slimming routines designed by S. Anjaneyulu changed everything. I lost 8.2 Kg in 2 months without fatigue, and my stress handles literally vanished.",
       program: 'Weight Loss Programs',
       videoUrl: testimonial01,
     },
@@ -53,7 +53,7 @@ export default function Testimonials() {
       age: 41,
       weightLost: '11.5 Kg',
       rating: 5,
-      quote: "I was suffering from stiff lower back joints and clinical thyroid lag. The personalized live corrections and custom posture alterations from S. Yoga rehabilitated my back and helped me shed 11 Kg naturally. Highly recommend online live yoga!",
+      quote: "I was suffering from stiff lower back joints and clinical thyroid lag. The personalized live corrections and custom posture alterations from S. Anjaneyulu rehabilitated my back and helped me shed 11 Kg naturally. Highly recommend online live yoga!",
       program: 'Personalized Yoga Sessions',
       videoUrl: testimonial02,
     },
@@ -123,7 +123,7 @@ export default function Testimonials() {
     //   age: 42,
     //   weightLost: '11.0 Kg',
     //   rating: 5,
-    //   quote: "Struggling with menopause-linked metabolic slows was exhausting. S. Yoga Anjaneyulu designed a bespoke hormonal balancing and digestion stimulation track. I lost 11 Kg, recovered my deep sleep patterns, and feels brand new.",
+    //   quote: "Struggling with menopause-linked metabolic slows was exhausting. S. Anjaneyulu designed a bespoke hormonal balancing and digestion stimulation track. I lost 11 Kg, recovered my deep sleep patterns, and feels brand new.",
     //   program: 'Nutrition Guidance',
     //   videoUrl: testimonial07,
     // }, 
@@ -132,9 +132,9 @@ export default function Testimonials() {
   const visibleTestimonials = showAll ? testimonialsList : testimonialsList.slice(0, 3);
 
   return (
-    <section id="testimonials" className="py-[56px] md:py-[72px] lg:py-[100px] bg-brand-ivory relative overflow-hidden">
-      {/* Absolute decorative back-sphere */}
-      <div className="absolute right-[-100px] bottom-1/4 w-[400px] h-[400px] rounded-full bg-brand-sage/10 filter blur-3xl opacity-50 pointer-events-none" />
+    <section id="testimonials" className="py-[56px] md:py-[72px] lg:py-[100px] bg-premium-light relative overflow-hidden">
+      {/* Absolute decorative back-sphere with continuous ambient movement */}
+      <div className="absolute right-[-100px] bottom-1/4 w-[400px] h-[400px] rounded-full bg-brand-sage/10 filter blur-3xl opacity-50 pointer-events-none ambient-glow-1" />
 
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-12 relative z-10">
         <div className="max-w-[1200px] mx-auto">
@@ -159,7 +159,7 @@ export default function Testimonials() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, amount: 0.25 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-none"
         >
           <AnimatePresence mode="popLayout">
@@ -174,47 +174,66 @@ export default function Testimonials() {
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ 
-                  scale: 1.03,
-                  y: -6,
-                  boxShadow: '0 20px 40px -15px rgba(15, 118, 110, 0.12)',
-                  borderColor: 'rgba(15, 118, 110, 0.15)'
+                  y: -8,
+                  boxShadow: '0 24px 48px -12px rgba(15, 118, 110, 0.22)',
+                  borderColor: '#0F766E'
                 }}
-                className="bg-white rounded-2xl border border-brand-sage/30 overflow-hidden shadow-sm flex flex-col justify-between group cursor-pointer"
+                className="bg-white rounded-2xl border border-brand-sage/30 overflow-hidden shadow-sm flex flex-col justify-between group cursor-pointer transition-colors duration-300"
               >
                 {/* Video Thumbnail with Hover Interaction */}
                 <div className="relative aspect-video bg-neutral-900 overflow-hidden" onClick={() => setActiveVideo(test)}>
-                  <video
-                    src={test.videoUrl}
-                    muted
-                    playsInline
-                    loop
-                    autoPlay
-                    className="w-full h-full object-cover opacity-85 group-hover:scale-[1.03] group-hover:opacity-65 transition-all duration-500"
-                  />
+                  <motion.div
+                    className="w-full h-full"
+                    animate={{ scale: [1, 1.06, 1] }}
+                    transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <video
+                      src={test.videoUrl}
+                      muted
+                      playsInline
+                      loop
+                      autoPlay
+                      className="w-full h-full object-cover opacity-85 group-hover:opacity-65 transition-opacity duration-500"
+                    />
+                  </motion.div>
                   
                   {/* Simulated Glass Play Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-brand-charcoal/20 group-hover:bg-brand-charcoal/30 transition-colors duration-300">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-brand-emerald group-hover:text-brand-gold shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <motion.div 
+                      animate={{
+                        scale: [1, 1.08, 1],
+                        boxShadow: [
+                          '0 4px 14px rgba(15,118,110,0.1)',
+                          '0 4px 22px 6px rgba(15,118,110,0.25)',
+                          '0 4px 14px rgba(15,118,110,0.1)'
+                        ]
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-brand-emerald group-hover:text-brand-gold shadow-lg group-hover:scale-110 transition-all duration-300"
+                    >
                       <Play className="h-5 w-5 fill-current ml-1 transform group-hover:rotate-[360deg] transition-transform duration-700" />
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Left Floating Transformation metric seal */}
                   {test.weightLost && (
-                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow-sm">
+                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow-sm z-10">
                       Lost {test.weightLost}
                     </div>
                   )}
 
                   {/* Right Floating Quick Label */}
-                  <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs text-[#B58552] border border-brand-sage/20">
+                  <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs text-[#B58552] border border-brand-sage/20 z-10">
                     Video Story
                   </span>
                 </div>
 
                 {/* Text review detail */}
-                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
-                  <div className="space-y-3">
+                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between relative overflow-hidden">
+                  {/* Floating quote icon in card background */}
+                  <Quote className="absolute right-3 bottom-14 h-16 w-16 text-brand-sage/15 transform rotate-12 pointer-events-none" />
+
+                  <div className="space-y-3 relative z-10">
                     {/* Rating Stars row */}
                     <div className="flex items-center gap-1 text-yellow-500">
                       {[...Array(test.rating)].map((_, i) => (
@@ -231,7 +250,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Subtitle/Identification */}
-                  <div className="pt-4 border-t border-brand-sage/20 flex items-center justify-between">
+                  <div className="pt-4 border-t border-brand-sage/20 flex items-center justify-between relative z-10">
                     <div className="text-left">
                       <h4 className="font-serif text-sm font-bold text-brand-charcoal leading-tight">
                         {test.name}
@@ -334,7 +353,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <p className="text-xs text-brand-charcoal/70 leading-relaxed font-sans">
-                  S. Yoga Anjaneyulu modified {activeVideo.name}'s daily 30-minute metabolic routine to reduce thyroid-linked fluid retention and naturally activate lower back stabilization.
+                  S. Anjaneyulu modified {activeVideo.name}'s daily 30-minute metabolic routine to reduce thyroid-linked fluid retention and naturally activate lower back stabilization.
                 </p>
               </div>
             </motion.div>

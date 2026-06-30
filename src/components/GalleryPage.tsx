@@ -68,7 +68,7 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
   );
 
   return (
-    <div className="pt-24 min-h-screen bg-brand-ivory" id="gallery-page-root">
+    <div className="pt-24 min-h-screen bg-premium-light" id="gallery-page-root">
       <SEO
         title="Bespoke Studio Gallery & Retreat Events | Harmony Yoga Center"
         description="Explore photographs of our Lotus Inner Sanctuary, personalized diagnostic consultation pavilions, and wellness retreats in Vikarabad."
@@ -87,7 +87,7 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
             The Sanctuary <span className="text-brand-emerald font-semibold font-serif italic">Gallery Portfolio</span>
           </h1>
           <p className="max-w-2xl mx-auto text-xs sm:text-sm text-brand-charcoal/60 leading-relaxed font-sans">
-            Witness the elite layout of our Banjara Hills retreat center, outdoor wellness gatherings, and precise posture therapeutic alignments curated under S. Yoga Anjaneyulu.
+            Witness the elite layout of our Banjara Hills retreat center, outdoor wellness gatherings, and precise posture therapeutic alignments curated under S. Anjaneyulu.
           </p>
 
           {/* Filter Pill List */}

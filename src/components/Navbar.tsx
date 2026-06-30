@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Logo from './Logo';
 import { 
   Menu, 
   X, 
@@ -103,7 +104,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
     {
       id: 'faq' as const,
       title: 'FAQ Shield',
-      description: 'Master S. Yoga Anjaneyulu answers academic concerns.',
+      description: 'Master S. Anjaneyulu answers academic concerns.',
       icon: HelpCircle,
     },
   ];
@@ -184,50 +185,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           <div className="flex h-full items-center justify-between">
             
             {/* Logo block */}
-            <motion.a
-              href="#"
-              onClick={handleLogoClick}
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-3 group select-none shrink-0 cursor-pointer"
-              id="navbar-logo-link"
-            >
-              <div 
-                className="flex items-center justify-center rounded-full bg-brand-emerald text-brand-ivory group-hover:bg-brand-gold transition-colors duration-400 shrink-0 shadow-xs"
-                style={{ width: '38px', height: '38px' }}
-              >
-                <span className="font-serif font-bold text-xs select-none text-[#FAF9F6]">H</span>
-              </div>
-              
-              <div className="flex flex-col select-none whitespace-nowrap justify-center animate-fade-in" style={{ gap: '1px' }}>
-                <div className="flex items-baseline gap-1.5" style={{ lineHeight: '1.1' }}>
-                  <span 
-                    className="font-serif font-bold text-brand-emerald group-hover:text-[#AF8F55] transition-colors"
-                    style={{ fontSize: '24px', fontFamily: '"Cormorant Garamond", serif', fontWeight: 700 }}
-                  >
-                    Harmony
-                  </span>
-                  <span 
-                    className="font-sans font-light text-[#374151]"
-                    style={{ fontSize: '13px', fontFamily: '"Inter", sans-serif', fontWeight: 300 }}
-                  >
-                    Yoga Center
-                  </span>
-                </div>
-                <span 
-                  className="font-sans font-bold text-brand-charcoal uppercase block tracking-[2px]"
-                  style={{ 
-                    fontSize: '8px', 
-                    letterSpacing: '1.8px', 
-                    opacity: 0.50,
-                    fontFamily: '"Inter", sans-serif',
-                    lineHeight: '1.1'
-                  }}
-                >
-                  PREMIUM WELLNESS SANCTUARY
-                </span>
-              </div>
-            </motion.a>
+            <Logo variant="light" onClick={handleLogoClick} className="group shrink-0" />
 
             {/* Desktop Navigation Links (Uniform typography and clean state routes) */}
             <div className="hidden lg:flex items-center gap-[24px]" id="desktop-nav-menu">

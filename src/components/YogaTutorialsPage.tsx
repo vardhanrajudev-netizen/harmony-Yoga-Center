@@ -55,7 +55,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'A 12-sequence classical alignment formulated to balance the metabolic rate, tone cellular tissues, and stimulate early morning lymphatic circulation.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-performing-yoga-on-mats-at-sunset-41705-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '2',
@@ -82,7 +82,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'A scientifically compiled sequence focusing on abdominal compression and visceral reflex stimulation to enhance calorie burn.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-doing-yoga-exercises-in-a-sunny-studio-41712-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '3',
@@ -109,7 +109,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'An elite breathing masterclass guiding proper diaphragmatic expansion to stabilize thyroid activity and eliminate stress handles in 10 minutes.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-in-nature-31498-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '4',
@@ -136,7 +136,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'Realign stiff lumbar joints and release long-held micro-tension with smooth, gentle structural expansions designed to restore natural posture.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-girl-stretching-her-arms-in-bed-41481-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '5',
@@ -163,7 +163,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'A modern, discrete micro-routine targeting key occupational stress points in professional schedules. No athletic gear or mat required.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-doing-yoga-exercises-in-a-sunny-studio-41712-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '6',
@@ -190,7 +190,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'An uplifting, low-impact flow combining balance sequences with gentle heart openers to elevate energy pathways and establish focus.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-performing-yoga-on-mats-at-sunset-41705-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     },
     {
       id: '7',
@@ -217,7 +217,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       description: 'A dedicated restorative flow custom-curated to regulate pelvic energy, quiet hormonal plateaus, and optimize thyroid tissue functioning.',
       videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-in-nature-31498-large.mp4',
       thumbnailUrl: 'https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=800&q=80',
-      mentor: 'S. Yoga Anjaneyulu, M.Sc.'
+      mentor: 'S. Anjaneyulu, M.Sc.'
     }
   ], []);
 
@@ -229,7 +229,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
   }, [selectedCategory, tutorials]);
 
   return (
-    <div className="bg-[#FAF9F6] text-[#1F2937] min-h-screen pt-[80px] font-sans overflow-x-hidden" id="tutorials-page-root">
+    <div className="bg-premium-light text-[#1F2937] min-h-screen pt-[80px] font-sans overflow-x-hidden" id="tutorials-page-root">
       <SEO 
         title="Yoga Pose Library & Tutorial Videos | Harmony Yoga Center"
         description="Master your alignments via custom streaming video tutorials guiding morning sun salutations, endocrine weight loss pose adjustments and calming pranayamas."
@@ -363,7 +363,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       </section>
 
       {/* 2. CATEGORY SELECTOR CARDS */}
-      <section className="py-12 bg-white border-b border-brand-sage/10">
+      <section className="py-12 bg-premium-light-alt border-b border-brand-sage/10">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-12">
           
           <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
@@ -722,7 +722,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       </AnimatePresence>
 
       {/* 5. WHY LEARN WITH HARMONY YOGA YOGA CENTER BRAND */}
-      <section className="py-16 px-6 sm:px-12 bg-white border-t border-b border-brand-sage/15">
+      <section className="py-16 px-6 sm:px-12 bg-premium-light border-t border-b border-brand-sage/15">
         <div className="max-w-[1280px] mx-auto">
           
           <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
@@ -739,7 +739,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               {
                 icon: Award,
                 title: 'MSC-Therapist Guidance',
-                desc: 'Every posture is curated and verified by S. Yoga Anjaneyulu, combining a master’s degree in clinical Yoga Science with real corrective experience.'
+                desc: 'Every posture is curated and verified by S. Anjaneyulu, combining a master’s degree in clinical Yoga Science with real corrective experience.'
               },
               {
                 icon: ShieldCheck,

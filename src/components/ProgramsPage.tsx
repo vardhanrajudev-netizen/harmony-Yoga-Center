@@ -30,8 +30,6 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
       subtitle: 'Harmony Dynamic Slimming',
       timeframe: '30 days minimum',
       duration: '30 mins / day',
-      price: 'Starting From ₹999/month',
-      numericPrice: '999',
       bulletPoints: [
         'Naturally sparks thyroid glandular juices',
         '30-minute daily sequences keep commitments manageable',
@@ -51,10 +49,8 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
       subtitle: 'Clinical Private Consultation',
       timeframe: 'Custom schedules',
       duration: 'Schedules vary',
-      price: 'Starting From ₹1,999/month',
-      numericPrice: '1,999',
       bulletPoints: [
-        'A thorough diagnostic review with master S. Yoga Anjaneyulu',
+        'A thorough diagnostic review with master S. Anjaneyulu',
         'Custom joint therapy sequences designed around chronic pains',
         'Direct posture correction to ensure full skeletal health',
         'Flexible 1-on-1 private scheduling (Physical or HD stream)',
@@ -72,8 +68,6 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
       subtitle: 'Ayurvedic Metabolic Nutrients',
       timeframe: 'Flexible lifestyle paths',
       duration: 'Weekly frameworks',
-      price: 'Starting From ₹799/month',
-      numericPrice: '799',
       bulletPoints: [
         'Personalized body constitution metabolic analysis ("Dosha Profile")',
         'No starving diet charts—focuses on bio-available nutrition',
@@ -209,46 +203,27 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
                     ))}
                   </div>
 
-                  {/* Pricing Plans Area using requested luxury wellness design (₹999, ₹1,999, ₹799) */}
-                  <div className="flex flex-col sm:flex-row gap-6 items-center pt-4 border-t border-brand-sage/10">
-                    
-                    {/* Luxury Typographic Card Component */}
-                    <div className="bg-[#FAF9F6] border border-[#CFE8D5] rounded-[18px] p-5 shrink-0 w-full sm:w-[220px] shadow-[0_2px_12px_rgba(31,41,55,0.02)] text-center space-y-1.5">
-                      <span className="text-[11px] uppercase tracking-[2px] font-bold text-brand-charcoal/50 block">
-                        STARTING FROM
-                      </span>
-                      <div className="flex items-baseline justify-center font-bold text-brand-emerald">
-                        <span className="text-[20px] mr-1.5 leading-none select-none">₹</span>
-                        <span className="text-[32px] tracking-tight leading-none">
-                          {track.numericPrice}
-                        </span>
-                      </div>
-                      <span className="text-[13px] opacity-70 text-brand-charcoal font-medium block leading-none">
-                        per month
-                      </span>
+                  {/* Action Area (re-designed for premium trial booking without pricing) */}
+                  <div className="pt-6 border-t border-brand-sage/10 flex flex-col sm:flex-row gap-6 items-center justify-between" id={`action-area-${track.id}`}>
+                    <div className="text-left space-y-1 max-w-md">
+                      <p className="text-xs font-bold text-brand-emerald tracking-wide uppercase">Includes Master Session Consult</p>
+                      <p className="text-xs text-brand-charcoal/70 leading-relaxed">
+                        Enjoy a complimentary 1-on-1 baseline metabolic screening & joint health consultation with S. Anjaneyulu during your first week.
+                      </p>
                     </div>
 
-                    {/* Secondary CTA Detail */}
-                    <div className="text-left space-y-4 flex-1">
-                      <div className="text-xs text-brand-charcoal/60 leading-relaxed">
-                        <p className="font-semibold text-brand-emerald">Includes Master Session Consult:</p>
-                        <p className="mt-0.5">Complimentary 1-on-1 baseline screening with S. Yoga Anjaneyulu during week 1.</p>
-                      </div>
-
-                      <button
-                        onClick={() => onSelectProgram(track.title)}
-                        className="group/btn h-[54px] w-full sm:w-auto px-6 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-between gap-4 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                    <button
+                      onClick={() => onSelectProgram(track.title)}
+                      className="group/btn h-[54px] w-full sm:w-auto px-8 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-between gap-4 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer shrink-0"
+                    >
+                      <span>{track.id === 'personalized' ? 'Book Your Session' : 'Book Free Trial'}</span>
+                      <div 
+                        className="h-8 w-8 rounded-full bg-[#E3B777] group-hover/btn:bg-[#EBC38B] flex items-center justify-center text-[#0F766E] transition-all duration-300 transform group-hover/btn:translate-x-[4px] shrink-0"
+                        style={{ boxShadow: '0 0 18px rgba(227,183,119,0.35)' }}
                       >
-                        <span>Book Free Session Trial</span>
-                        <div 
-                          className="h-8 w-8 rounded-full bg-[#E3B777] group-hover/btn:bg-[#EBC38B] flex items-center justify-center text-[#0F766E] transition-all duration-300 transform group-hover/btn:translate-x-[4px] shrink-0"
-                          style={{ boxShadow: '0 0 18px rgba(227,183,119,0.35)' }}
-                        >
-                          <ArrowRight className="h-4 w-4 stroke-[3]" />
-                        </div>
-                      </button>
-                    </div>
-
+                        <ArrowRight className="h-4 w-4 stroke-[3]" />
+                      </div>
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -302,7 +277,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-brand-emerald">Interactive HD Live Stream</h3>
                 <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
-                  Join our active slimming sequences live from anywhere globally. Secure zoom streams combined with physical visual screening from S. Yoga Anjaneyulu to answer sequence questions during active practice.
+                  Join our active slimming sequences live from anywhere globally. Secure zoom streams combined with physical visual screening from S. Anjaneyulu to answer sequence questions during active practice.
                 </p>
                 <div className="pt-2 space-y-2">
                   <div className="flex items-center gap-2 text-xs text-brand-charcoal/75 font-sans">
@@ -329,7 +304,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
             Activate Your Direct 3-Day Companion Trial Pass
           </h2>
           <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto">
-            Review physical structures, test our custom heated mats, and claim a personalized body Dosha analysis with master coach S. Yoga Anjaneyulu.
+            Review physical structures, test our custom heated mats, and claim a personalized body Dosha analysis with master coach S. Anjaneyulu.
           </p>
           <div className="pt-4 flex justify-center">
             <button

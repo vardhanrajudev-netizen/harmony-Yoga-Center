@@ -110,7 +110,7 @@ export default function ContactPage() {
     >
       <SEO 
         title="Contact Us & Register For Free Trial Slots | Harmony Yoga"
-        description="Connect with our Vijayawada sanctuary studio behind SV Ranga Rao Hospital in Mogalrajapuram. Register for a free therapeutic trial batch or send general inquiries to Master S. Yoga Anjaneyulu directly."
+        description="Connect with our Vijayawada sanctuary studio behind SV Ranga Rao Hospital in Mogalrajapuram. Register for a free therapeutic trial batch or send general inquiries to Master S. Anjaneyulu directly."
         path="/contact"
       />
 
@@ -143,11 +143,14 @@ export default function ContactPage() {
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 space-y-6">
               <h3 className="font-serif text-2xl font-bold text-brand-emerald">Information</h3>
               
-              <div className="space-y-5 text-sm">
+              <div className="space-y-4 text-sm">
                 
                 {/* Phone */}
-                <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
+                <motion.div 
+                  whileHover={{ y: -4, borderColor: '#0F766E', boxShadow: '0 8px 20px -8px rgba(15,118,110,0.15)' }}
+                  className="flex gap-4 items-start p-3 rounded-2xl border border-brand-sage/10 hover:bg-white transition-all duration-300 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5 transition-shadow duration-300 hover:shadow-[0_0_12px_#0F766E]">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
@@ -156,24 +159,30 @@ export default function ContactPage() {
                       <a href="tel:+917036711097" className="text-brand-emerald hover:underline font-semibold block">+91 70367 11097</a>
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Email */}
-                <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
+                <motion.div 
+                  whileHover={{ y: -4, borderColor: '#0F766E', boxShadow: '0 8px 20px -8px rgba(15,118,110,0.15)' }}
+                  className="flex gap-4 items-start p-3 rounded-2xl border border-brand-sage/10 hover:bg-white transition-all duration-300 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5 transition-shadow duration-300 hover:shadow-[0_0_12px_#0F766E]">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-[#0F766E] text-[13px] uppercase tracking-wider">Email</h4>
                     <p className="text-xs mt-1">
-                      <a href="mailto:contact@harmonyyoga.in" className="text-brand-emerald hover:underline font-semibold block">contact@harmonyyoga.in</a>
+                      <a href="mailto:harmonyyogacenter11@gmail.com" className="text-brand-emerald hover:underline font-semibold block">harmonyyogacenter11@gmail.com</a>
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Location */}
-                <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
+                <motion.div 
+                  whileHover={{ y: -4, borderColor: '#0F766E', boxShadow: '0 8px 20px -8px rgba(15,118,110,0.15)' }}
+                  className="flex gap-4 items-start p-3 rounded-2xl border border-brand-sage/10 hover:bg-white transition-all duration-300 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5 transition-shadow duration-300 hover:shadow-[0_0_12px_#0F766E]">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -191,10 +200,13 @@ export default function ContactPage() {
                       get directions on maps ↗
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* WhatsApp */}
-                <div className="flex gap-4 items-start">
+                <motion.div 
+                  whileHover={{ y: -4, borderColor: '#22C55E', boxShadow: '0 8px 20px -8px rgba(34,197,94,0.15)' }}
+                  className="flex gap-4 items-start p-3 rounded-2xl border border-brand-sage/10 hover:bg-white transition-all duration-300 cursor-pointer"
+                >
                   <div className="p-2.5 rounded-lg bg-green-500/10 text-green-600 shrink-0 mt-0.5">
                     <MessageCircle className="h-5 w-5" />
                   </div>
@@ -203,17 +215,31 @@ export default function ContactPage() {
                     <p className="text-xs text-brand-charcoal/70 leading-relaxed mt-1">
                       Chat with us instantly
                     </p>
-                    <a 
+                    <motion.a 
                       href="https://wa.me/917036711097?text=Hello%20Harmony%20Yoga%20Center!%20I'd%20like%20to%20know%20more%20about%20your%20metabolic%20slimming%20trial%20program." 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 mt-2 px-3 py-1.5 rounded-full bg-green-500 hover:bg-green-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-2xs"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        boxShadow: [
+                          '0 2px 4px rgba(34,197,94,0.2)',
+                          '0 2px 12px 4px rgba(34,197,94,0.35)',
+                          '0 2px 4px rgba(34,197,94,0.2)'
+                        ]
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      whileHover={{ scale: 1.07 }}
+                      className="inline-flex items-center gap-1.5 mt-2 px-3.5 py-2 rounded-full bg-[#22C55E] hover:bg-green-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-2xs cursor-pointer"
                     >
                       <MessageCircle className="h-3.5 w-3.5 fill-white" />
                       Chat on WhatsApp
-                    </a>
+                    </motion.a>
                   </div>
-                </div>
+                </motion.div>
 
               </div>
             </div>
@@ -489,7 +515,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-serif text-lg font-bold text-brand-emerald">Trial Registration Confirmed</h4>
                       <p className="text-xs text-brand-charcoal/60 mt-1.5 leading-relaxed">
-                        Your free 1-on-1 therapeutic session and baseline assessment slot is officially held. S. Yoga Anjaneyulu will review your physical remarks and contact you prior. See you soon!
+                        Your free 1-on-1 therapeutic session and baseline assessment slot is officially held. S. Anjaneyulu will review your physical remarks and contact you prior. See you soon!
                       </p>
                     </div>
                     {lastSubmittedTrial && (
@@ -539,7 +565,13 @@ export default function ContactPage() {
                 <MapPin className="h-4 w-4 text-brand-gold-bright" />
               </a>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-brand-sage/15 relative h-[380px] sm:h-[480px] bg-brand-sage/5">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.25 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-2xl overflow-hidden border border-brand-sage/15 relative h-[380px] sm:h-[480px] bg-brand-sage/5"
+            >
               {/* Embedded standard Google Maps iframe centered at Vijayawada Mogalrajapuram */}
               <iframe 
                 title="Harmony Yoga Center Vijayawada Mogalrajapuram Map Location"
@@ -552,7 +584,7 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               />
-            </div>
+            </motion.div>
           </div>
 
         </div>
