@@ -110,15 +110,19 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* Left Column Content - 52% width on lg with parallax scroll */}
           <motion.div 
             style={{ y: yBg }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: "some" }}
             className="w-full lg:w-[52%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
           >
             
             <div className="space-y-4 w-full">
               {/* Premium minimal overline indicator */}
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.25 }}
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 }
+                }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-flex items-center gap-2.5 text-brand-gold font-bold uppercase tracking-[0.25em] text-[13px] md:text-[14px]"
               >
@@ -134,9 +138,10 @@ export default function Hero({ onBookClick }: HeroProps) {
                 {headingLines.map((line, idx) => (
                   <div key={idx} className="overflow-hidden py-1">
                     <motion.span
-                      initial={{ y: "100%", opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: false, amount: 0.25 }}
+                      variants={{
+                        hidden: { y: "100%", opacity: 0 },
+                        visible: { y: 0, opacity: 1 }
+                      }}
                       transition={{ 
                         duration: 0.8, 
                         delay: 0.15 + idx * 0.15, 
@@ -153,9 +158,10 @@ export default function Hero({ onBookClick }: HeroProps) {
 
             {/* Subheading: Desktop 22px, Tablet 20px, Mobile 18px. Width: 80% desktop, 100% mobile */}
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.25 }}
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 }
+              }}
               transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="font-sans text-brand-charcoal/70 leading-relaxed w-full lg:w-[80%] text-[18px] md:text-[20px] lg:text-[22px]"
               id="hero-subheading"
@@ -165,9 +171,10 @@ export default function Hero({ onBookClick }: HeroProps) {
 
             {/* CTAs: Restrained, elegant buttons with scale entrance & translateY lifts on hover */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.25 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.95, y: 15 },
+                visible: { opacity: 1, scale: 1, y: 0 }
+              }}
               transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-2 w-full sm:w-auto"
               id="hero-ctas"
@@ -219,9 +226,10 @@ export default function Hero({ onBookClick }: HeroProps) {
 
             {/* Premium client-proof alignment badge with staggered rating pop-ins */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.25 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 }
+              }}
               transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-col sm:flex-row items-center gap-3 pt-6 text-[12px] font-medium text-brand-charcoal/75 w-full justify-center lg:justify-start"
             >
@@ -229,9 +237,10 @@ export default function Hero({ onBookClick }: HeroProps) {
                 {[1, 2, 3, 4].map((i) => (
                   <motion.img
                     key={i}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: false, amount: 0.25 }}
+                    variants={{
+                      hidden: { scale: 0, opacity: 0 },
+                      visible: { scale: 1, opacity: 1 }
+                    }}
                     transition={{ 
                       type: 'spring', 
                       stiffness: 300, 
@@ -257,25 +266,32 @@ export default function Hero({ onBookClick }: HeroProps) {
           </motion.div>
 
           {/* Right Column Layout - 48% width on lg */}
-          <div className="w-full lg:w-[48%] relative flex justify-center items-center">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: "some" }}
+            className="w-full lg:w-[48%] relative flex justify-center items-center"
+          >
             
             <div
               className="relative w-full aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl border border-brand-sage/20 max-h-[400px] md:max-h-[500px] lg:max-h-[650px] bg-brand-emerald/10"
             >
               {/* Luxury Reveal Mask Cover */}
               <motion.div
-                initial={{ left: '0%' }}
-                whileInView={{ left: '100%' }}
-                viewport={{ once: false, amount: 0.25 }}
+                variants={{
+                  hidden: { left: '0%' },
+                  visible: { left: '100%' }
+                }}
                 transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
                 className="absolute inset-0 bg-[#0F766E] z-10 pointer-events-none"
               />
 
               {/* Parallax Image Scale on Entry */}
               <motion.img
-                initial={{ scale: 1.08, opacity: 0 }}
-                whileInView={{ scale: 1.0, opacity: 1 }}
-                viewport={{ once: false, amount: 0.25 }}
+                variants={{
+                  hidden: { scale: 1.08, opacity: 0 },
+                  visible: { scale: 1.0, opacity: 1 }
+                }}
                 transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 style={{ y: yImage }}
                 src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80"
@@ -292,9 +308,10 @@ export default function Hero({ onBookClick }: HeroProps) {
             
             {/* BADGE 1: 500+ Transformations */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 15 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.25 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.85, y: 15 },
+                visible: { opacity: 1, scale: 1, y: 0 }
+              }}
               transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="absolute -top-3 left-4 z-20"
             >
@@ -324,9 +341,10 @@ export default function Hero({ onBookClick }: HeroProps) {
 
             {/* BADGE 2: 7+ Years Experience */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: -15 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.25 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.85, y: -15 },
+                visible: { opacity: 1, scale: 1, y: 0 }
+              }}
               transition={{ duration: 0.6, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="absolute bottom-6 right-4 z-20"
             >
@@ -354,7 +372,7 @@ export default function Hero({ onBookClick }: HeroProps) {
               </motion.div>
             </motion.div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>
