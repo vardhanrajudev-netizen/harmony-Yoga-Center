@@ -145,15 +145,42 @@ export default function ContactPage() {
               
               <div className="space-y-5 text-sm">
                 
-                {/* Physical Location */}
+                {/* Phone */}
+                <div className="flex gap-4 items-start">
+                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">Phone</h4>
+                    <p className="text-xs mt-1">
+                      <a href="tel:+917036711097" className="text-brand-emerald hover:underline font-semibold block">+91 70367 11097</a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex gap-4 items-start">
+                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0F766E] text-[13px] uppercase tracking-wider">Email</h4>
+                    <p className="text-xs mt-1">
+                      <a href="mailto:contact@harmonyyoga.in" className="text-brand-emerald hover:underline font-semibold block">contact@harmonyyoga.in</a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Location */}
                 <div className="flex gap-4 items-start">
                   <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">Sanctuary Address</h4>
+                    <h4 className="font-bold text-[#0F766E] text-[13px] uppercase tracking-wider">Location</h4>
                     <p className="text-xs text-brand-charcoal/70 leading-relaxed mt-1">
-                      Harmony Premium Wellness Sanctuary, D.no. 39-17-10/1, behind SV Ranga Rao Hospital, Mogalrajapuram, Labbipet, Vijayawada, Andhra Pradesh — 520010
+                      Mogalrajapuram, Vijayawada,<br />
+                      Andhra Pradesh, India
                     </p>
                     <a 
                       href="https://maps.app.goo.gl/w5GLUBg6vNfcboiT7" 
@@ -166,29 +193,15 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Dial Numbers */}
-                <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">Phone Lines</h4>
-                    <p className="text-xs mt-1">
-                      <a href="tel:+914023456789" className="text-brand-emerald hover:underline font-semibold block">+91 40 2345 6789 (Studio Desks)</a>
-                      <a href="tel:+917036711097" className="text-brand-emerald hover:underline font-semibold block mt-0.5">+91 70367 11097 (Admissions Support)</a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* WhatsApp clickable link integration as requested */}
+                {/* WhatsApp */}
                 <div className="flex gap-4 items-start">
                   <div className="p-2.5 rounded-lg bg-green-500/10 text-green-600 shrink-0 mt-0.5">
                     <MessageCircle className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">WhatsApp Concierge</h4>
+                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">WhatsApp</h4>
                     <p className="text-xs text-brand-charcoal/70 leading-relaxed mt-1">
-                      Initiate instant chat protocols regarding batch availability and schedules.
+                      Chat with us instantly
                     </p>
                     <a 
                       href="https://wa.me/917036711097?text=Hello%20Harmony%20Yoga%20Center!%20I'd%20like%20to%20know%20more%20about%20your%20metabolic%20slimming%20trial%20program." 
@@ -199,20 +212,6 @@ export default function ContactPage() {
                       <MessageCircle className="h-3.5 w-3.5 fill-white" />
                       Chat on WhatsApp
                     </a>
-                  </div>
-                </div>
-
-                {/* Email Channels */}
-                <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-brand-emerald/5 text-brand-emerald shrink-0 mt-0.5">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-brand-charcoal text-[13px] uppercase tracking-wider">Email Channels</h4>
-                    <p className="text-xs mt-1">
-                      <a href="mailto:contact@harmonyyogacenter.com" className="text-brand-emerald hover:underline font-semibold block">contact@harmonyyogacenter.com</a>
-                      <a href="mailto:director@harmonyyogacenter.com" className="text-brand-emerald hover:underline font-semibold block mt-0.5">director@harmonyyogacenter.com</a>
-                    </p>
                   </div>
                 </div>
 

@@ -181,10 +181,10 @@ export default function Footer() {
               <li className="flex items-center gap-2.5 text-xs">
                 <Mail className="h-4 w-4 text-[#E3B777] shrink-0" />
                 <a 
-                  href="mailto:contact@harmonyyogacenter.com" 
+                  href="mailto:contact@harmonyyoga.in" 
                   className="hover:text-brand-gold transition-colors font-semibold"
                 >
-                  contact@harmonyyogacenter.com
+                  contact@harmonyyoga.in
                 </a>
               </li>
               <li className="pt-1 select-none">

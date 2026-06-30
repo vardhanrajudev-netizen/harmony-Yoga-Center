@@ -24,9 +24,6 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
       ],
       intensity: 'Moderate-High',
       duration: '30 mins / day',
-      price: 'Starting From ₹999/month',
-      cleanPrice: '₹999/month',
-      numericPrice: '999',
     },
     {
       id: 'personalized',
@@ -44,9 +41,6 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
       ],
       intensity: 'Customized',
       duration: 'Schedules vary',
-      price: 'Starting From ₹1,999/month',
-      cleanPrice: '₹1,999/month',
-      numericPrice: '1,999',
     },
     {
       id: 'nutrition',
@@ -64,9 +58,6 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
       ],
       intensity: 'Nourishing',
       duration: 'Weekly frameworks',
-      price: 'Starting From ₹799/month',
-      cleanPrice: '₹799/month',
-      numericPrice: '799',
     },
   ];
 
@@ -214,49 +205,27 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                       </ul>
                     </div>
 
-                    {/* Highly Polished Premium Pricing integration */}
-                    <div className="space-y-4 pt-5 mt-4 border-t border-brand-sage/20" id={`card-footer-box-${track.id}`}>
-                      
-                      {/* Luxury Typographic Price Card Container */}
-                      <div 
-                        className="bg-[#FAF9F6] border border-[#CFE8D5] rounded-[18px] p-6 shadow-[0_2px_12px_rgba(31,41,55,0.02)] text-center space-y-2" 
-                        id={`price-display-minimal-${track.id}`}
-                      >
-                        <span className="text-[11px] uppercase tracking-[2px] font-bold text-brand-charcoal/50 block font-sans">
-                          STARTING FROM
-                        </span>
-                        <div className="flex items-baseline justify-center font-bold text-brand-emerald font-sans">
-                          {/* Rupee symbol and amount with decreased font size for elegance */}
-                          <span className="text-[20px] font-bold mr-1.5 text-brand-emerald leading-none select-none">₹</span>
-                          <span className="text-[32px] font-bold tracking-tight text-brand-emerald leading-none">
-                            {track.numericPrice}
-                          </span>
-                        </div>
-                        <span className="text-[13px] opacity-70 text-brand-charcoal font-medium font-sans block leading-none">
-                          per month
-                        </span>
-                      </div>
-
+                    {/* Highly Polished Premium CTA integration */}
+                    <div className="pt-5 mt-4 border-t border-brand-sage/20" id={`card-footer-box-${track.id}`}>
                       {/* Primary Boutique CTA button with smooth lifting and right-sliding arrow and glowing shadows */}
-                      <div className="pt-2">
-                        <button
-                          type="button"
-                          id={`btn-select-${track.id}`}
-                          onClick={() => onSelectProgram(track.title)}
-                          className="group/btn w-full h-[54px] inline-flex items-center justify-between rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory px-6 text-[13px] font-bold transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
+                      <button
+                        type="button"
+                        id={`btn-select-${track.id}`}
+                        onClick={() => onSelectProgram(track.title)}
+                        className="group/btn w-full h-[54px] inline-flex items-center justify-between rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory px-6 text-[13px] font-bold transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
+                      >
+                        <span className="font-sans pl-2 tracking-wide">
+                          {track.id === 'personalized' ? 'Book Your Session' : 'Book Free Trial'}
+                        </span>
+                        <div 
+                          className="h-9 w-9 rounded-full bg-[#E3B777] group-hover/btn:bg-[#EBC38B] flex items-center justify-center text-[#0F766E] transition-all duration-300 transform group-hover/btn:translate-x-[4px] shrink-0"
+                          style={{ 
+                            boxShadow: '0 0 18px rgba(227,183,119,0.35)' 
+                          }}
                         >
-                          <span className="font-sans pl-2 tracking-wide">Book Free Session Trial</span>
-                          <div 
-                            className="h-9 w-9 rounded-full bg-[#E3B777] group-hover/btn:bg-[#EBC38B] flex items-center justify-center text-[#0F766E] transition-all duration-300 transform group-hover/btn:translate-x-[4px] shrink-0"
-                            style={{ 
-                              boxShadow: '0 0 18px rgba(227,183,119,0.35)' 
-                            }}
-                          >
-                            <ArrowRight className="h-4.5 w-4.5 text-[#0F766E] stroke-[3.5]" />
-                          </div>
-                        </button>
-                      </div>
-
+                          <ArrowRight className="h-4.5 w-4.5 text-[#0F766E] stroke-[3.5]" />
+                        </div>
+                      </button>
                     </div>
                   </div>
                 </motion.div>
