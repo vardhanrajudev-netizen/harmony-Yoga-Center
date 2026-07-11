@@ -315,11 +315,11 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                   y: -1.5,
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="h-[42px] rounded-full bg-[#0F766E] px-4.5 text-[11px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(15,118,110,0.2)] hover:bg-[#0D6962] transition-colors group tracking-wider"
+                className="h-[42px] rounded-full bg-[#0F766E] px-4.5 text-[11px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(255,83,43,0.3)] hover:bg-[#0D6962] transition-colors group tracking-wider border border-brand-accent-vibrant/20"
               >
                 <span>BOOK FREE TRIAL</span>
-                <div className="h-5.5 w-5.5 rounded-full bg-[#E3B777] flex items-center justify-center shrink-0 ml-0.5 shadow-[0_0_12px_rgba(227,183,119,0.4)]">
-                  <ArrowRight className="h-3 w-3 text-[#0F766E] stroke-[3.5] transition-transform duration-300 transform group-hover:translate-x-0.5" />
+                <div className="h-5.5 w-5.5 rounded-full bg-brand-accent-vibrant flex items-center justify-center shrink-0 ml-0.5 shadow-[0_0_12px_rgba(255,83,43,0.6)]">
+                  <ArrowRight className="h-3 w-3 text-white stroke-[3.5] transition-transform duration-300 transform group-hover:translate-x-0.5" />
                 </div>
               </motion.button>
             </div>

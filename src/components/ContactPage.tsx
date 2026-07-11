@@ -105,7 +105,7 @@ export default function ContactPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="pt-[var(--navbar-height,80px)] bg-brand-ivory min-h-screen relative overflow-hidden font-sans"
+      className="pt-[var(--navbar-height,80px)] bg-luxury-glow-a min-h-screen relative overflow-hidden font-sans"
       id="contact-page"
     >
       <SEO 
@@ -115,19 +115,19 @@ export default function ContactPage() {
       />
 
       {/* Background elements */}
-      <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/10 blur-3xl pointer-events-none" />
-      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-[#E3B777]/5 blur-3xl pointer-events-none" />
+      <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/20 filter blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-brand-gold-bright/10 filter blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Header */}
-      <section className="py-16 md:py-24 px-6 text-center select-none" id="contact-hero">
+      <section className="py-20 md:py-28 px-6 text-center select-none" id="contact-hero">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[12px] font-bold tracking-[0.25em] text-[#b58552] uppercase block">
+          <span className="text-[10px] font-bold tracking-[0.25em] text-[#b58552] uppercase block">
             GET IN TOUCH
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-emerald tracking-tight leading-tight">
-            Connect With Harmony
+            Connect With <span className="italic text-[#065F5B]">Harmony</span>
           </h1>
-          <div className="h-[1px] w-20 bg-[#E3B777] mx-auto my-4" />
+          <div className="h-[2px] w-12 bg-brand-gold mx-auto my-5 rounded-full" />
           <p className="text-xs sm:text-sm text-brand-charcoal/70 max-w-xl mx-auto leading-relaxed">
             Reach out with queries regarding small batch offline enrollment, active live streaming licenses, or register your free trial package directly.
           </p>
@@ -140,8 +140,8 @@ export default function ContactPage() {
           
           {/* Left Column: Coordinates details */}
           <div className="lg:col-span-4">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-brand-emerald">Information</h3>
+            <div className="bg-white rounded-[32px] p-6 sm:p-8 border border-brand-sage/40 space-y-6 shadow-[0_12px_40px_-12px_rgba(15,118,110,0.06)] relative overflow-hidden">
+              <h3 className="font-serif text-2xl font-bold text-[#0F766E]">Information</h3>
               
               <div className="space-y-4 text-sm">
                 
@@ -247,10 +247,10 @@ export default function ContactPage() {
 
           {/* Center Column: Interactive General Contact Form */}
           <div className="lg:col-span-4" id="general-contact-column">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-[#E3B777]" />
+            <div className="bg-white rounded-[32px] p-6 sm:p-8 border border-brand-sage/40 relative overflow-hidden shadow-[0_12px_40px_-12px_rgba(15,118,110,0.06)]">
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-[#D4A373]" />
 
-              <h3 className="font-serif text-2xl font-bold text-brand-emerald mb-1">General Inquiry</h3>
+              <h3 className="font-serif text-2xl font-bold text-[#0F766E] mb-1">General Inquiry</h3>
               <p className="text-xs text-brand-charcoal/50 mb-6 font-sans">Have questions? Drop us a clinical or general administrative note.</p>
 
               <AnimatePresence mode="wait">
@@ -337,10 +337,10 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-[#0F766E] hover:bg-[#0D6962] text-white rounded-xl font-bold uppercase tracking-widest transition-transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+                      className="w-full h-[48px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                     >
                       <span>Send Message</span>
-                      <Send className="h-4 w-4" />
+                      <Send className="h-4 w-4 text-brand-gold" />
                     </button>
                   </motion.form>
                 ) : (
@@ -388,14 +388,14 @@ export default function ContactPage() {
 
           {/* Right Column: Free Trial Registration Form */}
           <div className="lg:col-span-4" id="trial-registration-column">
-            <div className="bg-[#FAF9F6] rounded-3xl p-6 sm:p-8 border border-[#CFE8D5] relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-emerald" />
+            <div className="bg-white rounded-[32px] p-6 sm:p-8 border border-brand-sage/40 relative overflow-hidden shadow-[0_12px_40px_-12px_rgba(15,118,110,0.06)]">
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-[#0F766E]" />
 
-              <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-[10px] uppercase tracking-wider mb-1 font-sans">
-                <Sparkles className="h-3.5 w-3.5" />
+              <div className="flex items-center gap-1.5 text-[#b58552] font-bold text-[10px] uppercase tracking-widest mb-1 font-sans">
+                <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin-slow" />
                 Enroll for Free Training
               </div>
-              <h3 className="font-serif text-2xl font-bold text-brand-emerald mb-6">Trial Registration</h3>
+              <h3 className="font-serif text-2xl font-bold text-[#0F766E] mb-6">Trial Registration</h3>
 
               <AnimatePresence mode="wait">
                 {!trialFormSubmitted ? (
@@ -496,10 +496,10 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="w-full py-4 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-xl font-bold uppercase tracking-widest transition-transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(15,118,110,0.15)]"
+                      className="w-full h-[48px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                     >
                       <span>Claim Free Session Pass</span>
-                      <Sparkles className="h-4 w-4 text-brand-gold-bright" />
+                      <Sparkles className="h-4 w-4 text-brand-gold animate-spin-slow" />
                     </button>
                   </motion.form>
                 ) : (
@@ -526,10 +526,10 @@ export default function ContactPage() {
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white py-3.5 px-6 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.2)] cursor-pointer"
+                          className="inline-flex w-full items-center justify-center gap-2.5 rounded-full h-[48px] bg-green-500 hover:bg-green-600 text-white px-6 text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.25)] hover:shadow-[0_8px_24px_rgba(34,197,94,0.35)] hover:-translate-y-0.5 cursor-pointer"
                         >
-                          <MessageCircle className="h-4 w-4" />
-                          Send Confirmation via WhatsApp
+                          <MessageCircle className="h-4 w-4 text-white" />
+                          <span>Send Confirmation via WhatsApp</span>
                         </a>
                       </div>
                     )}
@@ -546,12 +546,12 @@ export default function ContactPage() {
           </div>
 
           {/* Google Maps Embed container - Full size width at bottom */}
-          <div className="lg:col-span-12 w-full mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 overflow-hidden shadow-2xs" id="full-width-map-container animate-fade-in">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-5 border-b border-brand-sage/10 mb-6">
+          <div className="lg:col-span-12 w-full mt-10 bg-white rounded-[32px] p-6 sm:p-8 border border-brand-sage/40 overflow-hidden shadow-[0_12px_40px_-12px_rgba(15,118,110,0.06)]" id="full-width-map-container">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-5 border-b border-brand-sage/20 mb-6">
               <div>
-                <span className="block text-[10px] font-bold text-[#b58552] uppercase tracking-widest pl-0.5">VIJAYAWADA SANCTUARY</span>
-                <h3 className="font-serif text-2xl font-bold text-brand-emerald mt-1">Find Us On Google Maps</h3>
-                <p className="text-xs text-brand-charcoal/60 mt-1 max-w-2xl leading-relaxed">
+                <span className="block text-[9px] font-bold text-[#b58552] uppercase tracking-widest pl-0.5 font-sans">✦ VIJAYAWADA SANCTUARY ✦</span>
+                <h3 className="font-serif text-2xl font-bold text-[#0F766E] mt-1">Find Us On Google Maps</h3>
+                <p className="text-xs text-brand-charcoal/60 mt-1 max-w-2xl leading-relaxed font-sans">
                   D.no. 39-17-10/1, behind SV Ranga Rao Hospital, Mogalrajapuram, Labbipet, Vijayawada, Andhra Pradesh — 520010
                 </p>
               </div>
@@ -559,10 +559,10 @@ export default function ContactPage() {
                 href="https://maps.app.goo.gl/w5GLUBg6vNfcboiT7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] shrink-0 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 h-[44px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] shrink-0 cursor-pointer"
               >
                 <span>GET DIRECTIONS ↗</span>
-                <MapPin className="h-4 w-4 text-brand-gold-bright" />
+                <MapPin className="h-4 w-4 text-brand-gold animate-bounce-slow" />
               </a>
             </div>
             <motion.div 

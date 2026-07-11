@@ -8,9 +8,11 @@
   
   --color-brand-emerald: #0F766E;
   --color-brand-emerald-hover: #0D6962;
+  --color-brand-emerald-bright: #0BB19E;
   --color-brand-gold: #B47F43;
   --color-brand-gold-hover: #9D6C34;
-  --color-brand-gold-bright: #E5A93B;
+  --color-brand-gold-bright: #FFA800;
+  --color-brand-accent-vibrant: #FF532B;
   --color-brand-ivory: #FAF9F6;
   --color-brand-sage: #CFE8D5;
   --color-brand-charcoal: #1F2937;
@@ -178,6 +180,41 @@ html {
 }
 .premium-card-glow:hover::after {
   transform: translate(50%, 50%) rotate(-45deg);
+}
+
+/* Premium luxury glowing backgrounds */
+.bg-luxury-glow-a {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(11, 177, 158, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 168, 0, 0.14), transparent 45%),
+    linear-gradient(135deg, #FFFDF9 0%, #EEF8F4 100%);
+}
+
+.bg-luxury-glow-b {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(11, 177, 158, 0.18), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(255, 83, 43, 0.12), transparent 45%),
+    linear-gradient(135deg, #EEF8F4 0%, #FFFDF9 100%);
+}
+
+.bg-luxury-glow-c {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(11, 177, 158, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 168, 0, 0.22), transparent 40%),
+    linear-gradient(135deg, #065F5B 0%, #0F766E 50%, #094744 100%);
+}
+
+.bg-luxury-glow-d {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(11, 177, 158, 0.12), transparent 50%),
+    linear-gradient(180deg, #FFFDF9 0%, #FAF5E8 100%);
+}
+
+.bg-luxury-glow-e {
+  background: 
+    radial-gradient(circle at 10% 80%, rgba(11, 177, 158, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(255, 168, 0, 0.18), transparent 40%),
+    linear-gradient(135deg, #CFE8D5 0%, #EEF8F4 50%, #FFFDF9 100%);
 }
 
 

@@ -54,7 +54,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="pt-[var(--navbar-height,80px)] bg-premium-light min-h-screen relative overflow-hidden"
+      className="pt-[var(--navbar-height,80px)] bg-luxury-glow-a min-h-screen relative overflow-hidden"
       id="about-page-container"
     >
       <SEO 
@@ -64,19 +64,19 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       />
 
       {/* Absolute Decorative Background Elements with continuous ambient drift */}
-      <div className="absolute right-0 top-[10%] w-[500px] h-[500px] rounded-full bg-[#CFE8D5]/20 blur-3xl pointer-events-none ambient-glow-1" />
-      <div className="absolute -left-1/4 bottom-[15%] w-[400px] h-[400px] rounded-full bg-brand-gold-bright/5 blur-3xl pointer-events-none ambient-glow-2" />
+      <div className="absolute right-0 top-[10%] w-[500px] h-[500px] rounded-full bg-[#CFE8D5]/15 blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute -left-1/4 bottom-[15%] w-[400px] h-[400px] rounded-full bg-brand-gold-bright/8 blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Banner Section */}
-      <section className="relative py-20 lg:py-28 px-6 sm:px-10 lg:px-16" id="about-hero-section">
+      <section className="relative py-24 lg:py-32 px-6 sm:px-10 lg:px-16" id="about-hero-section">
         <div className="max-w-[1280px] mx-auto text-center space-y-6">
           <motion.span 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[13px] font-bold tracking-[0.25em] text-[#b58552] uppercase block font-sans"
+            className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans"
           >
-            Our Story & Legacy
+            ✦ Our Story & Legacy ✦
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -90,13 +90,17 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="h-[1px] w-28 bg-[#E3B777] mx-auto my-6" 
-          />
+            className="flex items-center justify-center gap-3 my-8"
+          >
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+            <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-2xl mx-auto text-sm sm:text-base text-brand-charcoal/70 font-sans leading-relaxed"
+            className="max-w-2xl mx-auto text-sm sm:text-base text-brand-charcoal/75 font-sans leading-relaxed"
           >
             Harmony Yoga Center was founded in Vijayawada on a simple, scientific hypothesis: that the body's natural metabolic vigor is best stimulated through targeted clinical movement, breathing science, and hormonal equilibrium—rather than extreme physical depletion.
           </motion.p>
@@ -104,7 +108,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       </section>
 
       {/* Meet S. Anjaneyulu Section (The Master Biography) */}
-      <section className="py-16 bg-white/60 border-y border-brand-sage/10 px-6 sm:px-10 lg:px-16" id="about-trainer-showcase">
+      <section className="py-20 bg-luxury-glow-e border-y border-brand-sage/20 px-6 sm:px-10 lg:px-16 animate-none" id="about-trainer-showcase">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -112,18 +116,18 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group max-w-sm w-full">
                 {/* Visual border outline decor */}
-                <div className="absolute inset-4 border border-[#b58552]/25 rounded-2xl transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 pointer-events-none z-10" />
+                <div className="absolute inset-4 border border-[#b58552]/40 rounded-[24px] transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 pointer-events-none z-10 shadow-lg" />
                 
-                <div className="relative rounded-2xl overflow-hidden shadow-xl bg-brand-ivory border border-brand-sage/30">
+                <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-brand-ivory border border-brand-sage/30">
                   <img
                     src="/assets/images/trainer-yoga.jpeg"
                     alt="S. Anjaneyulu"
-                    className="w-full aspect-[4/5] object-cover filter grayscale-[15%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
+                    className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-brand-sage/30 flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-brand-emerald flex items-center justify-center">
-                      <Sparkles className="h-4 w-4 text-[#E3B777]" />
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-brand-sage/30 flex items-center gap-3 shadow-md">
+                    <div className="h-8.5 w-8.5 rounded-full bg-brand-emerald flex items-center justify-center">
+                      <Sparkles className="h-4.5 w-4.5 text-brand-gold-bright" />
                     </div>
                     <div className="text-left font-sans">
                       <p className="text-[9px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Global Standards</p>
@@ -137,16 +141,16 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             {/* Right Column: Bio details */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-[11px] font-bold tracking-[2px] text-[#b58552] uppercase block font-sans">
-                THE FOUNDER & MASTER COACH
+                ✦ THE FOUNDER & MASTER COACH ✦
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-emerald leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald leading-tight">
                 S. Anjaneyulu
               </h2>
               <p className="text-xs sm:text-sm font-semibold uppercase text-brand-charcoal/50 tracking-wider font-sans -mt-3">
                 M.Sc. Yoga Science & Natural Healing Therapy
               </p>
               
-              <div className="space-y-4 text-sm text-brand-charcoal/80 leading-relaxed font-sans">
+              <div className="space-y-4 text-sm sm:text-base text-brand-charcoal/80 leading-relaxed font-sans">
                 <p>
                   With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Anjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
                 </p>
@@ -156,9 +160,9 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
               </div>
 
               {/* Quote Block */}
-              <div className="relative border-l-2 border-[#E3B777] pl-5 py-2.5 bg-brand-ivory/50 rounded-r-xl pr-4">
-                <Quote className="absolute right-4 top-2 h-8 w-8 text-[#E3B777]/10 pointer-events-none" />
-                <p className="italic text-xs text-brand-charcoal/80 leading-relaxed">
+              <div className="relative border-l-2 border-[#D4A373] pl-6 py-4 bg-white/70 rounded-r-2xl pr-4 shadow-sm border border-brand-sage/25">
+                <Quote className="absolute right-4 top-2 h-8 w-8 text-brand-gold/10 pointer-events-none" />
+                <p className="italic text-xs sm:text-sm text-brand-charcoal/80 leading-relaxed">
                   "Yoga shouldn't be about executing painful shapes on a mat. It is a precise science of internal organ activation. Guided sequence timing regulates the nervous complex, sparking the thyroid to manage natural energy synthesis."
                 </p>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-emerald mt-2">
@@ -173,14 +177,14 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   return (
                     <div 
                       key={idx}
-                      className="bg-white p-4 rounded-xl border border-brand-sage/40 flex items-start gap-3 shadow-2xs hover:shadow-xs transition-shadow duration-300"
+                      className="bg-white p-4.5 rounded-[18px] border border-brand-sage/40 flex items-start gap-3 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
                     >
-                      <div className={`p-2 rounded-lg shrink-0 ${stat.color}`}>
+                      <div className={`p-2 rounded-xl shrink-0 ${stat.color}`}>
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="font-sans">
                         <p className="text-sm font-bold text-brand-charcoal leading-none">{stat.value}</p>
-                        <p className="text-[10px] text-brand-charcoal/60 leading-tight mt-1">{stat.label}</p>
+                        <p className="text-[10px] text-brand-charcoal/60 leading-tight mt-1.5">{stat.label}</p>
                       </div>
                     </div>
                   );
@@ -193,12 +197,16 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       </section>
 
       {/* Core Philosophy Section */}
-      <section className="py-20 px-6 sm:px-10 lg:px-16" id="about-philosophy-bento">
+      <section className="py-24 px-6 sm:px-10 lg:px-16 bg-luxury-glow-a animate-none" id="about-philosophy-bento">
         <div className="max-w-[1280px] mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
-            <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">Our Foundations</span>
+          <div className="text-center max-w-xl mx-auto mb-16 space-y-4">
+            <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ Our Foundations ✦</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal tracking-tight">The Pillars of Harmony</h2>
-            <div className="h-[1px] w-12 bg-[#E3B777] mx-auto" />
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-[1.5px] w-6 bg-brand-gold/40" />
+              <div className="w-2 h-2 rounded-full border border-brand-gold rotate-45" />
+              <div className="h-[1.5px] w-6 bg-brand-gold/40" />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -209,13 +217,17 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.25 }}
+                  viewport={{ once: false, amount: 0.15 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-8 rounded-2xl border border-brand-sage/30 shadow-2xs hover:shadow-xs transition-all duration-300 relative group overflow-hidden"
+                  whileHover={{ 
+                    y: -10,
+                    borderColor: 'rgba(212, 163, 115, 0.6)',
+                    boxShadow: '0 25px 50px -15px rgba(212, 163, 115, 0.12), 0 0 0 1px rgba(212, 163, 115, 0.4)'
+                  }}
+                  className="bg-white/95 p-8 rounded-[24px] border border-brand-sage/40 shadow-[0_8px_30px_rgb(0,0,0,0.01)] transition-all duration-500 relative group overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-[#0F766E]/40" />
-                  <div className="h-12 w-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/10 flex items-center justify-center text-brand-emerald mb-6 transition-transform duration-300 group-hover:scale-105">
+                  <div className="h-12 w-12 rounded-xl bg-brand-emerald/10 border border-brand-emerald/10 flex items-center justify-center text-brand-emerald mb-6 transition-all duration-500 group-hover:scale-105 group-hover:bg-brand-emerald group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-3">{pillar.title}</h3>
@@ -228,15 +240,15 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       </section>
 
       {/* Premium Studio Environment Section */}
-      <section className="py-16 bg-[#0F766E]/5 px-6 sm:px-10 lg:px-16" id="about-environment">
+      <section className="py-20 bg-luxury-glow-c px-6 sm:px-10 lg:px-16 animate-none" id="about-environment">
         <div className="max-w-[1280px] mx-auto">
-          <div className="bg-[#FAF9F6] border border-brand-sage/20 rounded-[32px] p-8 md:p-12 lg:p-16 shadow-xs flex flex-col lg:flex-row gap-12 items-center">
+          <div className="bg-[#FAF9F6] border border-brand-sage/30 rounded-[32px] p-8 md:p-14 lg:p-18 shadow-lg flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2 space-y-6">
-              <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">VIJAYAWADA STUDIO</span>
+              <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ VIJAYAWADA STUDIO ✦</span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-emerald leading-tight">
                 An Elegant Sanctuary of Pure Serenity
               </h2>
-              <div className="h-[1px] w-16 bg-[#E3B777]" />
+              <div className="h-[1.5px] w-16 bg-[#D4A373]" />
               <div className="space-y-4 text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
                 <p>
                   Located in a peaceful, lush enclave in Vijayawada, our luxury boutique yoga space is carefully curated with chemical-free natural materials, high-efficiency HEPA air filtration systems, and full-spectrum organic ambient lighting.
@@ -246,19 +258,19 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 </p>
               </div>
               <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-emerald font-sans">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E3B777]" />
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-emerald font-sans">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#D4A373]" />
                   Limited to 8 Clients per Batch
                 </div>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-emerald font-sans">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E3B777]" />
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-emerald font-sans">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#D4A373]" />
                   Prior Appointments Required
                 </div>
               </div>
             </div>
             
             <div className="lg:w-1/2 w-full grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-md border border-brand-sage/20 aspect-square">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-brand-sage/20 aspect-square">
                 <img 
                   src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" 
                   alt="Yoga Studio Interior" 
@@ -266,7 +278,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-md border border-brand-sage/20 aspect-square mt-6">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-brand-sage/20 aspect-square mt-6">
                 <img 
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
                   alt="Personal Yoga Consulting" 
@@ -280,23 +292,23 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       </section>
 
       {/* Standalone Final CTA */}
-      <section className="py-20 text-center px-6" id="about-final-cta">
+      <section className="py-24 text-center px-6 bg-luxury-glow-a animate-none" id="about-final-cta">
         <div className="max-w-2xl mx-auto space-y-6">
-          <Award className="h-10 w-10 text-[#E3B777] mx-auto animate-pulse" />
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal">
+          <Award className="h-10 w-10 text-[#D4A373] mx-auto animate-pulse" />
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal leading-tight">
             Are You Ready to Begin Your Realignment?
           </h2>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto">
+          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
             Book an introductory clinical consultation and 1-on-1 trial class directly with our master therapist S. Anjaneyulu.
           </p>
           <div className="pt-4 flex justify-center">
             <button
               onClick={onBookClick}
-              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer group"
+              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-3.5 cursor-pointer group"
             >
               <span>Schedule Free Trial Session</span>
-              <div className="h-6 w-6 rounded-full bg-[#E3B777] flex items-center justify-center text-[#0F766E] transform group-hover:translate-x-1 transition-transform">
-                <Sparkles className="h-3 w-3 stroke-[3]" />
+              <div className="h-6 w-6 rounded-full bg-[#D4A373] flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform">
+                <Sparkles className="h-3.5 w-3.5 stroke-[3]" />
               </div>
             </button>
           </div>

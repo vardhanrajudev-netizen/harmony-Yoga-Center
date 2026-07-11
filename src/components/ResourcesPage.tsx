@@ -244,7 +244,11 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
   );
 
   return (
-    <div className="pt-24 min-h-screen bg-premium-light relative" id="resources-page-container">
+    <div className="pt-24 min-h-screen bg-luxury-glow-e relative overflow-hidden" id="resources-page-container">
+      {/* Decorative Blur Backgrounds */}
+      <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/20 filter blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-brand-gold-bright/8 filter blur-3xl pointer-events-none ambient-glow-2" />
+
       {/* Non-Blocking Download Toast Banner */}
       <AnimatePresence>
         {downloadMessage && (
@@ -254,44 +258,42 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-6 right-6 sm:right-10 z-[1000] font-sans text-xs bg-[#021a17] text-white py-4 px-6 rounded-2xl border border-brand-gold/20 shadow-2xl flex items-center gap-3 max-w-sm"
           >
-            <div className="h-2 w-2 rounded-full bg-brand-gold animate-pulse shrink-0" />
+            <div className="h-2.5 w-2.5 rounded-full bg-brand-gold animate-pulse shrink-0" />
             <span className="font-semibold leading-relaxed">{downloadMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Top Header Panel resembling Aman Resorts styled spacing */}
-      <section className="relative py-12 md:py-16 bg-gradient-to-b from-brand-sage/20 to-transparent overflow-hidden">
-        <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none">
-          <div className="absolute top-1/4 left-10 w-96 h-96 rounded-full bg-brand-emerald/5 blur-3xl" />
-          <div className="absolute top-1/3 right-10 w-80 h-80 rounded-full bg-brand-gold/5 blur-3xl" />
-        </div>
-
+      <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="mx-auto max-w-5xl px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-1 px-3 py-1 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-widest mb-4"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#EEF8F4] border border-[#CFE8D5] text-[#0F766E] rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 shadow-3xs"
           >
-            <Sparkles className="h-3 w-3 text-brand-gold" />
+            <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin-slow" />
             Curated Resources Hub
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-charcoal"
           >
-            Premium Wellness <span className="text-brand-emerald font-semibold font-serif italic">Assessment Tools</span>
+            Premium Wellness <span className="text-[#0F766E] font-semibold font-serif italic">Assessment Tools</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-3.5 max-w-2xl mx-auto text-sm text-brand-charcoal/65 leading-relaxed font-sans"
+            className="mt-4 max-w-2xl mx-auto text-sm text-brand-charcoal/65 leading-relaxed font-sans"
           >
-            Utilize our scientific wellness tools designed by expert masters at Harmony Center to estimate metabolic pace, caloric guidelines, and healthy transformation paths.
+            Utilize our scientific wellness tools designed by S. Anjaneyulu to estimate metabolic pace, caloric guidelines, and healthy transformation paths.
           </motion.p>
         </div>
       </section>
@@ -323,8 +325,8 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                 filter: brightness(1.2) drop-shadow(0 0 12px rgba(244, 201, 107, 0.65)) !important;
               }
             `}</style>
-            <div className="bg-white rounded-2xl border border-brand-sage/40 p-4 shadow-[0_10px_35px_-8px_rgba(15,118,110,0.06)] relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1 h-full bg-brand-gold/40" />
+            <div className="bg-white rounded-[24px] border border-brand-sage/40 p-5 shadow-[0_12px_40px_-12px_rgba(15,118,110,0.08)] relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-gold" />
               <p className="text-[10px] font-bold text-brand-charcoal/45 uppercase tracking-widest mb-4 pl-2">SELECT ASSESSMENT</p>
               
               <div className="space-y-1.5 flex flex-col">
@@ -335,20 +337,20 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                     <button
                       key={tab.id}
                       onClick={() => navigate(getPathFromTab(tab.id))}
-                      className={`w-full flex items-center gap-3.5 px-3 py-3 rounded-xl text-left transition-all duration-300 relative group/tab border ${
+                      className={`w-full flex items-center gap-3.5 px-3.5 py-3 rounded-2xl text-left transition-all duration-300 relative group/tab border ${
                         isActive 
                           ? 'premium-active-tab shadow-md' 
-                          : 'bg-transparent text-brand-charcoal/75 border-transparent hover:bg-brand-sage/35 hover:text-brand-emerald'
+                          : 'bg-transparent text-brand-charcoal/75 border-transparent hover:bg-brand-sage/20 hover:text-[#0F766E]'
                       }`}
                     >
-                      <div className={`p-1.5 rounded-lg shrink-0 transition-all duration-300 tab-icon-container ${isActive ? '' : 'bg-brand-sage/40 text-brand-emerald'}`}>
+                      <div className={`p-1.5 rounded-xl shrink-0 transition-all duration-300 tab-icon-container ${isActive ? '' : 'bg-brand-sage/30 text-brand-emerald'}`}>
                         <Icon className={`h-4 w-4 transition-all duration-300 origin-center tab-icon ${isActive ? '' : 'group-hover/tab:scale-[1.08]'}`} />
                       </div>
                       <div className="overflow-hidden">
                         <span className={`block text-xs font-bold font-sans tracking-wide transition-colors ${isActive ? 'text-[#FFFFFF]' : 'text-brand-charcoal'}`}>{tab.label}</span>
-                        <span className={`block text-[10px] truncate leading-none mt-0.5 transition-colors ${isActive ? 'text-[rgba(255,255,255,0.8)]' : 'text-brand-charcoal/45 group-hover/tab:text-brand-emerald/70'}`}>{tab.desc}</span>
+                        <span className={`block text-[10px] truncate leading-none mt-0.5 transition-colors ${isActive ? 'text-[rgba(255,255,255,0.8)]' : 'text-brand-charcoal/45 group-hover/tab:text-[#0F766E]/70'}`}>{tab.desc}</span>
                       </div>
-                      <ChevronRight className={`ml-auto h-3.5 w-3.5 transition-transform duration-300 ${isActive ? 'rotate-90 text-[#F4C96B]' : 'translate-x-0 group-hover/tab:translate-x-0.5 text-brand-charcoal/30'}`} />
+                      <ChevronRight className={`ml-auto h-3.5 w-3.5 transition-transform duration-300 ${isActive ? 'rotate-90 text-brand-gold' : 'translate-x-0 group-hover/tab:translate-x-0.5 text-brand-charcoal/30'}`} />
                     </button>
                   );
                 })}
@@ -356,10 +358,10 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
               {/* VIP Trial Box */}
               <div className="mt-6 pt-5 border-t border-brand-sage/40 text-center">
-                <p className="text-[11px] font-semibold text-brand-charcoal/70 uppercase tracking-widest mb-2.5">Ready to proceed?</p>
+                <p className="text-[11px] font-bold text-brand-charcoal/70 uppercase tracking-widest mb-3">Ready to proceed?</p>
                 <button
                   onClick={() => onBookClick('Resources Consultation')}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-brand-emerald text-white text-[11px] font-bold uppercase tracking-wider hover:bg-brand-emerald-hover cursor-pointer transition-colors"
+                  className="w-full h-[40px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-[10px] font-bold uppercase tracking-widest inline-flex items-center justify-center transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>Claim Elite 3-Day Pass</span>
                 </button>

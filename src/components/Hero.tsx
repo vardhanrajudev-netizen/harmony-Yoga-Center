@@ -23,8 +23,8 @@ export default function Hero({ onBookClick }: HeroProps) {
       className="relative min-h-screen flex items-center pt-[120px] pb-16 overflow-hidden bg-brand-ivory text-brand-charcoal"
     >
       {/* Soft luxurious background radial blurs and continuous ambient glowing gradients */}
-      <div className="absolute top-1/6 -left-64 w-[550px] h-[550px] rounded-full bg-brand-sage/20 filter blur-3xl opacity-60 pointer-events-none ambient-glow-1" />
-      <div className="absolute bottom-12 -right-48 w-[600px] h-[600px] rounded-full bg-brand-gold/12 filter blur-3xl opacity-50 pointer-events-none ambient-glow-2" />
+      <div className="absolute top-1/6 -left-64 w-[550px] h-[550px] rounded-full bg-brand-emerald-bright/25 filter blur-3xl opacity-75 pointer-events-none ambient-glow-1" />
+      <div className="absolute bottom-12 -right-48 w-[600px] h-[600px] rounded-full bg-brand-accent-vibrant/20 filter blur-3xl opacity-65 pointer-events-none ambient-glow-2" />
       
       {/* Decorative slow rotating mandala in background */}
       <motion.div
@@ -59,10 +59,10 @@ export default function Hero({ onBookClick }: HeroProps) {
 
       {/* Continuing floating golden particles and abstract organic leaves representing pure Agni prana energy */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/5 w-1.5 h-1.5 bg-brand-gold/40 rounded-full animate-float-slow" />
-        <div className="absolute top-3/4 left-1/10 w-2 h-2 bg-brand-emerald/20 rounded-full animate-float-delayed" />
-        <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-brand-gold/30 rounded-full animate-float-slow" />
-        <div className="absolute bottom-1/4 right-1/10 w-2.5 h-2.5 bg-brand-gold/20 rounded-full animate-float-delayed" />
+        <div className="absolute top-1/4 left-1/5 w-2.5 h-2.5 bg-brand-gold-bright/70 rounded-full animate-float-slow shadow-[0_0_10px_#FFA800]" />
+        <div className="absolute top-3/4 left-1/10 w-3 h-3 bg-brand-emerald-bright/60 rounded-full animate-float-delayed shadow-[0_0_12px_#0BB19E]" />
+        <div className="absolute top-1/2 right-1/4 w-2.5 h-2.5 bg-brand-accent-vibrant/70 rounded-full animate-float-slow shadow-[0_0_10px_#FF532B]" />
+        <div className="absolute bottom-1/4 right-1/10 w-3 h-3 bg-brand-gold-bright/60 rounded-full animate-float-delayed shadow-[0_0_8px_#FFA800]" />
         
         {/* Abstract floating organic leaf shapes */}
         <motion.div
@@ -111,8 +111,7 @@ export default function Hero({ onBookClick }: HeroProps) {
           <motion.div 
             style={{ y: yBg }}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: "some" }}
+            animate="visible"
             className="w-full lg:w-[52%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
           >
             
@@ -124,9 +123,9 @@ export default function Hero({ onBookClick }: HeroProps) {
                   visible: { opacity: 1, y: 0 }
                 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-flex items-center gap-2.5 text-brand-gold font-bold uppercase tracking-[0.25em] text-[13px] md:text-[14px]"
+                className="inline-flex items-center gap-2.5 text-brand-accent-vibrant font-bold uppercase tracking-[0.25em] text-[13px] md:text-[14px]"
               >
-                <div className="w-8 h-[1.5px] bg-brand-gold"></div>
+                <div className="w-8 h-[1.5px] bg-brand-accent-vibrant"></div>
                 <span>Bespoke Wellness Sanctuary</span>
               </motion.div>
 
@@ -147,7 +146,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                         delay: 0.15 + idx * 0.15, 
                         ease: [0.22, 1, 0.36, 1] 
                       }}
-                      className={`block ${line.isItalic ? 'text-brand-emerald italic font-normal' : ''}`}
+                      className={`block ${line.isItalic ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald-bright via-brand-gold-bright to-brand-accent-vibrant italic font-extrabold pb-1' : ''}`}
                     >
                       {line.text}
                     </motion.span>
@@ -182,13 +181,13 @@ export default function Hero({ onBookClick }: HeroProps) {
               <div className="relative w-full sm:w-auto">
                 {/* Glowing breathing ring backdrop for premium CTA */}
                 <motion.div
-                  className="absolute inset-0 bg-brand-emerald/25 rounded-full filter blur-md -z-10"
+                  className="absolute inset-0 bg-gradient-to-r from-brand-accent-vibrant/40 via-brand-gold-bright/40 to-brand-emerald-bright/40 rounded-full filter blur-md -z-10"
                   animate={{
-                    scale: [1, 1.12, 1],
-                    opacity: [0.35, 0.65, 0.35],
+                    scale: [1, 1.16, 1],
+                    opacity: [0.45, 0.85, 0.45],
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 2.5,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
@@ -197,7 +196,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                   type="button"
                   id="hero-primary-cta"
                   onClick={onBookClick}
-                  whileHover={{ y: -3, scale: 1.02, boxShadow: '0 10px 22px -5px rgba(15, 118, 110, 0.45)' }}
+                  whileHover={{ y: -3, scale: 1.02, boxShadow: '0 10px 25px -5px rgba(255, 83, 43, 0.5), 0 0 15px rgba(255, 168, 0, 0.3)' }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.3 }}
                   className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#0F766E] px-8 py-4 text-xs font-bold uppercase tracking-wider text-brand-ivory hover:bg-brand-emerald-hover transition-colors duration-300 cursor-pointer shadow-sm overflow-hidden"
@@ -255,12 +254,12 @@ export default function Hero({ onBookClick }: HeroProps) {
                 ))}
               </div>
               <div className="flex items-center gap-1.5 font-sans">
-                <div className="flex text-amber-500">
+                <div className="flex text-brand-gold-bright drop-shadow-[0_0_6px_rgba(255,168,0,0.85)]">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-current" />
+                    <Star key={i} className="h-3.5 w-3.5 fill-current animate-pulse" style={{ animationDelay: `${i * 150}ms` }} />
                   ))}
                 </div>
-                <span>Excellent 4.9/5 stars based on 500+ student transformations</span>
+                <span className="font-bold text-brand-charcoal/90">Excellent 4.9/5 stars based on 500+ student transformations</span>
               </div>
             </motion.div>
           </motion.div>
@@ -268,8 +267,7 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* Right Column Layout - 48% width on lg */}
           <motion.div 
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: "some" }}
+            animate="visible"
             className="w-full lg:w-[48%] relative flex justify-center items-center"
           >
             

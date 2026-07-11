@@ -115,7 +115,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="pt-[var(--navbar-height,80px)] bg-premium-light min-h-screen relative overflow-hidden"
+      className="pt-[var(--navbar-height,80px)] bg-luxury-glow-c min-h-screen relative overflow-hidden"
       id="success-stories-page"
     >
       <SEO 
@@ -125,19 +125,23 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       />
 
       {/* Decorative Blur Overlays with continuous luxury ambient movement */}
-      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-brand-sage/10 blur-3xl pointer-events-none ambient-glow-1" />
-      <div className="absolute -left-1/4 bottom-1/4 w-80 h-80 rounded-full bg-[#E3B777]/5 blur-3xl pointer-events-none ambient-glow-2" />
+      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-brand-sage/20 filter blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute -left-1/4 bottom-1/4 w-80 h-80 rounded-full bg-brand-gold-bright/8 filter blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Header Banner */}
-      <section className="py-16 md:py-24 px-6 text-center select-none" id="success-hero">
+      <section className="py-24 px-6 text-center select-none" id="success-hero">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[12px] font-bold tracking-[0.25em] text-[#b58552] uppercase block font-sans">
-            AUTHENTIC METABOLIC MILESTONES
+          <span className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans">
+            ✦ AUTHENTIC METABOLIC MILESTONES ✦
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-emerald tracking-tight leading-tight">
             Member Transformation Chronicles
           </h1>
-          <div className="h-[1px] w-20 bg-[#E3B777] mx-auto my-4" />
+          <div className="flex items-center justify-center gap-3 py-1">
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+            <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+          </div>
           <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-xl mx-auto leading-relaxed">
             Real people. Honest results. Backed by physiological science. Explore case logs of deep hormonal recoveries, postural corrections, and long-term metabolic health.
           </p>
@@ -146,20 +150,20 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
 
       {/* Incremental Animated Counter Stats Panel */}
       <section className="py-8 px-6 sm:px-10 lg:px-16" id="transformation-counters-panel">
-        <div className="max-w-[1100px] mx-auto bg-white border border-[#CFE8D5]/60 rounded-3xl p-8 sm:p-10 shadow-[0_4px_30px_rgba(15,118,110,0.02)]">
+        <div className="max-w-[1100px] mx-auto bg-white/90 border border-brand-sage/40 rounded-[32px] p-8 sm:p-12 shadow-[0_4px_30px_rgba(15,118,110,0.03)] relative overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {quickStatsSummary.map((stat, idx) => {
               const Icon = stat.icon;
               return (
-                <div key={idx} className="space-y-1.5 font-sans relative group">
-                  {idx > 0 && <div className="hidden sm:block absolute left-0 top-1/4 bottom-1/4 w-[1px] bg-brand-sage/20" />}
-                  <div className="mx-auto h-10 w-10 rounded-full bg-brand-emerald/5 flex items-center justify-center text-brand-emerald">
+                <div key={idx} className="space-y-2 font-sans relative group">
+                  {idx > 0 && <div className="hidden sm:block absolute left-0 top-1/4 bottom-1/4 w-[1px] bg-brand-sage/30" />}
+                  <div className="mx-auto h-12 w-12 rounded-xl bg-brand-emerald/10 flex items-center justify-center text-brand-emerald transition-transform group-hover:scale-105 duration-300">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <span className="block text-3xl sm:text-4xl font-bold text-brand-emerald font-mono leading-none pt-2">
+                  <span className="block text-3xl sm:text-4xl font-bold text-brand-emerald font-serif leading-none pt-2 tracking-tight">
                     {stat.targetValue.toLocaleString()}{stat.suffix}
                   </span>
-                  <p className="text-[11px] font-semibold text-brand-charcoal/50 uppercase tracking-wider">
+                  <p className="text-[10px] font-semibold text-brand-charcoal/50 uppercase tracking-widest">
                     {stat.label}
                   </p>
                 </div>
@@ -170,34 +174,34 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       </section>
 
       {/* Detailed Narrative Cases Section */}
-      <section className="py-16 px-6 sm:px-10 lg:px-16" id="certified-members-cases">
-        <div className="max-w-[1280px] mx-auto space-y-12">
+      <section className="py-20 px-6 sm:px-10 lg:px-16" id="certified-members-cases">
+        <div className="max-w-[1280px] mx-auto space-y-16">
           {majorStories.map((story, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.25 }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.7 }}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white border border-brand-sage/20 rounded-3xl p-8 sm:p-10 shadow-3xs relative overflow-hidden`}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white/95 border border-brand-sage/40 rounded-[32px] p-8 sm:p-12 shadow-xs hover:shadow-md hover:border-brand-emerald/30 transition-all duration-300 relative overflow-hidden`}
               id={`story-case-${idx}`}
             >
               {/* Highlight ribbon representing clinical safety */}
-              <div className="absolute top-6 left-6 inline-flex items-center gap-1 bg-brand-emerald/5 border border-brand-emerald/10 px-3 py-1 rounded-full text-[9px] font-bold text-brand-emerald uppercase tracking-wider font-sans">
-                <ShieldCheck className="h-3.5 w-3.5" />
+              <div className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-[#EEF8F4] border border-[#CFE8D5] px-3.5 py-1.5 rounded-full text-[9px] font-bold text-brand-emerald uppercase tracking-widest font-sans shadow-2xs">
+                <ShieldCheck className="h-4 w-4 text-brand-emerald" />
                 {story.vetted}
               </div>
 
               {/* Visual Mask Image section */}
               <div className={`lg:col-span-4 flex justify-center ${idx % 2 !== 0 ? 'lg:order-last' : ''}`}>
-                <div className="relative group max-w-xs w-full rounded-2xl overflow-hidden shadow-md aspect-square bg-[#FAF9F6] border border-brand-sage/10">
+                <div className="relative group max-w-xs w-full rounded-2xl overflow-hidden shadow-sm aspect-square bg-[#FAF9F6] border border-brand-sage/20">
                   <img 
                     src={story.image} 
                     alt={story.name}
-                    className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 hover:scale-103"
+                    className="w-full h-full object-cover filter grayscale-[5%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg font-sans">
+                  <div className="absolute bottom-4 left-4 bg-brand-emerald text-brand-ivory text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg font-sans shadow-md">
                     {story.timeline} Roadmap
                   </div>
                 </div>
@@ -205,22 +209,22 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
 
               {/* Narrative Context Section */}
               <div className="lg:col-span-8 space-y-6 font-sans">
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase tracking-widest text-[#b58552] font-semibold">{story.program}</span>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald leading-tight">
+                <div className="space-y-1 pt-6 lg:pt-0">
+                  <span className="text-[10px] uppercase tracking-widest text-[#b58552] font-bold">✦ {story.program} ✦</span>
+                  <h3 className="font-serif text-3xl font-bold text-brand-emerald leading-tight">
                     {story.name}, <span className="text-brand-charcoal/60 font-sans text-xl font-normal">Age {story.age}</span>
                   </h3>
                 </div>
 
                 {/* Metabolic progress metrics */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-3.5 bg-[#FAF9F6] rounded-xl border border-brand-sage/10 relative overflow-hidden">
+                  <div className="p-4 bg-[#FAF9F6] rounded-xl border border-brand-sage/20 relative overflow-hidden">
                     <span className="text-[9px] text-brand-charcoal/40 font-bold uppercase tracking-wider block">Baseline Entry Metrics</span>
-                    <p className="text-xs font-semibold text-brand-charcoal/80 mt-1">{story.metricBefore}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-brand-charcoal/80 mt-1">{story.metricBefore}</p>
                   </div>
-                  <div className="p-3.5 bg-brand-emerald/5 rounded-xl border border-[#CFE8D5] relative overflow-hidden">
-                    <span className="text-[9px] text-[#0F766E] font-bold uppercase tracking-wider block">Verified Clinical Post-Output</span>
-                    <p className="text-xs font-bold text-brand-emerald mt-1">{story.metricAfter}</p>
+                  <div className="p-4 bg-[#EEF8F4] rounded-xl border border-[#CFE8D5] relative overflow-hidden">
+                    <span className="text-[9px] text-brand-emerald font-bold uppercase tracking-wider block">Verified Clinical Post-Output</span>
+                    <p className="text-xs sm:text-sm font-bold text-[#065F5B] mt-1">{story.metricAfter}</p>
                   </div>
                 </div>
 
@@ -231,12 +235,12 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
 
                 {/* Floating highlight status value */}
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-brand-gold-bright/15 text-[#b58552] flex items-center justify-center shrink-0">
-                    <Activity className="h-5 w-5" />
+                  <div className="h-12 w-12 rounded-xl bg-[#FAF9F6] border border-brand-sage/20 text-[#b58552] flex items-center justify-center shrink-0 shadow-2xs">
+                    <Activity className="h-5 w-5 text-brand-gold" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase font-bold text-brand-charcoal/40 tracking-widest block">Core Physical Shift</span>
-                    <span className="text-sm font-bold text-brand-emerald">{story.statValue} ({story.statLabel})</span>
+                    <span className="text-sm font-bold text-[#065F5B]">{story.statValue} ({story.statLabel})</span>
                   </div>
                 </div>
               </div>
@@ -247,23 +251,26 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       </section>
 
       {/* Free Trial Conversion section */}
-      <section className="py-20 text-center px-6" id="success-conversion">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <Sparkles className="h-10 w-10 text-[#E3B777] mx-auto animate-bounce" />
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal">
+      <section className="py-24 text-center px-6 relative" id="success-conversion">
+        <div className="absolute inset-0 bg-[#EEF8F4]/40 -z-10" />
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="inline-flex p-3 bg-brand-gold-bright/15 text-brand-gold rounded-full mb-2">
+            <Sparkles className="h-6 w-6 text-brand-gold" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#065F5B] tracking-tight leading-tight">
             Achieve Your Personal Clinical Best
           </h2>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-sm mx-auto">
+          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
             Work directly with S. Anjaneyulu to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
           </p>
-          <div className="pt-4 flex justify-center">
+          <div className="pt-6 flex justify-center">
             <button
               onClick={onBookClick}
-              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer group"
+              className="px-8 h-[54px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer group"
             >
               <span>Activate Free 3-Day Trial</span>
-              <div className="h-6 w-6 rounded-full bg-[#E3B777] flex items-center justify-center text-[#0F766E] transform group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="h-3 w-3 stroke-[3]" />
+              <div className="h-7 w-7 rounded-full bg-[#E3B777] flex items-center justify-center text-[#0F766E] transform group-hover:translate-x-1 transition-all duration-300">
+                <ArrowRight className="h-3.5 w-3.5 stroke-[3]" />
               </div>
             </button>
           </div>

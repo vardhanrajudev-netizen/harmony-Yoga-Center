@@ -132,23 +132,28 @@ export default function Testimonials() {
   const visibleTestimonials = showAll ? testimonialsList : testimonialsList.slice(0, 3);
 
   return (
-    <section id="testimonials" className="py-[56px] md:py-[72px] lg:py-[100px] bg-premium-light relative overflow-hidden">
+    <section id="testimonials" className="py-[64px] md:py-[88px] lg:py-[120px] bg-luxury-glow-b relative overflow-hidden">
       {/* Absolute decorative back-sphere with continuous ambient movement */}
-      <div className="absolute right-[-100px] bottom-1/4 w-[400px] h-[400px] rounded-full bg-brand-sage/10 filter blur-3xl opacity-50 pointer-events-none ambient-glow-1" />
+      <div className="absolute right-[-100px] bottom-1/4 w-[500px] h-[500px] rounded-full bg-brand-sage/15 filter blur-3xl opacity-40 pointer-events-none ambient-glow-1" />
+      <div className="absolute left-[-50px] top-1/4 w-[400px] h-[400px] rounded-full bg-brand-gold/10 filter blur-3xl opacity-30 pointer-events-none ambient-glow-2" />
 
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-12 relative z-10">
         <div className="max-w-[1200px] mx-auto">
         
         {/* Section Title */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span className="text-[13px] md:text-[14px] font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
-            Client Proof & Voice
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span className="text-[12px] md:text-[13px] font-bold tracking-[0.3em] text-brand-gold uppercase font-sans block">
+            ✦ Client Proof & Voice ✦
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight leading-tight">
             Real Transformations, Natural Success
           </h2>
-          <div className="h-[1px] w-20 bg-brand-gold mx-auto" />
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-lg mx-auto">
+          <div className="flex items-center justify-center gap-3">
+            <div className="h-[1.5px] w-8 bg-brand-gold/40" />
+            <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
+            <div className="h-[1.5px] w-8 bg-brand-gold/40" />
+          </div>
+          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-lg mx-auto leading-relaxed">
             These authentic, verified story capsule frames outline our community's natural fat removal and metabolic rehabilitation journeys.
           </p>
         </div>
@@ -159,8 +164,8 @@ export default function Testimonials() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.25 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-none"
+          viewport={{ once: false, amount: 0.15 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
             {visibleTestimonials.map((test) => (
@@ -174,17 +179,17 @@ export default function Testimonials() {
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ 
-                  y: -8,
-                  boxShadow: '0 24px 48px -12px rgba(15, 118, 110, 0.22)',
-                  borderColor: '#0F766E'
+                  y: -10,
+                  boxShadow: '0 25px 50px -15px rgba(15, 118, 110, 0.15), 0 0 0 1px rgba(20, 168, 154, 0.2)',
+                  borderColor: 'rgba(20, 168, 154, 0.3)'
                 }}
-                className="bg-white rounded-2xl border border-brand-sage/30 overflow-hidden shadow-sm flex flex-col justify-between group cursor-pointer transition-colors duration-300"
+                className="bg-white/95 rounded-[24px] border border-brand-sage/40 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.015)] flex flex-col justify-between group cursor-pointer transition-all duration-500"
               >
                 {/* Video Thumbnail with Hover Interaction */}
                 <div className="relative aspect-video bg-neutral-900 overflow-hidden" onClick={() => setActiveVideo(test)}>
                   <motion.div
                     className="w-full h-full"
-                    animate={{ scale: [1, 1.06, 1] }}
+                    animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <video
@@ -198,18 +203,18 @@ export default function Testimonials() {
                   </motion.div>
                   
                   {/* Simulated Glass Play Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-brand-charcoal/20 group-hover:bg-brand-charcoal/30 transition-colors duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center bg-brand-charcoal/20 group-hover:bg-brand-charcoal/35 transition-colors duration-300">
                     <motion.div 
                       animate={{
                         scale: [1, 1.08, 1],
                         boxShadow: [
-                          '0 4px 14px rgba(15,118,110,0.1)',
-                          '0 4px 22px 6px rgba(15,118,110,0.25)',
-                          '0 4px 14px rgba(15,118,110,0.1)'
+                          '0 4px 14px rgba(15,118,110,0.15)',
+                          '0 4px 25px 8px rgba(15,118,110,0.35)',
+                          '0 4px 14px rgba(15,118,110,0.15)'
                         ]
                       }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-brand-emerald group-hover:text-brand-gold shadow-lg group-hover:scale-110 transition-all duration-300"
+                      className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-emerald group-hover:text-brand-gold shadow-2xl group-hover:scale-115 transition-all duration-300"
                     >
                       <Play className="h-5 w-5 fill-current ml-1 transform group-hover:rotate-[360deg] transition-transform duration-700" />
                     </motion.div>
@@ -217,25 +222,25 @@ export default function Testimonials() {
 
                   {/* Left Floating Transformation metric seal */}
                   {test.weightLost && (
-                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow-sm z-10">
+                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-lg shadow-md z-10">
                       Lost {test.weightLost}
                     </div>
                   )}
 
                   {/* Right Floating Quick Label */}
-                  <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs text-[#B58552] border border-brand-sage/20 z-10">
+                  <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md text-[#B58552] border border-brand-sage/20 z-10 shadow-xs">
                     Video Story
                   </span>
                 </div>
 
                 {/* Text review detail */}
-                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between relative overflow-hidden">
+                <div className="p-6.5 space-y-4 flex-1 flex flex-col justify-between relative overflow-hidden">
                   {/* Floating quote icon in card background */}
-                  <Quote className="absolute right-3 bottom-14 h-16 w-16 text-brand-sage/15 transform rotate-12 pointer-events-none" />
+                  <Quote className="absolute right-3 bottom-14 h-16 w-16 text-brand-sage/12 transform rotate-12 pointer-events-none" />
 
                   <div className="space-y-3 relative z-10">
                     {/* Rating Stars row */}
-                    <div className="flex items-center gap-1 text-yellow-500">
+                    <div className="flex items-center gap-1 text-amber-500">
                       {[...Array(test.rating)].map((_, i) => (
                         <Star key={i} className="h-3.5 w-3.5 fill-current" />
                       ))}
@@ -244,13 +249,13 @@ export default function Testimonials() {
                       </span>
                     </div>
 
-                    <p className="text-xs text-brand-charcoal/85 italic leading-relaxed font-sans">
+                    <p className="text-[13px] text-brand-charcoal/85 italic leading-relaxed font-sans">
                       "{test.quote}"
                     </p>
                   </div>
 
                   {/* Subtitle/Identification */}
-                  <div className="pt-4 border-t border-brand-sage/20 flex items-center justify-between relative z-10">
+                  <div className="pt-4 border-t border-brand-sage/25 flex items-center justify-between relative z-10">
                     <div className="text-left">
                       <h4 className="font-serif text-sm font-bold text-brand-charcoal leading-tight">
                         {test.name}
@@ -259,7 +264,7 @@ export default function Testimonials() {
                         Age {test.age} • Vijayawada Studio
                       </p>
                     </div>
-                    <span className="text-[9px] font-semibold tracking-wider text-brand-emerald bg-brand-sage/25 px-2 py-1 rounded-sm uppercase">
+                    <span className="text-[9px] font-bold tracking-wider text-brand-emerald bg-brand-sage/20 px-2.5 py-1 rounded-md uppercase">
                       {test.program.replace(' Programs', '')}
                     </span>
                   </div>

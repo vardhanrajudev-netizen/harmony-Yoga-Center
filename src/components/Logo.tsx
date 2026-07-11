@@ -119,6 +119,7 @@ export default function Logo({ variant = 'light', className = "", onClick }: Log
             marginTop: '2.5px'
           }}
         >
+          Premium Wellness Sanctuary
         </span>
       </div>
     </div>

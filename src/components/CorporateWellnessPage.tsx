@@ -62,7 +62,7 @@ export default function CorporateWellnessPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="pt-[var(--navbar-height,80px)] bg-brand-ivory min-h-screen relative overflow-hidden"
+      className="pt-[var(--navbar-height,80px)] bg-luxury-glow-b min-h-screen relative overflow-hidden"
       id="corporate-wellness-page"
     >
       <SEO 
@@ -72,19 +72,23 @@ export default function CorporateWellnessPage() {
       />
 
       {/* Decorative Blur Backgrounds */}
-      <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/15 blur-3xl pointer-events-none" />
-      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-[#E3B777]/5 blur-3xl pointer-events-none" />
+      <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/20 filter blur-3xl pointer-events-none ambient-glow-1" />
+      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-brand-gold-bright/8 filter blur-3xl pointer-events-none ambient-glow-2" />
 
       {/* Hero Header */}
-      <section className="py-20 px-6 sm:px-10 lg:px-16 text-center select-none" id="corporate-hero">
+      <section className="py-24 px-6 sm:px-10 lg:px-16 text-center select-none" id="corporate-hero">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[12px] font-bold tracking-[0.25em] text-[#b58552] uppercase block">
-            WORKPLACE HARMONY
+          <span className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block">
+            ✦ WORKPLACE HARMONY ✦
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-emerald tracking-tight leading-tight">
             Corporate Wellness Programs
           </h1>
-          <div className="h-[1px] w-20 bg-[#E3B777] mx-auto my-4" />
+          <div className="flex items-center justify-center gap-3">
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+            <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
+            <div className="h-[1.5px] w-12 bg-brand-gold/40" />
+          </div>
           <p className="text-xs sm:text-sm text-brand-charcoal/70 max-w-2xl mx-auto leading-relaxed">
             Empower your team with S. Anjaneyulu’s clinical posture alignment routines, targeted physical decompression therapy, and custom mindfulness modules suited for high-stress corporate pipelines.
           </p>
@@ -92,31 +96,31 @@ export default function CorporateWellnessPage() {
       </section>
 
       {/* Two-Column Detail Layout */}
-      <section className="pb-20 px-6 sm:px-10 lg:px-16" id="corporate-main-content">
+      <section className="pb-24 px-6 sm:px-10 lg:px-16" id="corporate-main-content">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Focus benefits & Interactive calculator */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 space-y-6">
-              <h2 className="font-serif text-2xl font-bold text-brand-emerald">
+          <div className="lg:col-span-7 space-y-10">
+            <div className="bg-white/95 rounded-[32px] p-8 sm:p-10 border border-brand-sage/40 space-y-6 shadow-sm">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald tracking-tight">
                 Why Invest in Yoga for Your Workforce?
               </h2>
-              <p className="text-xs text-brand-charcoal/70 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
                 Prolonged workstation hours cause cervical strain, sluggish lung volumes, and mental burnout. Our executive sessions are engineered with specific bio-mechanic alignments to optimize active cardiovascular circulation and eliminate neural blockages.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-brand-sage/15">
                 {corporateBenefits.map((benefit, i) => {
                   const Icon = benefit.icon;
                   return (
-                    <div key={i} className="space-y-2 border-l-2 border-brand-gold/40 pl-4 font-sans">
-                      <div className="text-brand-emerald p-1 rounded-full inline-block bg-brand-emerald/5 mb-1">
-                        <Icon className="h-4 w-4" />
+                    <div key={i} className="space-y-3 pl-1 font-sans">
+                      <div className="text-brand-emerald p-2 rounded-xl inline-block bg-brand-emerald/10">
+                        <Icon className="h-5 w-5" />
                       </div>
                       <h3 className="font-serif font-bold text-[14px] text-brand-charcoal leading-tight">
                         {benefit.title}
                       </h3>
-                      <p className="text-[10px] text-brand-charcoal/60 leading-relaxed">
+                      <p className="text-[11px] text-brand-charcoal/65 leading-relaxed">
                         {benefit.desc}
                       </p>
                     </div>
@@ -126,18 +130,20 @@ export default function CorporateWellnessPage() {
             </div>
 
             {/* Interactive Calculator: Dynamic estimation of worker focus reclaim */}
-            <div className="bg-[#0F766E]/5 rounded-3xl p-6 sm:p-8 border border-brand-emerald/10 space-y-4">
-              <div className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-brand-emerald" />
-                <h4 className="font-serif text-lg font-bold text-brand-emerald">
+            <div className="bg-white/95 rounded-[32px] p-8 sm:p-10 border border-brand-sage/40 space-y-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-brand-emerald/10 rounded-xl">
+                  <TrendingUp className="h-5 w-5 text-brand-emerald" />
+                </div>
+                <h4 className="font-serif text-xl font-bold text-brand-emerald tracking-tight">
                   Employee Focus & Stress Saving Estimator
                 </h4>
               </div>
-              <p className="text-[11px] text-brand-charcoal/60 leading-relaxed font-sans">
+              <p className="text-xs text-brand-charcoal/60 leading-relaxed font-sans">
                 Slide the bar according to your active company sizes to compute estimated weekly executive productivity recovery and stress index reduction ratios.
               </p>
 
-              <div className="space-y-4 pt-2 font-sans">
+              <div className="space-y-5 pt-2 font-sans">
                 <div className="flex justify-between items-center text-xs">
                   <span className="font-bold text-brand-charcoal">Employee Count:</span>
                   <span className="text-brand-emerald font-extrabold text-sm">{employeesCount} Active Staff</span>
@@ -148,20 +154,20 @@ export default function CorporateWellnessPage() {
                   max="500" 
                   value={employeesCount}
                   onChange={(e) => setEmployeesCount(Number(e.target.value))}
-                  className="w-full h-2 bg-brand-sage/30 rounded-lg appearance-none cursor-pointer accent-brand-emerald"
+                  className="w-full h-2 bg-brand-sage/40 rounded-lg appearance-none cursor-pointer accent-brand-emerald"
                 />
-                <div className="grid grid-cols-3 gap-3 pt-3">
-                  <div className="bg-white p-3 rounded-xl border border-brand-sage/20 text-center">
+                <div className="grid grid-cols-3 gap-4 pt-4">
+                  <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
                     <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Postural Relief</span>
-                    <span className="text-[18px] font-serif font-bold text-brand-emerald">{Math.min(employeesCount * 4, 1800)} hrs/yr</span>
+                    <span className="text-[18px] font-serif font-bold text-brand-emerald mt-1 block">{Math.min(employeesCount * 4, 1800)} hrs/yr</span>
                   </div>
-                  <div className="bg-white p-3 rounded-xl border border-brand-sage/20 text-center">
+                  <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
                     <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Fatigue Reduction</span>
-                    <span className="text-[18px] font-serif font-bold text-[#b58552]">~{(employeesCount * 1.5).toFixed(0)}%</span>
+                    <span className="text-[18px] font-serif font-bold text-[#b58552] mt-1 block">~{(employeesCount * 1.5).toFixed(0)}%</span>
                   </div>
-                  <div className="bg-white p-3 rounded-xl border border-brand-sage/20 text-center">
+                  <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
                     <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Sick Leave Savings</span>
-                    <span className="text-[18px] font-serif font-bold text-brand-emerald">₹{(employeesCount * 2200).toLocaleString('en-IN')}</span>
+                    <span className="text-[18px] font-serif font-bold text-brand-emerald mt-1 block">₹{(employeesCount * 2200).toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
@@ -170,14 +176,14 @@ export default function CorporateWellnessPage() {
 
           {/* Right Column: Custom proposal consultation form */}
           <div className="lg:col-span-5" id="corporate-proposal-form">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-sage/20 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-emerald" />
+            <div className="bg-white/95 rounded-[32px] p-8 sm:p-10 border border-brand-sage/40 relative overflow-hidden shadow-sm">
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-brand-emerald" />
 
-              <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-[10px] uppercase tracking-wider mb-1 font-sans">
+              <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-[10px] uppercase tracking-wider mb-2 font-sans">
                 <Sparkles className="h-3.5 w-3.5" />
                 Custom Corporate Solutions
               </div>
-              <h3 className="font-serif text-2xl font-bold text-brand-emerald mb-1">Request a Proposal</h3>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#065F5B] mb-1 leading-tight">Request a Proposal</h3>
               <p className="text-xs text-brand-charcoal/50 mb-6 font-sans">Arrange a baseline postural screening workshop or ongoing corporate sessions.</p>
 
               {submitted ? (
@@ -208,7 +214,7 @@ export default function CorporateWellnessPage() {
                       required
                       value={formData.companyName}
                       onChange={handleInputChange}
-                      className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                      className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                       placeholder="Indus Solutions Private Limited"
                     />
                   </div>
@@ -222,7 +228,7 @@ export default function CorporateWellnessPage() {
                         required
                         value={formData.contactName}
                         onChange={handleInputChange}
-                        className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                        className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                         placeholder="Rohan Mehra"
                       />
                     </div>
@@ -230,7 +236,7 @@ export default function CorporateWellnessPage() {
                       <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Designation / Job Title</label>
                       <input 
                         type="text" 
-                        className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                        className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                         placeholder="Chief People Officer"
                       />
                     </div>
@@ -245,7 +251,7 @@ export default function CorporateWellnessPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                        className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                         placeholder="rohan.mehra@company.com"
                       />
                     </div>
@@ -257,7 +263,7 @@ export default function CorporateWellnessPage() {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                        className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                         placeholder="+91 91234 56789"
                       />
                     </div>
@@ -269,7 +275,7 @@ export default function CorporateWellnessPage() {
                       name="programType"
                       value={formData.programType}
                       onChange={handleInputChange}
-                      className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                      className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                     >
                       <option value="On-site Interactive Workshops">On-site Interactive Workshops (2 hrs)</option>
                       <option value="Weekly Office Deskside realignments">Weekly Office Deskside Realignments</option>
@@ -285,14 +291,14 @@ export default function CorporateWellnessPage() {
                       rows={3}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm focus:border-brand-emerald focus:outline-hidden"
+                      className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
                       placeholder="E.g., 150 software professionals experiencing desk tightness..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-xl font-bold uppercase tracking-widest transition-transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                   >
                     <span>Request Quotation</span>
                     <ArrowRight className="h-4 w-4" />
