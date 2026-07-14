@@ -246,7 +246,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-emerald/10 px-3.5 py-1 text-[11px] font-bold text-brand-emerald tracking-[0.2em] uppercase url-badge"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-emerald/10 px-3.5 py-1 text-xs sm:text-sm font-bold text-brand-emerald tracking-[0.2em] uppercase url-badge"
             >
               <Sparkles className="h-3 w-3 text-brand-gold fill-current" />
               PREMIUM YOGA LEARNING EXPERIENCE
@@ -289,7 +289,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="relative group overflow-hidden px-8 py-4 rounded-full bg-brand-emerald text-brand-ivory text-[13px] font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:bg-brand-emerald/95 duration-300"
+                className="relative group overflow-hidden px-8 py-4 rounded-full bg-brand-emerald text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:bg-brand-emerald/95 duration-300"
               >
                 <div className="absolute inset-0 bg-brand-gold/10 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
                 <Play className="h-4 w-4 text-brand-gold fill-current group-hover:scale-110 transition-transform duration-300" />
@@ -299,7 +299,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               <button
                 type="button"
                 onClick={() => onBookClick()}
-                className="group border border-brand-emerald/30 hover:border-brand-emerald bg-white text-brand-emerald px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-wider flex items-center gap-2 transition-all duration-300 shadow-2xs hover:shadow-md"
+                className="group border border-brand-emerald/30 hover:border-brand-emerald bg-white text-brand-emerald px-8 py-4 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider flex items-center gap-2 transition-all duration-300 shadow-2xs hover:shadow-md"
               >
                 <span>Book Free Trial</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -315,15 +315,15 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
             >
               <div className="space-y-1">
                 <p className="text-xl sm:text-2xl font-serif font-bold text-brand-emerald">500+</p>
-                <p className="text-[11px] font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Students Trained</p>
+                <p className="text-xs sm:text-sm font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Students Trained</p>
               </div>
               <div className="space-y-1">
                 <p className="text-xl sm:text-2xl font-serif font-bold text-brand-emerald">7+ Years</p>
-                <p className="text-[11px] font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Elite Mentorship</p>
+                <p className="text-xs sm:text-sm font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Elite Mentorship</p>
               </div>
               <div className="space-y-1">
                 <p className="text-xl sm:text-2xl font-serif font-bold text-brand-emerald">100%</p>
-                <p className="text-[11px] font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Beginner Friendly</p>
+                <p className="text-xs sm:text-sm font-bold text-brand-charcoal/65 tracking-wider uppercase font-sans">Beginner Friendly</p>
               </div>
             </motion.div>
           </div>
@@ -352,8 +352,8 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                   <UserCheck className="h-5 w-5 text-brand-emerald" />
                 </div>
                 <div className="text-left select-none">
-                  <p className="text-[10px] font-bold text-brand-charcoal/50 uppercase tracking-widest leading-none">Clinical Design</p>
-                  <p className="text-xs font-bold text-brand-emerald mt-1">MSC-Certified Posture Corrective Flow</p>
+                  <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-widest leading-none">Clinical Design</p>
+                  <p className="text-sm font-bold text-brand-emerald mt-1">MSC-Certified Posture Corrective Flow</p>
                 </div>
               </div>
             </motion.div>
@@ -367,7 +367,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
         <div className="max-w-[1280px] mx-auto px-6 sm:px-12">
           
           <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <span className="text-[11px] font-bold tracking-[0.25em] text-brand-gold uppercase block">Select Focus Discipline</span>
+            <span className="text-xs sm:text-sm font-bold tracking-[0.25em] text-brand-gold uppercase block">Select Focus Discipline</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal tracking-tight">Structured Wellness Channels</h2>
             <div className="h-[1px] w-12 bg-brand-gold mx-auto mt-2" />
           </div>
@@ -378,7 +378,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                 key={category}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
-                className={`relative px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border cursor-pointer ${
+                className={`relative px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 border cursor-pointer ${
                   selectedCategory === category 
                     ? 'bg-brand-emerald text-brand-ivory border-brand-emerald shadow-sm' 
                     : 'bg-[#FAF9F6] text-brand-charcoal/75 hover:text-brand-emerald border-brand-sage/30 hover:border-brand-emerald/40 hover:bg-white'
@@ -401,11 +401,11 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               Class Sequences 
               <span className="text-brand-emerald italic font-light ml-2">Currently Streaming</span>
             </h2>
-            <p className="text-xs sm:text-sm text-brand-charcoal/60">
+            <p className="text-sm sm:text-base text-brand-charcoal/60">
               Showing {filteredTutorials.length} tailored physical modules. Click on any routine below to launch active tutorial steps.
             </p>
           </div>
-          <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-brand-gold uppercase tracking-[0.15em] pt-2 md:pt-0">
+          <div className="hidden sm:flex items-center gap-2 text-sm font-semibold text-brand-gold uppercase tracking-[0.15em] pt-2 md:pt-0">
             <Flame className="h-4 w-4 animate-pulse fill-current text-brand-gold" />
             <span>Optimize Hormonal Response</span>
           </div>
@@ -441,10 +441,10 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
 
                   {/* Level & Difficulty badge overlay */}
                   <div className="absolute top-3.5 left-3.5 z-10 flex gap-1.5 pointer-events-none select-none">
-                    <span className="text-[9px] font-bold text-brand-ivory bg-brand-emerald/90 backdrop-blur-md px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-xs font-bold text-brand-ivory bg-brand-emerald/90 backdrop-blur-md px-2.5 py-1 rounded-full uppercase tracking-wider">
                       {tutorial.difficulty}
                     </span>
-                    <span className="text-[9px] font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-xs font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full uppercase tracking-wider">
                       {tutorial.category}
                     </span>
                   </div>
@@ -480,14 +480,14 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                     >
                       {tutorial.title}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-brand-charcoal/70 line-clamp-2 leading-relaxed">
+                    <p className="text-[15px] sm:text-base text-brand-charcoal/75 leading-relaxed font-sans">
                       {tutorial.description}
                     </p>
                   </div>
 
                   {/* Technical values indicators & benefits */}
                   <div className="space-y-3.5 pt-1">
-                    <div className="flex items-center gap-4 text-[11px] font-bold text-brand-charcoal/60 uppercase tracking-wider border-y border-brand-sage/15 py-2.5">
+                    <div className="flex items-center gap-4 text-xs sm:text-sm font-bold text-brand-charcoal/60 uppercase tracking-wider border-y border-brand-sage/15 py-2.5">
                       <span className="flex items-center gap-1.5">
                         <Clock className="h-3.5 w-3.5 text-brand-gold" />
                         {tutorial.duration}
@@ -500,10 +500,10 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
 
                     {/* Benefit labels */}
                     <div className="space-y-1.5">
-                      <p className="text-[10px] font-bold uppercase text-brand-gold/90 tracking-wider">Target Clinical Benefit:</p>
+                      <p className="text-xs font-bold uppercase text-brand-gold/90 tracking-wider">Target Clinical Benefit:</p>
                       <ul className="space-y-1">
                         {tutorial.benefits.slice(0, 1).map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-1.5 text-xs text-brand-charcoal/80">
+                          <li key={i} className="flex items-start gap-1.5 text-sm sm:text-base text-brand-charcoal/80 font-sans">
                             <ShieldCheck className="h-3.5 w-3.5 text-brand-emerald shrink-0 mt-0.5" />
                             <span>{benefit}</span>
                           </li>
@@ -516,7 +516,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                   <button
                     type="button"
                     onClick={() => setActiveTutorial(tutorial)}
-                    className="w-full py-2.5 rounded-lg border border-brand-sage/30 group-hover:border-brand-emerald text-brand-charcoal/80 group-hover:text-brand-emerald group-hover:bg-brand-emerald/5 transition-all duration-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5"
+                    className="w-full py-2.5 rounded-lg border border-brand-sage/30 group-hover:border-brand-emerald text-brand-charcoal/80 group-hover:text-brand-emerald group-hover:bg-brand-emerald/5 transition-all duration-300 text-sm sm:text-base font-bold uppercase tracking-wider flex items-center justify-center gap-1.5"
                   >
                     <span>Watch Tutorial</span>
                     <ChevronRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
@@ -572,7 +572,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                   
                   {/* Overlay watermarks */}
                   <div className="absolute top-4 left-4 z-20 pointer-events-none flex flex-col gap-0.5">
-                    <span className="flex items-center gap-1.5 text-[10px] text-white bg-brand-emerald/90 px-3 py-1 rounded-full backdrop-blur-md font-semibold tracking-wider uppercase">
+                    <span className="flex items-center gap-1.5 text-xs text-white bg-brand-emerald/90 px-3 py-1 rounded-full backdrop-blur-md font-semibold tracking-wider uppercase">
                       <Heart className="h-3 w-3 text-brand-gold animate-pulse fill-current" />
                       Studio Active Stream
                     </span>
@@ -593,13 +593,13 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                   
                   {/* Core Title Details */}
                   <div className="space-y-2 border-b border-brand-sage/25 pb-4">
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-brand-gold uppercase block">
+                    <span className="text-xs font-bold tracking-[0.2em] text-brand-gold uppercase block">
                       {activeTutorial.category} • Certified Guidance
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal leading-tight">
                       {activeTutorial.title}
                     </h3>
-                    <p className="text-sm text-brand-charcoal/70 leading-relaxed max-w-3xl">
+                    <p className="text-base text-brand-charcoal/75 leading-relaxed max-w-3xl font-sans">
                       {activeTutorial.description}
                     </p>
                   </div>
@@ -607,20 +607,20 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                   {/* Multi-grid statistics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white p-4 rounded-xl border border-brand-sage/30">
                     <div className="space-y-0.5">
-                      <p className="text-[10px] font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">DURATION</p>
-                      <p className="text-sm font-bold text-brand-charcoal">{activeTutorial.duration}</p>
+                      <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">DURATION</p>
+                      <p className="text-sm sm:text-base font-bold text-brand-charcoal">{activeTutorial.duration}</p>
                     </div>
                     <div className="space-y-0.5 border-l border-brand-sage/20 pl-4">
-                      <p className="text-[10px] font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">CALORIE RATE</p>
-                      <p className="text-sm font-bold text-brand-charcoal">{activeTutorial.caloriesBurned}</p>
+                      <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">CALORIE RATE</p>
+                      <p className="text-sm sm:text-base font-bold text-brand-charcoal">{activeTutorial.caloriesBurned}</p>
                     </div>
                     <div className="space-y-0.5 border-l border-brand-sage/20 pl-4">
-                      <p className="text-[10px] font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">DIFFICULTY</p>
-                      <p className="text-sm font-bold text-brand-emerald">{activeTutorial.difficulty}</p>
+                      <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">DIFFICULTY</p>
+                      <p className="text-sm sm:text-base font-bold text-brand-emerald">{activeTutorial.difficulty}</p>
                     </div>
                     <div className="space-y-0.5 border-l border-brand-sage/20 pl-4 font-sans">
-                      <p className="text-[10px] font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">LED BY MASTER</p>
-                      <p className="text-xs font-bold text-brand-gold line-clamp-1">{activeTutorial.mentor}</p>
+                      <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest font-sans">LED BY MASTER</p>
+                      <p className="text-xs sm:text-sm font-bold text-brand-gold line-clamp-1">{activeTutorial.mentor}</p>
                     </div>
                   </div>
 
@@ -629,7 +629,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                     
                     {/* Left detailed steps list */}
                     <div className="md:col-span-7 space-y-4">
-                      <h4 className="text-[13px] font-bold text-brand-charcoal tracking-widest uppercase flex items-center gap-2">
+                      <h4 className="text-sm sm:text-base font-bold text-brand-charcoal tracking-widest uppercase flex items-center gap-2">
                         <Award className="h-4 w-4 text-brand-emerald" />
                         Step-By-Step Practice Blueprint
                       </h4>
@@ -642,8 +642,8 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                                 {index + 1}
                               </span>
                               <div>
-                                <h5 className="text-xs sm:text-sm font-bold text-brand-charcoal">{title}</h5>
-                                {desc && <p className="text-xs text-brand-charcoal/70 mt-0.5 leading-relaxed">{desc}</p>}
+                                <h5 className="text-sm sm:text-base font-bold text-brand-charcoal">{title}</h5>
+                                {desc && <p className="text-sm text-brand-charcoal/75 mt-0.5 leading-relaxed font-sans">{desc}</p>}
                               </div>
                             </li>
                           );
@@ -656,11 +656,11 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                       
                       {/* Clinical target benefits */}
                       <div className="bg-brand-emerald/5 p-4 rounded-xl border border-brand-emerald/10 space-y-3">
-                        <h4 className="text-[11px] font-bold text-brand-emerald tracking-widest uppercase flex items-center gap-1.5">
+                        <h4 className="text-xs font-bold text-brand-emerald tracking-widest uppercase flex items-center gap-1.5">
                           <ShieldCheck className="h-4 w-4" />
                           Physiological Benefits
                         </h4>
-                        <ul className="space-y-2 text-xs text-brand-charcoal/85">
+                        <ul className="space-y-2 text-sm sm:text-base text-brand-charcoal/85 font-sans">
                           {activeTutorial.benefits.map((benefit, i) => (
                             <li key={i} className="flex gap-2">
                               <span className="text-brand-emerald font-bold shrink-0">•</span>
@@ -672,11 +672,11 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
 
                       {/* Clinical pre-check and precautions */}
                       <div className="bg-brand-gold/5 p-4 rounded-xl border border-brand-gold/15 space-y-3">
-                        <h4 className="text-[11px] font-bold text-[#b58552] tracking-widest uppercase flex items-center gap-1.5">
+                        <h4 className="text-xs font-bold text-[#b58552] tracking-widest uppercase flex items-center gap-1.5">
                           <Wind className="h-4 w-4" />
                           Health Precautions
                         </h4>
-                        <ul className="space-y-2 text-xs text-brand-charcoal/85">
+                        <ul className="space-y-2 text-sm sm:text-base text-brand-charcoal/85 font-sans">
                           {activeTutorial.precautions.map((precaution, i) => (
                             <li key={i} className="flex gap-2">
                               <span className="text-brand-gold font-bold shrink-0">•</span>
@@ -698,7 +698,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               <div className="p-4 sm:p-5 bg-white border-t border-brand-sage/20 flex flex-col sm:flex-row items-center justify-between gap-4 z-20 shrink-0">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping shrink-0" />
-                  <p className="text-xs text-brand-charcoal/60 leading-tight">
+                  <p className="text-sm text-brand-charcoal/70 leading-tight font-sans">
                     Want real-time postural breath correction? Join our next live class.
                   </p>
                 </div>
@@ -709,7 +709,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                     setActiveTutorial(null);
                     onBookClick(activeTutorial?.category || 'Weight Loss Programs');
                   }}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-brand-emerald hover:bg-brand-emerald/95 text-brand-ivory text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-all duration-300 pointer-events-auto"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-brand-emerald hover:bg-brand-emerald/95 text-brand-ivory text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-all duration-300 pointer-events-auto"
                 >
                   <MessageSquare className="h-3.5 w-3.5 text-brand-gold fill-current" />
                   <span>Book Complementary Session</span>
@@ -726,10 +726,10 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
         <div className="max-w-[1280px] mx-auto">
           
           <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
-            <span className="text-[11px] font-bold tracking-[0.25em] text-brand-gold uppercase block">Handcrafted Excellence</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-brand-gold uppercase block">Handcrafted Excellence</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal tracking-tight">The Luxury Wellness Standard</h2>
             <div className="h-[1px] w-20 bg-brand-gold mx-auto mt-2" />
-            <p className="text-xs sm:text-sm text-brand-charcoal/65 leading-relaxed font-sans">
+            <p className="text-base sm:text-lg text-brand-charcoal/70 leading-relaxed font-sans">
               Unlike generic, unmonitored digital video repositories, Harmony channels are designed by clinical specialists to achieve true metabolic realignment.
             </p>
           </div>
@@ -762,7 +762,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
                     <IconComponent className="h-5 w-5" />
                   </div>
                   <h3 className="font-serif text-lg font-bold text-brand-charcoal">{feature.title}</h3>
-                  <p className="text-xs sm:text-[13px] text-brand-charcoal/70 leading-relaxed font-sans">
+                  <p className="text-[15px] sm:text-base text-brand-charcoal/75 leading-relaxed font-sans">
                     {feature.desc}
                   </p>
                 </div>
@@ -780,16 +780,26 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
         <div className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 rounded-full bg-white/5 filter blur-[120px] pointer-events-none" />
 
         <div className="max-w-2xl mx-auto text-center space-y-6 relative z-10">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-brand-gold uppercase block">Start Your Path</span>
+          <div className="flex justify-center select-none pb-2">
+            <button
+              type="button"
+              onClick={() => onBookClick()}
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#0F766E] to-[#115E59] hover:from-[#115E59] hover:to-[#0F766E] text-white text-base md:text-[18px] font-bold uppercase tracking-wider shadow-lg border border-[#F2C66D]/45 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
+            >
+              <Sparkles className="h-4.5 w-4.5 text-[#F2C66D] group-hover:scale-110 transition-transform duration-300 shrink-0" />
+              <span>Start Your Plan</span>
+              <ArrowRight className="h-4.5 w-4.5 text-[#F2C66D] group-hover:translate-x-1 transition-transform duration-300 shrink-0" />
+            </button>
+          </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
             Begin Your Wellness <br />
             <span className="italic font-light">Transformation Today</span>
           </h2>
-          <p className="text-sm text-brand-ivory/85 leading-relaxed font-sans max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-brand-ivory/85 leading-relaxed font-sans max-w-lg mx-auto">
             Receive personalized, live physical corrections and dietary blueprints tailored directly for your constitutional type. Book a complete free interactive video assessment setup session.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 uppercase tracking-wider text-xs font-bold">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 uppercase tracking-wider text-sm sm:text-base font-bold">
             <button
               type="button"
               onClick={() => onBookClick()}
@@ -816,7 +826,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-brand-sage/20 py-2.5 px-4 flex sm:hidden items-center justify-between gap-3 shadow-2xl pointer-events-auto">
         <a
           href="tel:+917036711097"
-          className="flex-1 h-11 rounded-lg border border-brand-sage flex items-center justify-center text-brand-charcoal text-[11px] font-bold uppercase tracking-wider gap-1.5"
+          className="flex-1 h-11 rounded-lg border border-brand-sage flex items-center justify-center text-brand-charcoal text-xs sm:text-sm font-bold uppercase tracking-wider gap-1.5"
         >
           <Phone className="h-3.5 w-3.5 text-brand-gold" />
           <span>Call Now</span>
@@ -826,7 +836,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
           href="https://wa.me/917036711097?text=Hi%20Harmony%20Yoga,%20interested%20in%20Postural%20Tutorials!"
           target="_blank"
           rel="noreferrer noopener"
-          className="flex-1 h-11 rounded-lg bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center text-white text-[11px] font-bold uppercase tracking-wider gap-1.5"
+          className="flex-1 h-11 rounded-lg bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center text-white text-xs sm:text-sm font-bold uppercase tracking-wider gap-1.5"
         >
           <MessageSquare className="h-3.5 w-3.5 fill-current" />
           <span>WhatsApp</span>
@@ -835,7 +845,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
         <button
           type="button"
           onClick={() => onBookClick()}
-          className="flex-1 h-11 rounded-lg bg-brand-emerald text-brand-ivory text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1"
+          className="flex-1 h-11 rounded-lg bg-brand-emerald text-brand-ivory text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-1"
         >
           <Award className="h-3.5 w-3.5 text-brand-gold fill-current" />
           <span>Book Free</span>

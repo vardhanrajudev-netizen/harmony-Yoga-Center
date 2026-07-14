@@ -306,22 +306,22 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
 
       {/* Standalone Free Trial CTA */}
       <section className="py-24 px-6 bg-luxury-glow-a text-center" id="programs-free-trial-cta">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <Award className="h-10 w-10 text-[#D4A373] mx-auto animate-pulse" />
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-emerald leading-tight">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <Award className="h-12 w-12 text-[#D4A373] mx-auto animate-pulse" />
+          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-brand-emerald leading-tight">
             Activate Your Direct 3-Day Companion Trial Pass
           </h2>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-brand-charcoal/75 font-sans max-w-2xl mx-auto leading-relaxed mt-2">
             Review physical structures, test our custom heated mats, and claim a personalized body Dosha analysis with master coach S. Anjaneyulu.
           </p>
-          <div className="pt-4 flex justify-center">
+          <div className="pt-6 flex justify-center">
             <button
               onClick={() => onSelectProgram('Weight Loss Programs')}
-              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-3.5 cursor-pointer group"
+              className="px-10 py-5 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-4 cursor-pointer group"
             >
               <span>Schedule Free Trial Now</span>
-              <div className="h-6 w-6 rounded-full bg-[#D4A373] flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="h-3.5 w-3.5 stroke-[3]" />
+              <div className="h-7 w-7 rounded-full bg-[#D4A373] flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform">
+                <ArrowRight className="h-4 w-4 stroke-[3]" />
               </div>
             </button>
           </div>

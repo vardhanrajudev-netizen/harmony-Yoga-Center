@@ -74,7 +74,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans"
+            className="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans"
           >
             ✦ Our Story & Legacy ✦
           </motion.span>
@@ -100,7 +100,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-2xl mx-auto text-sm sm:text-base text-brand-charcoal/75 font-sans leading-relaxed"
+            className="max-w-2xl mx-auto text-base sm:text-lg text-brand-charcoal/75 font-sans leading-relaxed"
           >
             Harmony Yoga Center was founded in Vijayawada on a simple, scientific hypothesis: that the body's natural metabolic vigor is best stimulated through targeted clinical movement, breathing science, and hormonal equilibrium—rather than extreme physical depletion.
           </motion.p>
@@ -130,8 +130,8 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                       <Sparkles className="h-4.5 w-4.5 text-brand-gold-bright" />
                     </div>
                     <div className="text-left font-sans">
-                      <p className="text-[9px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Global Standards</p>
-                      <p className="text-xs font-bold text-brand-emerald">Certified Clinical Wellness Specialist</p>
+                      <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest">Global Standards</p>
+                      <p className="text-sm font-bold text-brand-emerald">Certified Clinical Wellness Specialist</p>
                     </div>
                   </div>
                 </div>
@@ -140,17 +140,17 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
 
             {/* Right Column: Bio details */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-[11px] font-bold tracking-[2px] text-[#b58552] uppercase block font-sans">
+              <span className="text-xs sm:text-sm font-bold tracking-[2px] text-[#b58552] uppercase block font-sans">
                 ✦ THE FOUNDER & MASTER COACH ✦
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald leading-tight">
                 S. Anjaneyulu
               </h2>
-              <p className="text-xs sm:text-sm font-semibold uppercase text-brand-charcoal/50 tracking-wider font-sans -mt-3">
+              <p className="text-sm sm:text-base font-semibold uppercase text-brand-charcoal/50 tracking-wider font-sans -mt-3">
                 M.Sc. Yoga Science & Natural Healing Therapy
               </p>
               
-              <div className="space-y-4 text-sm sm:text-base text-brand-charcoal/80 leading-relaxed font-sans">
+              <div className="space-y-4 text-base sm:text-lg text-brand-charcoal/80 leading-relaxed font-sans">
                 <p>
                   With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Anjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
                 </p>
@@ -162,10 +162,10 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
               {/* Quote Block */}
               <div className="relative border-l-2 border-[#D4A373] pl-6 py-4 bg-white/70 rounded-r-2xl pr-4 shadow-sm border border-brand-sage/25">
                 <Quote className="absolute right-4 top-2 h-8 w-8 text-brand-gold/10 pointer-events-none" />
-                <p className="italic text-xs sm:text-sm text-brand-charcoal/80 leading-relaxed">
+                <p className="italic text-[15px] sm:text-base text-brand-charcoal/80 leading-relaxed">
                   "Yoga shouldn't be about executing painful shapes on a mat. It is a precise science of internal organ activation. Guided sequence timing regulates the nervous complex, sparking the thyroid to manage natural energy synthesis."
                 </p>
-                <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-emerald mt-2">
+                <span className="block text-xs font-bold uppercase tracking-wider text-brand-emerald mt-2">
                   — S. Anjaneyulu, Founder
                 </span>
               </div>
@@ -183,8 +183,8 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="font-sans">
-                        <p className="text-sm font-bold text-brand-charcoal leading-none">{stat.value}</p>
-                        <p className="text-[10px] text-brand-charcoal/60 leading-tight mt-1.5">{stat.label}</p>
+                        <p className="text-base sm:text-lg font-bold text-brand-charcoal leading-none">{stat.value}</p>
+                        <p className="text-xs text-brand-charcoal/60 leading-tight mt-1.5">{stat.label}</p>
                       </div>
                     </div>
                   );
@@ -200,7 +200,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       <section className="py-24 px-6 sm:px-10 lg:px-16 bg-luxury-glow-a animate-none" id="about-philosophy-bento">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center max-w-xl mx-auto mb-16 space-y-4">
-            <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ Our Foundations ✦</span>
+            <span className="text-xs sm:text-sm font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ Our Foundations ✦</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal tracking-tight">The Pillars of Harmony</h2>
             <div className="flex items-center justify-center gap-3">
               <div className="h-[1.5px] w-6 bg-brand-gold/40" />
@@ -231,7 +231,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-3">{pillar.title}</h3>
-                  <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">{pillar.description}</p>
+                  <p className="text-[15px] sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">{pillar.description}</p>
                 </motion.div>
               );
             })}
@@ -244,12 +244,12 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
         <div className="max-w-[1280px] mx-auto">
           <div className="bg-[#FAF9F6] border border-brand-sage/30 rounded-[32px] p-8 md:p-14 lg:p-18 shadow-lg flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2 space-y-6">
-              <span className="text-[11px] font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ VIJAYAWADA STUDIO ✦</span>
+              <span className="text-xs sm:text-sm font-bold tracking-[2.5px] text-[#b58552] uppercase block font-sans">✦ VIJAYAWADA STUDIO ✦</span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-emerald leading-tight">
                 An Elegant Sanctuary of Pure Serenity
               </h2>
               <div className="h-[1.5px] w-16 bg-[#D4A373]" />
-              <div className="space-y-4 text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
+              <div className="space-y-4 text-[15px] sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                 <p>
                   Located in a peaceful, lush enclave in Vijayawada, our luxury boutique yoga space is carefully curated with chemical-free natural materials, high-efficiency HEPA air filtration systems, and full-spectrum organic ambient lighting.
                 </p>
@@ -258,11 +258,11 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 </p>
               </div>
               <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-emerald font-sans">
+                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-emerald font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#D4A373]" />
                   Limited to 8 Clients per Batch
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-emerald font-sans">
+                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-emerald font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#D4A373]" />
                   Prior Appointments Required
                 </div>
@@ -298,13 +298,13 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal leading-tight">
             Are You Ready to Begin Your Realignment?
           </h2>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
             Book an introductory clinical consultation and 1-on-1 trial class directly with our master therapist S. Anjaneyulu.
           </p>
           <div className="pt-4 flex justify-center">
             <button
               onClick={onBookClick}
-              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-3.5 cursor-pointer group"
+              className="px-8 py-4 rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-3.5 cursor-pointer group"
             >
               <span>Schedule Free Trial Session</span>
               <div className="h-6 w-6 rounded-full bg-[#D4A373] flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform">

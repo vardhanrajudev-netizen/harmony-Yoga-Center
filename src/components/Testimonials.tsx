@@ -142,7 +142,7 @@ export default function Testimonials() {
         
         {/* Section Title */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <span className="text-[12px] md:text-[13px] font-bold tracking-[0.3em] text-brand-gold uppercase font-sans block">
+          <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-brand-gold uppercase font-sans block">
             ✦ Client Proof & Voice ✦
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight leading-tight">
@@ -153,7 +153,7 @@ export default function Testimonials() {
             <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
             <div className="h-[1.5px] w-8 bg-brand-gold/40" />
           </div>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-lg mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-lg mx-auto leading-relaxed">
             These authentic, verified story capsule frames outline our community's natural fat removal and metabolic rehabilitation journeys.
           </p>
         </div>
@@ -222,13 +222,13 @@ export default function Testimonials() {
 
                   {/* Left Floating Transformation metric seal */}
                   {test.weightLost && (
-                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-lg shadow-md z-10">
+                    <div className="absolute bottom-3 left-3 bg-[#0F766E] text-brand-ivory text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-lg shadow-md z-10">
                       Lost {test.weightLost}
                     </div>
                   )}
 
                   {/* Right Floating Quick Label */}
-                  <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md text-[#B58552] border border-brand-sage/20 z-10 shadow-xs">
+                  <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-md text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-md text-[#B58552] border border-brand-sage/20 z-10 shadow-xs">
                     Video Story
                   </span>
                 </div>
@@ -244,12 +244,12 @@ export default function Testimonials() {
                       {[...Array(test.rating)].map((_, i) => (
                         <Star key={i} className="h-3.5 w-3.5 fill-current" />
                       ))}
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-brand-charcoal/50 ml-1.5 font-sans">
+                      <span className="text-xs uppercase font-bold tracking-wider text-brand-charcoal/50 ml-1.5 font-sans">
                         Verified Review
                       </span>
                     </div>
 
-                    <p className="text-[13px] text-brand-charcoal/85 italic leading-relaxed font-sans">
+                    <p className="text-[15px] sm:text-base text-brand-charcoal/85 italic leading-relaxed font-sans">
                       "{test.quote}"
                     </p>
                   </div>
@@ -257,14 +257,14 @@ export default function Testimonials() {
                   {/* Subtitle/Identification */}
                   <div className="pt-4 border-t border-brand-sage/25 flex items-center justify-between relative z-10">
                     <div className="text-left">
-                      <h4 className="font-serif text-sm font-bold text-brand-charcoal leading-tight">
+                      <h4 className="font-serif text-[16px] sm:text-lg font-bold text-brand-charcoal leading-tight">
                         {test.name}
                       </h4>
-                      <p className="text-[10px] text-brand-charcoal/60 font-sans mt-0.5">
+                      <p className="text-xs sm:text-sm text-brand-charcoal/60 font-sans mt-0.5">
                         Age {test.age} • Vijayawada Studio
                       </p>
                     </div>
-                    <span className="text-[9px] font-bold tracking-wider text-brand-emerald bg-brand-sage/20 px-2.5 py-1 rounded-md uppercase">
+                    <span className="text-xs font-bold tracking-wider text-brand-emerald bg-brand-sage/20 px-2.5 py-1 rounded-md uppercase">
                       {test.program.replace(' Programs', '')}
                     </span>
                   </div>
@@ -280,7 +280,7 @@ export default function Testimonials() {
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-brand-emerald text-brand-emerald hover:bg-brand-emerald hover:text-white transition-all duration-300 font-bold uppercase tracking-widest text-[10px] cursor-pointer shadow-xs select-none bg-transparent"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-brand-emerald text-brand-emerald hover:bg-brand-emerald hover:text-white transition-all duration-300 font-bold uppercase tracking-widest text-xs sm:text-sm cursor-pointer shadow-xs select-none bg-transparent"
           >
             {showAll ? (
               <>
@@ -348,16 +348,16 @@ export default function Testimonials() {
               <div className="p-5 space-y-3 bg-white">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="text-sm font-bold text-brand-charcoal">Case Spotlight: {activeVideo.name}</p>
-                    <p className="text-xs text-brand-emerald font-semibold">{activeVideo.program}</p>
+                    <p className="text-base font-bold text-brand-charcoal">Case Spotlight: {activeVideo.name}</p>
+                    <p className="text-sm text-brand-emerald font-semibold">{activeVideo.program}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-brand-emerald bg-brand-sage/20 px-2 py-0.5 rounded-sm">
+                    <span className="text-sm font-bold text-brand-emerald bg-brand-sage/20 px-2.5 py-1 rounded-sm">
                       Target: Natural Slimming
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-brand-charcoal/70 leading-relaxed font-sans">
+                <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                   S. Anjaneyulu modified {activeVideo.name}'s daily 30-minute metabolic routine to reduce thyroid-linked fluid retention and naturally activate lower back stabilization.
                 </p>
               </div>

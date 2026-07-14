@@ -82,8 +82,8 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
       {/* Editorial Title */}
       <section className="relative py-16 text-center select-none" id="gallery-hero">
         <div className="mx-auto max-w-4xl px-6 text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-gold/15 text-[#b58552] rounded-full text-[10px] font-bold uppercase tracking-widest font-sans shadow-2xs">
-            <Camera className="h-4 w-4 text-brand-gold" />
+          <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-gold/15 text-[#b58552] rounded-full text-xs font-bold uppercase tracking-widest font-sans shadow-2xs">
+            <Camera className="h-4.5 w-4.5 text-brand-gold" />
             Vivid Sensory Tour
           </div>
 
@@ -95,7 +95,7 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
             <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
             <div className="h-[1.5px] w-12 bg-brand-gold/40" />
           </div>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm text-brand-charcoal/60 leading-relaxed font-sans">
+          <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-brand-charcoal/70 leading-relaxed font-sans mt-3">
             Witness the elite layout of our Banjara Hills retreat center, outdoor wellness gatherings, and precise posture therapeutic alignments curated under S. Anjaneyulu.
           </p>
 
@@ -106,7 +106,7 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
                 key={filter}
                 type="button"
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border cursor-pointer transition-all duration-300 shadow-2xs ${activeFilter === filter
+                className={`px-5 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest border cursor-pointer transition-all duration-300 shadow-2xs ${activeFilter === filter
                     ? 'bg-[#0F766E] text-brand-ivory border-[#0F766E] shadow-sm'
                     : 'bg-white/85 text-brand-charcoal/70 border-brand-sage/40 hover:bg-[#EEF8F4] hover:text-brand-emerald'
                   }`}
@@ -153,21 +153,21 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
                   </div>
 
                   {/* Category Pill Overlays */}
-                  <span className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-widest bg-[#EEF8F4]/95 text-brand-emerald border border-[#CFE8D5] px-2.5 py-1 rounded-md shadow-2xs">
+                  <span className="absolute top-3 left-3 text-xs font-bold uppercase tracking-widest bg-[#EEF8F4]/95 text-brand-emerald border border-[#CFE8D5] px-2.5 py-1 rounded-md shadow-2xs">
                     {item.category}
                   </span>
                 </div>
 
                 {/* Information Footer */}
-                <div className="p-5 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-[9px] text-[#b58552] font-bold uppercase tracking-widest font-sans">
+                <div className="p-5 space-y-2">
+                  <div className="flex items-center gap-1.5 text-xs text-[#b58552] font-bold uppercase tracking-widest font-sans">
                     <MapPin className="h-3.5 w-3.5 text-brand-gold shrink-0" />
                     <span>{item.location}</span>
                   </div>
-                  <h3 className="font-serif font-bold text-sm text-brand-charcoal group-hover:text-[#065F5B] transition-colors leading-tight">
+                  <h3 className="font-serif font-bold text-lg sm:text-xl text-brand-charcoal group-hover:text-[#065F5B] transition-colors leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-brand-charcoal/65 line-clamp-2 leading-relaxed">
+                  <p className="text-sm sm:text-base text-brand-charcoal/70 line-clamp-2 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -216,27 +216,27 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
               <div className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 font-sans">
                 <div className="space-y-4">
                   <div className="space-y-1.5">
-                    <span className="inline-flex items-center gap-1.5 text-[9px] font-bold text-[#b58552] uppercase tracking-widest border border-brand-gold/30 bg-brand-gold-bright/10 px-2.5 py-1 rounded-md shadow-3xs">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#b58552] uppercase tracking-widest border border-brand-gold/30 bg-brand-gold-bright/10 px-2.5 py-1 rounded-md shadow-3xs">
                       {selectedItem.category}
                     </span>
-                    <h2 className="font-serif text-xl sm:text-2xl font-bold text-brand-emerald">
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald">
                       {selectedItem.title}
                     </h2>
-                    <div className="flex items-center gap-1.5 text-xs text-brand-charcoal/50 font-sans">
+                    <div className="flex items-center gap-1.5 text-sm sm:text-base text-brand-charcoal/60 font-sans">
                       <MapPin className="h-3.5 w-3.5 text-brand-gold shrink-0" />
                       <span>{selectedItem.location}</span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-brand-charcoal/80 leading-relaxed font-sans border-t border-brand-sage/20 pt-4">
+                  <p className="text-sm sm:text-base text-brand-charcoal/80 leading-relaxed font-sans border-t border-brand-sage/20 pt-4">
                     {selectedItem.desc}
                   </p>
                 </div>
 
                 <div className="space-y-4 pt-4 border-t border-brand-sage/25">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-brand-charcoal/45">VISIT OUR VIJAYAWADA SANCTUARY</p>
-                    <p className="text-[11px] text-brand-charcoal/60 leading-relaxed mt-1">
+                    <p className="text-xs font-bold uppercase tracking-widest text-brand-charcoal/45">VISIT OUR VIJAYAWADA SANCTUARY</p>
+                    <p className="text-xs sm:text-sm text-brand-charcoal/60 leading-relaxed mt-1">
                       Come see our high-end space and physical amenities, situated behind SV Ranga Rao Hospital in Mogalrajapuram.
                     </p>
                   </div>
@@ -248,10 +248,10 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
                         onBookClick(`Studio Visit - ${selectedItem.title}`);
                         setSelectedItem(null);
                       }}
-                      className="w-full h-[48px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-between px-6 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer group"
+                      className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest inline-flex items-center justify-between px-6 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer group"
                     >
                       <span>Reserve Studio Walkthrough</span>
-                      <ArrowUpRight className="h-4 w-4 text-brand-gold transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="h-4.5 w-4.5 text-brand-gold transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
                   </div>
                 </div>

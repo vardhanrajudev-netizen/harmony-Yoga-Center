@@ -78,7 +78,7 @@ export default function CorporateWellnessPage() {
       {/* Hero Header */}
       <section className="py-24 px-6 sm:px-10 lg:px-16 text-center select-none" id="corporate-hero">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block">
+          <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#b58552] uppercase block">
             ✦ WORKPLACE HARMONY ✦
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-emerald tracking-tight leading-tight">
@@ -89,7 +89,7 @@ export default function CorporateWellnessPage() {
             <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
             <div className="h-[1.5px] w-12 bg-brand-gold/40" />
           </div>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-brand-charcoal/70 max-w-2xl mx-auto leading-relaxed">
             Empower your team with S. Anjaneyulu’s clinical posture alignment routines, targeted physical decompression therapy, and custom mindfulness modules suited for high-stress corporate pipelines.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function CorporateWellnessPage() {
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-emerald tracking-tight">
                 Why Invest in Yoga for Your Workforce?
               </h2>
-              <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
+              <p className="text-base sm:text-lg text-brand-charcoal/70 leading-relaxed font-sans">
                 Prolonged workstation hours cause cervical strain, sluggish lung volumes, and mental burnout. Our executive sessions are engineered with specific bio-mechanic alignments to optimize active cardiovascular circulation and eliminate neural blockages.
               </p>
 
@@ -117,10 +117,10 @@ export default function CorporateWellnessPage() {
                       <div className="text-brand-emerald p-2 rounded-xl inline-block bg-brand-emerald/10">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <h3 className="font-serif font-bold text-[14px] text-brand-charcoal leading-tight">
+                      <h3 className="font-serif font-bold text-base sm:text-lg text-brand-charcoal leading-tight">
                         {benefit.title}
                       </h3>
-                      <p className="text-[11px] text-brand-charcoal/65 leading-relaxed">
+                      <p className="text-[14px] sm:text-[15px] text-brand-charcoal/65 leading-relaxed">
                         {benefit.desc}
                       </p>
                     </div>
@@ -139,14 +139,14 @@ export default function CorporateWellnessPage() {
                   Employee Focus & Stress Saving Estimator
                 </h4>
               </div>
-              <p className="text-xs text-brand-charcoal/60 leading-relaxed font-sans">
+              <p className="text-sm sm:text-base text-brand-charcoal/60 leading-relaxed font-sans">
                 Slide the bar according to your active company sizes to compute estimated weekly executive productivity recovery and stress index reduction ratios.
               </p>
 
               <div className="space-y-5 pt-2 font-sans">
-                <div className="flex justify-between items-center text-xs">
+                <div className="flex justify-between items-center text-sm">
                   <span className="font-bold text-brand-charcoal">Employee Count:</span>
-                  <span className="text-brand-emerald font-extrabold text-sm">{employeesCount} Active Staff</span>
+                  <span className="text-brand-emerald font-extrabold text-base">{employeesCount} Staff</span>
                 </div>
                 <input 
                   type="range" 
@@ -158,16 +158,16 @@ export default function CorporateWellnessPage() {
                 />
                 <div className="grid grid-cols-3 gap-4 pt-4">
                   <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
-                    <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Postural Relief</span>
-                    <span className="text-[18px] font-serif font-bold text-brand-emerald mt-1 block">{Math.min(employeesCount * 4, 1800)} hrs/yr</span>
+                    <span className="block text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest">Postural Relief</span>
+                    <span className="text-[20px] sm:text-[22px] font-serif font-bold text-brand-emerald mt-1 block">{Math.min(employeesCount * 4, 1800)} hrs/yr</span>
                   </div>
                   <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
-                    <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Fatigue Reduction</span>
-                    <span className="text-[18px] font-serif font-bold text-[#b58552] mt-1 block">~{(employeesCount * 1.5).toFixed(0)}%</span>
+                    <span className="block text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest">Fatigue Reduction</span>
+                    <span className="text-[20px] sm:text-[22px] font-serif font-bold text-[#b58552] mt-1 block">~{(employeesCount * 1.5).toFixed(0)}%</span>
                   </div>
                   <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-brand-sage/20 text-center shadow-2xs">
-                    <span className="block text-[8px] font-bold text-brand-charcoal/40 uppercase tracking-widest">Sick Leave Savings</span>
-                    <span className="text-[18px] font-serif font-bold text-brand-emerald mt-1 block">₹{(employeesCount * 2200).toLocaleString('en-IN')}</span>
+                    <span className="block text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest">Sick Leave Savings</span>
+                    <span className="text-[20px] sm:text-[22px] font-serif font-bold text-brand-emerald mt-1 block">₹{(employeesCount * 2200).toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
@@ -179,12 +179,12 @@ export default function CorporateWellnessPage() {
             <div className="bg-white/95 rounded-[32px] p-8 sm:p-10 border border-brand-sage/40 relative overflow-hidden shadow-sm">
               <div className="absolute top-0 left-0 w-full h-[4px] bg-brand-emerald" />
 
-              <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-[10px] uppercase tracking-wider mb-2 font-sans">
+              <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-xs uppercase tracking-wider mb-2 font-sans">
                 <Sparkles className="h-3.5 w-3.5" />
                 Custom Corporate Solutions
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#065F5B] mb-1 leading-tight">Request a Proposal</h3>
-              <p className="text-xs text-brand-charcoal/50 mb-6 font-sans">Arrange a baseline postural screening workshop or ongoing corporate sessions.</p>
+              <p className="text-sm text-brand-charcoal/50 mb-6 font-sans">Arrange a baseline postural screening workshop or ongoing corporate sessions.</p>
 
               {submitted ? (
                 <div className="text-center py-12 space-y-4 font-sans">
@@ -193,13 +193,13 @@ export default function CorporateWellnessPage() {
                   </div>
                   <div>
                     <h4 className="font-serif text-[18px] font-bold text-brand-emerald">Proposal Sent Successfully</h4>
-                    <p className="text-xs text-brand-charcoal/60 mt-2 leading-relaxed">
+                    <p className="text-sm sm:text-base text-brand-charcoal/60 mt-2 leading-relaxed">
                       Thank you for your interest. A custom corporate program director will details options and contact your HR/Admin team within 24 business hours.
                     </p>
                   </div>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="px-5 py-2 hover:bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 text-[10px] uppercase font-bold tracking-wider rounded-full transition-colors cursor-pointer"
+                    className="px-5 py-2 hover:bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 text-xs uppercase font-bold tracking-wider rounded-full transition-colors cursor-pointer"
                   >
                     Submit Another Request
                   </button>
@@ -207,7 +207,7 @@ export default function CorporateWellnessPage() {
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4 text-xs font-sans">
                   <div>
-                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Company Name *</label>
+                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Company Name *</label>
                     <input 
                       type="text" 
                       name="companyName" 
@@ -221,7 +221,7 @@ export default function CorporateWellnessPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">HR / Contact Person *</label>
+                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">HR / Contact Person *</label>
                       <input 
                         type="text" 
                         name="contactName" 
@@ -233,7 +233,7 @@ export default function CorporateWellnessPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Designation / Job Title</label>
+                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Designation / Job Title</label>
                       <input 
                         type="text" 
                         className="w-full rounded-xl border border-brand-sage/60 bg-[#FAF9F6] p-3.5 text-sm focus:border-brand-emerald focus:outline-hidden transition-all"
@@ -244,7 +244,7 @@ export default function CorporateWellnessPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Corporate Email *</label>
+                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Corporate Email *</label>
                       <input 
                         type="email" 
                         name="email" 
@@ -256,7 +256,7 @@ export default function CorporateWellnessPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Contact Number *</label>
+                      <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Contact Number *</label>
                       <input 
                         type="tel" 
                         name="phone" 
@@ -270,7 +270,7 @@ export default function CorporateWellnessPage() {
                   </div>
 
                   <div>
-                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Preferred Program Tier</label>
+                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Preferred Program Tier</label>
                     <select 
                       name="programType"
                       value={formData.programType}
@@ -285,7 +285,7 @@ export default function CorporateWellnessPage() {
                   </div>
 
                   <div>
-                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[9px]">Brief Description of Team Size & Goals</label>
+                    <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-[11px]">Brief Description of Team Size & Goals</label>
                     <textarea 
                       name="message"
                       rows={3}
@@ -298,7 +298,7 @@ export default function CorporateWellnessPage() {
 
                   <button
                     type="submit"
-                    className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
+                    className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                   >
                     <span>Request Quotation</span>
                     <ArrowRight className="h-4 w-4" />

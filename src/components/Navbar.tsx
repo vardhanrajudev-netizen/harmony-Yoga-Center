@@ -166,146 +166,154 @@ export default function Navbar({ onBookClick }: NavbarProps) {
       >
         <style>{`
           :root {
-            --navbar-height: 64px;
+            --navbar-height: 58px;
           }
           @media (min-width: 640px) {
             :root {
-              --navbar-height: 72px;
+              --navbar-height: 66px;
             }
           }
           @media (min-width: 1024px) {
             :root {
-              --navbar-height: 80px;
+              --navbar-height: 72px;
             }
           }
         `}</style>
 
         {/* Max width container */}
-        <div className="mx-auto max-w-[1280px] h-full px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="w-full max-w-[1500px] h-full mx-auto px-4 sm:px-[clamp(24px,3vw,56px)]">
           <div className="flex h-full items-center justify-between">
             
-            {/* Logo block */}
-            <Logo variant="light" onClick={handleLogoClick} className="group shrink-0" />
-
-            {/* Desktop Navigation Links (Uniform typography and clean state routes) */}
-            <div className="hidden lg:flex items-center gap-[24px]" id="desktop-nav-menu">
-              
-              {navLinks.map((link) => {
-                const active = isNavActive(link.path);
-                return (
-                  <a
-                    key={link.name}
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, link.path)}
-                    className={`font-sans text-[11.5px] font-bold tracking-wider transition-colors duration-250 relative py-1 block uppercase group cursor-pointer ${
-                      active ? 'text-brand-emerald' : 'text-brand-charcoal/80 hover:text-brand-emerald'
-                    }`}
-                  >
-                    {link.name}
-                    <span className={`absolute bottom-0 left-1/2 h-[1px] bg-[#E3B777] -translate-x-1/2 transition-all duration-300 ${
-                      active ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
-                  </a>
-                );
-              })}
-
-              {/* Resources Dropdown Trigger */}
-              <div 
-                ref={resourcesDropdownRef}
-                className="relative py-1"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
-              >
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsDropdownOpen(!isDropdownOpen);
-                  }}
-                  className={`flex items-center gap-1 font-sans text-[11.5px] font-bold tracking-wider py-1 uppercase transition-colors duration-250 cursor-pointer ${
-                    location.pathname.startsWith('/resources') ? 'text-brand-emerald' : 'text-brand-charcoal/80 hover:text-brand-emerald'
-                  }`}
-                >
-                  <span>Resources</span>
-                  <ChevronDown className="h-3 w-3 text-[#E3B777]" />
-                </button>
-
-                {/* Dropdown Container */}
-                <AnimatePresence>
-                  {isDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                      transition={{ duration: 0.25 }}
-                      style={{
-                        borderRadius: '20px',
-                        boxShadow: '0 20px 50px rgba(15,118,110,0.1)',
-                        width: '330px',
-                        padding: '20px',
-                        backgroundColor: '#FAF9F6',
-                        transformOrigin: 'top'
-                      }}
-                      className="absolute left-1/2 -translate-x-1/2 mt-3 border border-brand-sage/20 z-50 transform-gpu"
-                    >
-                      <div className="flex items-center gap-1 text-[9px] uppercase tracking-widest text-[#B47F43] font-bold border-b border-brand-sage/15 pb-2 mb-2">
-                        <Sparkles className="h-3 w-3" />
-                        Interactive Guides
-                      </div>
-
-                      <div className="space-y-0.5">
-                        {dropdownItems.map((item, id) => {
-                          const IconComponent = item.icon;
-                          return (
-                            <a
-                              key={item.id}
-                              href="#"
-                              onClick={(e) => handleDropdownItemClick(e, item)}
-                              className="flex items-start gap-3 p-2 rounded-xl text-left hover:bg-[#CFE8D5]/30 transition-all duration-300 group/item cursor-pointer"
-                            >
-                              <div className="p-1.5 rounded-lg bg-white border border-brand-sage/20 text-brand-emerald shrink-0 mt-0.5">
-                                <IconComponent className="h-4 w-4" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-[11.5px] font-bold text-brand-charcoal font-sans group-hover/item:text-brand-emerald transition-colors leading-tight">
-                                  {item.title}
-                                </p>
-                                <p className="text-[10px] text-brand-charcoal/50 leading-tight truncate mt-0.5 font-sans">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </a>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            {/* Left side wrapper combining Brand block and Desktop Nav Links with fixed gap */}
+            <div className="flex items-center h-full min-w-0 flex-1">
+              {/* Brand block */}
+              <div className="flex justify-start items-center shrink-0 mr-12">
+                <Logo variant="light" onClick={handleLogoClick} isNavbar={true} className="group shrink-0 transition-transform duration-300" />
               </div>
 
-              {primaryRightLinks.map((link) => {
-                const active = isNavActive(link.path);
-                return (
-                  <a
-                    key={link.name}
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, link.path)}
-                    className={`font-sans text-[11.5px] font-bold tracking-wider transition-colors duration-250 relative py-1 block uppercase group cursor-pointer ${
-                      active ? 'text-brand-emerald' : 'text-brand-charcoal/80 hover:text-brand-emerald'
+              {/* Desktop Navigation Links (Uniform typography, perfectly aligned) */}
+              <div className="hidden min-[1400px]:flex items-center gap-[clamp(10px,1vw,20px)] h-full shrink-0" id="desktop-nav-menu">
+                
+                {navLinks.map((link) => {
+                  const active = isNavActive(link.path);
+                  return (
+                    <a
+                      key={link.name}
+                      href="#"
+                      onClick={(e) => handleLinkClick(e, link.path)}
+                      className={`font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer ${
+                        active ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
+                      }`}
+                    >
+                      {link.name}
+                      <span className={`absolute bottom-0 left-0 h-[1.5px] bg-[#E3B777] transition-transform duration-300 origin-left ${
+                        active ? 'w-full scale-x-100' : 'w-full scale-x-0 group-hover:scale-x-100'
+                      }`} />
+                    </a>
+                  );
+                })}
+
+                {/* Resources Dropdown Trigger */}
+                <div 
+                  ref={resourcesDropdownRef}
+                  className="relative flex items-center h-full"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsDropdownOpen(!isDropdownOpen);
+                    }}
+                    className={`flex items-center gap-1 font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 uppercase group cursor-pointer ${
+                      location.pathname.startsWith('/resources') ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
                     }`}
                   >
-                    {link.name}
-                    <span className={`absolute bottom-0 left-1/2 h-[1px] bg-[#E3B777] -translate-x-1/2 transition-all duration-300 ${
-                      active ? 'w-full' : 'w-0 group-hover:w-full'
+                    <span>Resources</span>
+                    <ChevronDown className="h-3.5 w-3.5 text-[#E3B777] shrink-0" />
+                    <span className={`absolute bottom-0 left-0 h-[1.5px] bg-[#E3B777] transition-transform duration-300 origin-left ${
+                      location.pathname.startsWith('/resources') ? 'w-full scale-x-100' : 'w-full scale-x-0 group-hover:scale-x-100'
                     }`} />
-                  </a>
-                );
-              })}
+                  </button>
 
+                  {/* Dropdown Container */}
+                  <AnimatePresence>
+                    {isDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                        transition={{ duration: 0.25 }}
+                        style={{
+                          borderRadius: '20px',
+                          boxShadow: '0 20px 50px rgba(15,118,110,0.1)',
+                          width: '330px',
+                          padding: '20px',
+                          backgroundColor: '#FAF9F6',
+                          transformOrigin: 'top'
+                        }}
+                        className="absolute left-1/2 -translate-x-1/2 mt-3 border border-brand-sage/20 z-50 transform-gpu"
+                      >
+                        <div className="flex items-center gap-1 text-[9px] uppercase tracking-widest text-[#B47F43] font-bold border-b border-brand-sage/15 pb-2 mb-2">
+                          <Sparkles className="h-3 w-3" />
+                          Interactive Guides
+                        </div>
+
+                        <div className="space-y-0.5">
+                          {dropdownItems.map((item) => {
+                            const IconComponent = item.icon;
+                            return (
+                              <a
+                                key={item.id}
+                                href="#"
+                                onClick={(e) => handleDropdownItemClick(e, item)}
+                                className="flex items-start gap-3 p-2 rounded-xl text-left hover:bg-[#CFE8D5]/30 transition-all duration-300 group/item cursor-pointer"
+                              >
+                                <div className="p-1.5 rounded-lg bg-white border border-brand-sage/20 text-brand-emerald shrink-0 mt-0.5">
+                                  <IconComponent className="h-4 w-4" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-[11.5px] font-bold text-brand-charcoal font-sans group-hover/item:text-brand-emerald transition-colors leading-tight">
+                                    {item.title}
+                                  </p>
+                                  <p className="text-[10px] text-brand-charcoal/50 leading-tight truncate mt-0.5 font-sans">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {primaryRightLinks.map((link) => {
+                  const active = isNavActive(link.path);
+                  return (
+                    <a
+                      key={link.name}
+                      href="#"
+                      onClick={(e) => handleLinkClick(e, link.path)}
+                      className={`font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer ${
+                        active ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
+                      }`}
+                    >
+                      {link.name}
+                      <span className={`absolute bottom-0 left-0 h-[1.5px] bg-[#E3B777] transition-transform duration-300 origin-left ${
+                        active ? 'w-full scale-x-100' : 'w-full scale-x-0 group-hover:scale-x-100'
+                      }`} />
+                    </a>
+                  );
+                })}
+
+              </div>
             </div>
 
             {/* Desktop Action Button */}
-            <div className="hidden lg:block shrink-0">
+            <div className="hidden min-[1400px]:flex justify-end items-center shrink-0">
               <motion.button
                 type="button"
                 id="navbar-cta-btn"
@@ -315,7 +323,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                   y: -1.5,
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="h-[42px] rounded-full bg-[#0F766E] px-4.5 text-[11px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(255,83,43,0.3)] hover:bg-[#0D6962] transition-colors group tracking-wider border border-brand-accent-vibrant/20"
+                className="h-[42px] rounded-full bg-[#0F766E] px-4.5 text-[11px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(15,118,110,0.2)] hover:bg-[#0D6962] transition-colors group tracking-wider border border-[#E3B777]/20 whitespace-nowrap"
               >
                 <span>BOOK FREE TRIAL</span>
                 <div className="h-5.5 w-5.5 rounded-full bg-brand-accent-vibrant flex items-center justify-center shrink-0 ml-0.5 shadow-[0_0_12px_rgba(255,83,43,0.6)]">
@@ -325,7 +333,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
             </div>
 
             {/* Mobile / Tablet Toggle Button */}
-            <div className="lg:hidden flex items-center">
+            <div className="min-[1400px]:hidden flex items-center">
               <button
                 type="button"
                 id="mobile-menu-toggle"
@@ -351,7 +359,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               id="mobile-navigation-drawer"
-              className="lg:hidden absolute top-full left-0 right-0 bg-[#FAF9F6] border-b border-brand-emerald/10 shadow-lg overflow-y-auto max-h-[85vh] transform-gpu"
+              className="min-[1400px]:hidden absolute top-full left-0 right-0 bg-[#FAF9F6] border-b border-brand-emerald/10 shadow-lg overflow-y-auto max-h-[85vh] transform-gpu"
             >
               <div className="px-6 py-4 space-y-1">
                 

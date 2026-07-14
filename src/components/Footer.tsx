@@ -34,11 +34,11 @@ export default function Footer() {
         background: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(212, 163, 115, 0.05) 0%, transparent 50%), linear-gradient(135deg, #021a17 0%, #052c26 50%, #011411 100%)'
       }}
     >
-      <div className="px-6 sm:px-12 md:px-16 py-8 sm:py-10 mx-auto max-w-[1280px] relative z-10">
+      <div className="px-6 sm:px-12 md:px-16 pt-8 pb-24 sm:pb-10 mx-auto max-w-[1280px] relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Column 1: Logo & Socials */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-5">
             <motion.div 
               animate={{
                 filter: [
@@ -54,7 +54,7 @@ export default function Footer() {
               <Logo variant="footer" onClick={(e) => handleLinkClick(e, '/')} />
             </motion.div>
 
-            <p className="text-sm font-sans text-white/80 max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base font-sans text-white/95 max-w-sm leading-relaxed">
               Harmony Yoga Center helps individuals transform their health naturally through expert yoga programs, physical diagnostic alignments, and holistic dietary wisdom.
             </p>
 
@@ -74,9 +74,9 @@ export default function Footer() {
                       boxShadow: '0 0 20px rgba(227,183,119,0.5)',
                       borderColor: '#E3B777',
                     }}
-                    className="w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-md flex items-center justify-center text-white/85 hover:text-brand-gold hover:border-brand-gold/40 transition-colors"
+                    className="w-10.5 h-10.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/55 transition-colors"
                   >
-                    <IconComponent className="h-4 w-4" />
+                    <IconComponent className="h-4.5 w-4.5" />
                   </motion.a>
                 );
               })}
@@ -85,10 +85,10 @@ export default function Footer() {
 
           {/* Column 2: Core Pages */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-bold text-brand-gold text-sm uppercase tracking-[2px] font-sans block">
+            <h4 className="font-bold text-brand-gold text-sm sm:text-base uppercase tracking-[2px] font-sans block">
               Quick Links
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {[
                 { name: 'Home View', path: '/' },
                 { name: 'About Biography', path: '/about' },
@@ -103,7 +103,7 @@ export default function Footer() {
                     onClick={(e) => handleLinkClick(e, link.path)}
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="font-medium text-white/80 hover:text-brand-gold transition-colors duration-300 inline-block text-xs uppercase tracking-wide cursor-pointer relative group/link"
+                    className="font-medium text-white/90 hover:text-brand-gold transition-colors duration-300 inline-block text-xs sm:text-sm uppercase tracking-wide cursor-pointer relative group/link"
                   >
                     <span>{link.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#E3B777] group-hover/link:w-full transition-all duration-300 ease-out" />
@@ -115,10 +115,10 @@ export default function Footer() {
 
           {/* Column 3: Tools & Resources */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-bold text-brand-gold text-sm uppercase tracking-[2px] font-sans block">
+            <h4 className="font-bold text-brand-gold text-sm sm:text-base uppercase tracking-[2px] font-sans block">
               Resources
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {[
                 { name: 'Yoga Tutorials', path: '/yoga-tutorials' },
                 { name: 'The Slimming Guide', path: '/resources/guide' },
@@ -132,7 +132,7 @@ export default function Footer() {
                     onClick={(e) => handleLinkClick(e, link.path)}
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="font-medium text-white/80 hover:text-brand-gold transition-colors duration-300 inline-block text-xs uppercase tracking-wide cursor-pointer relative group/link"
+                    className="font-medium text-white/90 hover:text-brand-gold transition-colors duration-300 inline-block text-xs sm:text-sm uppercase tracking-wide cursor-pointer relative group/link"
                   >
                     <span>{link.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#E3B777] group-hover/link:w-full transition-all duration-300 ease-out" />
@@ -144,23 +144,23 @@ export default function Footer() {
 
           {/* Column 4: Studio Contact Address */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-bold text-brand-gold text-sm uppercase tracking-[2px] font-sans block">
+            <h4 className="font-bold text-brand-gold text-sm sm:text-base uppercase tracking-[2px] font-sans block">
               Contact
             </h4>
-            <ul className="space-y-3 font-sans text-sm text-white/80">
+            <ul className="space-y-3.5 font-sans text-xs sm:text-sm text-white/90">
               <li className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 text-[#E3B777] shrink-0 mt-0.5" />
-                <span className="leading-relaxed text-xs">
+                <MapPin className="h-4.5 w-4.5 text-[#E3B777] shrink-0 mt-0.5" />
+                <span className="leading-relaxed text-xs sm:text-sm">
                   D.no. 39-17-10/1, behind SV Ranga Rao Hospital,<br />
                   Mogalrajapuram, Vijayawada, AP — 520010
                 </span>
               </li>
-              <li className="flex items-center gap-2.5 text-xs">
-                <Phone className="h-4 w-4 text-[#E3B777] shrink-0" />
+              <li className="flex items-center gap-2.5 text-xs sm:text-sm">
+                <Phone className="h-4.5 w-4.5 text-[#E3B777] shrink-0" />
                 <span>+91 70367 11097</span>
               </li>
-              <li className="flex items-center gap-2.5 text-xs">
-                <Mail className="h-4 w-4 text-[#E3B777] shrink-0" />
+              <li className="flex items-center gap-2.5 text-xs sm:text-sm">
+                <Mail className="h-4.5 w-4.5 text-[#E3B777] shrink-0" />
                 <a 
                   href="mailto:harmonyyogacenter11@gmail.com" 
                   className="hover:text-brand-gold transition-colors font-semibold"
@@ -168,15 +168,15 @@ export default function Footer() {
                   harmonyyogacenter11@gmail.com
                 </a>
               </li>
-              <li className="pt-1 select-none">
+              <li className="pt-1.5 select-none">
                 <motion.a
                   href="https://wa.me/917036711097?text=Hello%20Harmony%20Yoga%20Center!%20I'd%20like%20to%20learn%20more%20about%20your%20therapeutic%20slimming%20sessions."
                   target="_blank"
                   rel="noreferrer noopener"
                   whileHover={{ scale: 1.03, y: -1, boxShadow: '0 0 15px rgba(34,197,94,0.3)' }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 hover:bg-green-500/20 text-green-400 hover:text-white transition-all duration-300 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-green-500/30 bg-green-500/10 hover:bg-green-500/20 text-green-400 hover:text-white transition-all duration-300 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shrink-0" />
                   Chat on WhatsApp
                 </motion.a>
               </li>
@@ -185,7 +185,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45 font-sans select-none">
+        <div className="mt-10 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/60 font-sans select-none">
           <p>© 2026 Harmony Yoga Center. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="hover:text-white transition-colors">Privacy Policy</a>

@@ -48,11 +48,11 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
               Begin Your Wellness <span className="text-brand-gold-bright">Transformation</span> Today
             </h2>
             
-            <p className="text-sm sm:text-base text-brand-sage/90 max-w-lg mx-auto leading-relaxed font-sans mt-2">
+            <p className="text-base sm:text-lg text-brand-sage/90 max-w-xl mx-auto leading-relaxed font-sans mt-2">
               Join our free 3-day yoga experience and discover a healthier, lighter version of yourself. Tailored naturally by registered masters.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4.5 pt-6 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4.5 pt-6 max-w-lg mx-auto">
               {/* Primary action trigger */}
               <motion.button
                 type="button"
@@ -64,10 +64,10 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
                   boxShadow: '0 15px 30px -8px rgba(212, 163, 115, 0.45)'
                 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#D4A373] hover:bg-[#E2B383] px-8 py-4 text-xs font-bold uppercase tracking-widest text-brand-charcoal transition-all duration-300 cursor-pointer shadow-lg group border border-transparent"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#D4A373] hover:bg-[#E2B383] px-8 py-4 text-sm sm:text-base font-bold uppercase tracking-widest text-brand-charcoal transition-all duration-300 cursor-pointer shadow-lg group border border-transparent"
               >
                 <span>Book Free Trial</span>
-                <ArrowUpRight className="h-4 w-4 stroke-[2.5] transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                <ArrowUpRight className="h-4.5 w-4.5 stroke-[2.5] transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </motion.button>
 
               {/* WhatsApp custom trigger */}
@@ -82,9 +82,9 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
                   boxShadow: '0 15px 30px -8px rgba(37, 211, 102, 0.4)'
                 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-[#20ba59] transition-all duration-300 shadow-lg cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm sm:text-base font-bold uppercase tracking-widest text-white hover:bg-[#20ba59] transition-all duration-300 shadow-lg cursor-pointer"
               >
-                <MessageCircle className="h-5 w-5 fill-current" />
+                <MessageCircle className="h-5.5 w-5.5 fill-current" />
                 <span>WhatsApp Us</span>
               </motion.a>
             </div>
@@ -97,11 +97,11 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
               variants={{
                 hidden: { opacity: 0 },
                 visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.15 }
+                   opacity: 1,
+                   transition: { staggerChildren: 0.15 }
                 }
               }}
-              className="flex flex-wrap items-center justify-center gap-6 pt-8 text-[11px] font-bold text-brand-sage/85 uppercase tracking-widest border-t border-white/10 font-sans"
+              className="flex flex-wrap items-center justify-center gap-6 pt-8 text-xs sm:text-sm font-bold text-brand-sage/85 uppercase tracking-widest border-t border-white/10 font-sans"
             >
               <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-brand-gold-bright shrink-0" />

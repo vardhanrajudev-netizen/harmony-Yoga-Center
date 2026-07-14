@@ -80,7 +80,7 @@ export default function Trainer() {
 
           {/* Section Title */}
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="text-[12px] md:text-[13px] font-bold tracking-[0.3em] text-brand-gold uppercase font-sans block">
+            <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-brand-gold uppercase font-sans block">
               ✦ Expert Leadership ✦
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight leading-tight">
@@ -91,7 +91,7 @@ export default function Trainer() {
               <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
               <div className="h-[1.5px] w-8 bg-brand-gold/40" />
             </div>
-            <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-lg mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-lg mx-auto leading-relaxed">
               Backed by academic yoga science, our programs are structured directly by clinical experts to assure natural, sustainable physiology.
             </p>
           </div>
@@ -158,8 +158,8 @@ export default function Trainer() {
                       <Sparkles className="h-5 w-5 text-brand-gold-bright" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[9px] font-bold text-brand-charcoal/50 uppercase tracking-wider font-sans leading-none">Professional Registry</p>
-                      <p className="text-xs font-bold text-brand-emerald mt-0.5">Registered MSC Yoga Therapist</p>
+                      <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-wider font-sans leading-none">Professional Registry</p>
+                      <p className="text-sm font-bold text-brand-emerald mt-0.5">Registered MSC Yoga Therapist</p>
                     </div>
                   </motion.div>
                 </div>
@@ -175,19 +175,19 @@ export default function Trainer() {
               className="lg:col-span-7 space-y-8"
             >
               <div className="space-y-4">
-                <motion.span variants={bioItemVariants} className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-4 py-1.5 text-[11px] font-bold text-[#b58552] uppercase tracking-wider shadow-2xs">
+                <motion.span variants={bioItemVariants} className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-4 py-1.5 text-xs sm:text-sm font-bold text-[#b58552] uppercase tracking-wider shadow-2xs">
                   ✦ Founder, Head Coach
                 </motion.span>
                 <motion.h3 variants={bioItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald tracking-tight">
                   S. Anjaneyulu
                 </motion.h3>
-                <motion.p variants={bioItemVariants} className="text-[12px] font-bold text-brand-charcoal/50 tracking-widest uppercase font-sans -mt-2">
+                <motion.p variants={bioItemVariants} className="text-xs sm:text-sm font-bold text-brand-charcoal/50 tracking-widest uppercase font-sans -mt-2">
                   M.Sc. Yoga Science & Natural healing therapy
                 </motion.p>
               </div>
 
               {/* Custom Narrative */}
-              <motion.div variants={bioItemVariants} className="story-paragraphs space-y-4 text-sm text-brand-charcoal/85 leading-relaxed font-sans">
+              <motion.div variants={bioItemVariants} className="story-paragraphs space-y-4 text-base sm:text-lg text-brand-charcoal/85 leading-relaxed font-sans">
                 <p>
                   Combining deep academic knowledge in <span className="font-semibold text-brand-emerald">Yoga Science</span> with seven years of practical teaching, S. Anjaneyulu formulated the Harmony Natural Slimming blueprint—a methodology utilizing specialized 30-minute daily routines to stimulate metabolic speed without aggressive dieting.
                 </p>
@@ -202,10 +202,10 @@ export default function Trainer() {
                 className="relative border-l-4 border-brand-gold pl-6 py-4 bg-white/60 backdrop-blur-xs rounded-r-2xl pr-6 shadow-[0_4px_25px_rgba(0,0,0,0.01)]"
               >
                 <Quote className="absolute right-5 top-3 h-12 w-12 text-brand-gold/10 pointer-events-none" />
-                <p className="italic text-[13px] text-brand-charcoal/80 leading-relaxed font-serif">
+                <p className="italic text-[15px] sm:text-base text-brand-charcoal/80 leading-relaxed font-serif">
                   "Yoga is not simply an artistic stretch; it is a metabolic realignment. By activating internal thyroid secretions and calming the nervous system for 30 purposeful minutes daily, we unlock true natural weight regulation."
                 </p>
-                <span className="block text-[10px] font-bold uppercase tracking-widest text-brand-emerald mt-3">
+                <span className="block text-xs font-bold uppercase tracking-widest text-brand-emerald mt-3">
                   — S. Anjaneyulu
                 </span>
               </motion.div>
@@ -234,8 +234,8 @@ export default function Trainer() {
                       </div>
                       <div>
                         {/* Elegant slowly scaling display values */}
-                        <p className="text-base font-bold text-brand-charcoal tracking-tight">{stat.value}</p>
-                        <p className="text-[10px] text-brand-charcoal/60 leading-tight mt-0.5 tracking-wide font-medium">{stat.label}</p>
+                        <p className="text-lg sm:text-xl font-bold text-brand-charcoal tracking-tight">{stat.value}</p>
+                        <p className="text-xs text-brand-charcoal/60 leading-tight mt-0.5 tracking-wide font-medium">{stat.label}</p>
                       </div>
                     </motion.div>
                   );

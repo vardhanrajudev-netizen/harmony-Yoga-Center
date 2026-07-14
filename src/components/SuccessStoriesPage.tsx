@@ -131,7 +131,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       {/* Hero Header Banner */}
       <section className="py-24 px-6 text-center select-none" id="success-hero">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[12px] font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans">
+          <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#b58552] uppercase block font-sans">
             ✦ AUTHENTIC METABOLIC MILESTONES ✦
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-emerald tracking-tight leading-tight">
@@ -142,7 +142,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
             <div className="w-2.5 h-2.5 rounded-full border border-brand-gold rotate-45" />
             <div className="h-[1.5px] w-12 bg-brand-gold/40" />
           </div>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-xl mx-auto leading-relaxed">
             Real people. Honest results. Backed by physiological science. Explore case logs of deep hormonal recoveries, postural corrections, and long-term metabolic health.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
                   <span className="block text-3xl sm:text-4xl font-bold text-brand-emerald font-serif leading-none pt-2 tracking-tight">
                     {stat.targetValue.toLocaleString()}{stat.suffix}
                   </span>
-                  <p className="text-[10px] font-semibold text-brand-charcoal/50 uppercase tracking-widest">
+                  <p className="text-xs font-semibold text-brand-charcoal/50 uppercase tracking-widest">
                     {stat.label}
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
               id={`story-case-${idx}`}
             >
               {/* Highlight ribbon representing clinical safety */}
-              <div className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-[#EEF8F4] border border-[#CFE8D5] px-3.5 py-1.5 rounded-full text-[9px] font-bold text-brand-emerald uppercase tracking-widest font-sans shadow-2xs">
+              <div className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-[#EEF8F4] border border-[#CFE8D5] px-3.5 py-1.5 rounded-full text-xs font-bold text-brand-emerald uppercase tracking-widest font-sans shadow-2xs">
                 <ShieldCheck className="h-4 w-4 text-brand-emerald" />
                 {story.vetted}
               </div>
@@ -201,7 +201,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
                     className="w-full h-full object-cover filter grayscale-[5%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-4 left-4 bg-brand-emerald text-brand-ivory text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg font-sans shadow-md">
+                  <div className="absolute bottom-4 left-4 bg-brand-emerald text-brand-ivory text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg font-sans shadow-md">
                     {story.timeline} Roadmap
                   </div>
                 </div>
@@ -210,26 +210,26 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
               {/* Narrative Context Section */}
               <div className="lg:col-span-8 space-y-6 font-sans">
                 <div className="space-y-1 pt-6 lg:pt-0">
-                  <span className="text-[10px] uppercase tracking-widest text-[#b58552] font-bold">✦ {story.program} ✦</span>
+                  <span className="text-xs uppercase tracking-widest text-[#b58552] font-bold font-sans">✦ {story.program} ✦</span>
                   <h3 className="font-serif text-3xl font-bold text-brand-emerald leading-tight">
-                    {story.name}, <span className="text-brand-charcoal/60 font-sans text-xl font-normal">Age {story.age}</span>
+                    {story.name}, <span className="text-brand-charcoal/60 font-sans text-xl sm:text-2xl font-normal">Age {story.age}</span>
                   </h3>
                 </div>
 
                 {/* Metabolic progress metrics */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-[#FAF9F6] rounded-xl border border-brand-sage/20 relative overflow-hidden">
-                    <span className="text-[9px] text-brand-charcoal/40 font-bold uppercase tracking-wider block">Baseline Entry Metrics</span>
-                    <p className="text-xs sm:text-sm font-semibold text-brand-charcoal/80 mt-1">{story.metricBefore}</p>
+                    <span className="text-xs text-brand-charcoal/40 font-bold uppercase tracking-wider block">Baseline Entry Metrics</span>
+                    <p className="text-[15px] sm:text-base font-semibold text-brand-charcoal/80 mt-1">{story.metricBefore}</p>
                   </div>
                   <div className="p-4 bg-[#EEF8F4] rounded-xl border border-[#CFE8D5] relative overflow-hidden">
-                    <span className="text-[9px] text-brand-emerald font-bold uppercase tracking-wider block">Verified Clinical Post-Output</span>
-                    <p className="text-xs sm:text-sm font-bold text-[#065F5B] mt-1">{story.metricAfter}</p>
+                    <span className="text-xs text-brand-emerald font-bold uppercase tracking-wider block">Verified Clinical Post-Output</span>
+                    <p className="text-[15px] sm:text-base font-bold text-[#065F5B] mt-1">{story.metricAfter}</p>
                   </div>
                 </div>
 
                 {/* Block Quote */}
-                <p className="italic text-brand-charcoal/75 text-xs sm:text-sm leading-relaxed border-l-2 border-[#E3B777] pl-4">
+                <p className="italic text-brand-charcoal/75 text-[15px] sm:text-base leading-relaxed border-l-2 border-[#E3B777] pl-4">
                   "{story.quote}"
                 </p>
 
@@ -239,8 +239,8 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
                     <Activity className="h-5 w-5 text-brand-gold" />
                   </div>
                   <div>
-                    <span className="text-[9px] uppercase font-bold text-brand-charcoal/40 tracking-widest block">Core Physical Shift</span>
-                    <span className="text-sm font-bold text-[#065F5B]">{story.statValue} ({story.statLabel})</span>
+                    <span className="text-xs uppercase font-bold text-brand-charcoal/40 tracking-widest block">Core Physical Shift</span>
+                    <span className="text-[15px] sm:text-base font-bold text-[#065F5B]">{story.statValue} ({story.statLabel})</span>
                   </div>
                 </div>
               </div>
@@ -260,13 +260,13 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#065F5B] tracking-tight leading-tight">
             Achieve Your Personal Clinical Best
           </h2>
-          <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
             Work directly with S. Anjaneyulu to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
           </p>
           <div className="pt-6 flex justify-center">
             <button
               onClick={onBookClick}
-              className="px-8 h-[54px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs font-bold uppercase tracking-widest inline-flex items-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer group"
+              className="px-8 h-[54px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest inline-flex items-center gap-3 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer group"
             >
               <span>Activate Free 3-Day Trial</span>
               <div className="h-7 w-7 rounded-full bg-[#E3B777] flex items-center justify-center text-[#0F766E] transform group-hover:translate-x-1 transition-all duration-300">

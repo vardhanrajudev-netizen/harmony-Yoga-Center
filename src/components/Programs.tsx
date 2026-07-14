@@ -108,7 +108,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
         
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4" id="programs-section-header">
-            <span className="text-[12px] md:text-[13px] font-bold tracking-[0.3em] text-brand-accent-vibrant uppercase font-sans block">
+            <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-brand-accent-vibrant uppercase font-sans block">
               ✦ Transformation Sanctuary ✦
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-charcoal leading-tight">
@@ -122,7 +122,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
               </div>
               <div className="h-[2px] w-10 bg-brand-accent-vibrant/65 rounded-full" />
             </div>
-            <p className="text-xs sm:text-sm text-brand-charcoal/70 font-sans max-w-xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-xl mx-auto leading-relaxed">
               Choose your bespoke path. Guided step-by-step by clinical masters to support sustainable vitality. No aggressive starve plans.
             </p>
           </div>
@@ -160,14 +160,14 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                     />
                     {/* Decorative luxury tag overlay */}
                     <div className="absolute top-4 left-4 z-10" id={`card-tag-${track.id}`}>
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-accent-vibrant to-brand-gold-bright px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-brand-ivory shadow-lg border border-white/20">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-accent-vibrant to-brand-gold-bright px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-widest text-brand-ivory shadow-lg border border-white/20">
                         <Sparkles className="h-3 w-3 text-white fill-white/25 animate-spin-slow" />
                         {track.tag}
                       </span>
                     </div>
                     {/* Bottom glassmorphic overlay for categories */}
                     <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-brand-sage/40" id={`card-cat-box-${track.id}`}>
-                      <p className="text-[10px] font-bold text-brand-emerald uppercase tracking-wider">{track.category}</p>
+                      <p className="text-xs font-bold text-brand-emerald uppercase tracking-wider">{track.category}</p>
                     </div>
                   </div>
 
@@ -179,17 +179,17 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                         <div className="p-2.5 rounded-xl bg-brand-sage/40 text-brand-emerald transition-all duration-500 group-hover:rotate-[15deg] group-hover:bg-brand-emerald group-hover:text-white">
                           <IconComponent className="h-4.5 w-4.5" />
                         </div>
-                        <h3 className="font-serif text-lg font-bold text-brand-charcoal tracking-tight group-hover:text-brand-emerald transition-colors duration-300">
+                        <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-charcoal tracking-tight group-hover:text-brand-emerald transition-colors duration-300">
                           {track.title}
                         </h3>
                       </div>
                       
-                      <p className="text-xs text-brand-charcoal/80 leading-relaxed font-sans" id={`card-desc-${track.id}`}>
+                      <p className="text-[15px] sm:text-base text-brand-charcoal/85 leading-relaxed font-sans" id={`card-desc-${track.id}`}>
                         {track.description}
                       </p>
 
                       {/* Metadata row with timing & levels */}
-                      <div className="flex items-center gap-4 text-[11px] font-semibold text-brand-gold/95 border-y border-brand-sage/20 py-2.5 font-sans" id={`card-meta-${track.id}`}>
+                      <div className="flex items-center gap-4 text-xs sm:text-sm font-semibold text-brand-gold/95 border-y border-brand-sage/20 py-2.5 font-sans" id={`card-meta-${track.id}`}>
                         <span className="flex items-center gap-1.5">
                           <Clock className="h-3.5 w-3.5 text-brand-gold shrink-0" />
                           Duration: {track.duration}
@@ -199,7 +199,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                       </div>
 
                       {/* Features/benefits bullet pointers list */}
-                      <ul className="space-y-2.5 text-xs text-brand-charcoal/85 font-sans pt-1" id={`card-features-${track.id}`}>
+                      <ul className="space-y-2.5 text-sm sm:text-base text-brand-charcoal/85 font-sans pt-1" id={`card-features-${track.id}`}>
                         {track.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start gap-2.5">
                             <Check className="h-3.5 w-3.5 text-brand-emerald shrink-0 mt-0.5 stroke-[2.5]" />
@@ -216,7 +216,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                         type="button"
                         id={`btn-select-${track.id}`}
                         onClick={() => onSelectProgram(track.title)}
-                        className="group/btn w-full h-[54px] inline-flex items-center justify-between rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory px-6 text-[13px] font-bold transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
+                        className="group/btn w-full h-[54px] inline-flex items-center justify-between rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory px-6 text-sm sm:text-base font-bold transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                       >
                         <span className="font-sans pl-2 tracking-wide">
                           {track.id === 'personalized' ? 'Book Your Session' : 'Book Free Trial'}

@@ -123,7 +123,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                   visible: { opacity: 1, y: 0 }
                 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-flex items-center gap-2.5 text-brand-accent-vibrant font-bold uppercase tracking-[0.25em] text-[13px] md:text-[14px]"
+                className="inline-flex items-center gap-2.5 text-brand-accent-vibrant font-bold uppercase tracking-[0.25em] text-xs sm:text-sm md:text-base"
               >
                 <div className="w-8 h-[1.5px] bg-brand-accent-vibrant"></div>
                 <span>Bespoke Wellness Sanctuary</span>
@@ -162,7 +162,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                 visible: { opacity: 1, y: 0 }
               }}
               transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="font-sans text-brand-charcoal/70 leading-relaxed w-full lg:w-[80%] text-[18px] md:text-[20px] lg:text-[22px]"
+              className="font-sans text-brand-charcoal/75 leading-[1.7] w-full lg:w-[80%] text-[18px] sm:text-[20px] md:text-[21px]"
               id="hero-subheading"
             >
               Step into a premium sanctuary designed to help you naturally reduce weight, correct metabolism, and align your health in just 30 minutes a day.
@@ -199,7 +199,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                   whileHover={{ y: -3, scale: 1.02, boxShadow: '0 10px 25px -5px rgba(255, 83, 43, 0.5), 0 0 15px rgba(255, 168, 0, 0.3)' }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#0F766E] px-8 py-4 text-xs font-bold uppercase tracking-wider text-brand-ivory hover:bg-brand-emerald-hover transition-colors duration-300 cursor-pointer shadow-sm overflow-hidden"
+                  className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#0F766E] px-8 py-4 text-sm sm:text-[15px] font-bold uppercase tracking-wider text-brand-ivory hover:bg-brand-emerald-hover transition-colors duration-300 cursor-pointer shadow-sm overflow-hidden"
                 >
                   <span>Book Free Trial Session</span>
                   <motion.span
@@ -216,9 +216,9 @@ export default function Hero({ onBookClick }: HeroProps) {
                 id="hero-secondary-cta"
                 whileHover={{ y: -3, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-wider border-b border-brand-gold pb-1 text-brand-charcoal hover:text-brand-emerald hover:border-brand-emerald transition-colors"
+                className="group flex items-center justify-center gap-2.5 text-sm sm:text-[15px] font-bold uppercase tracking-wider border-b border-brand-gold pb-1 text-brand-charcoal hover:text-brand-emerald hover:border-brand-emerald transition-colors"
               >
-                <span className="w-5 h-5 rounded-full border border-brand-gold group-hover:border-brand-emerald flex items-center justify-center text-[8px] transition-colors">▶</span>
+                <span className="w-5 h-5 rounded-full border border-brand-gold group-hover:border-brand-emerald flex items-center justify-center text-[10px] transition-colors">▶</span>
                 <span>Watch Journeys</span>
               </motion.a>
             </motion.div>
@@ -230,7 +230,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                 visible: { opacity: 1 }
               }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row items-center gap-3 pt-6 text-[12px] font-medium text-brand-charcoal/75 w-full justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row items-center gap-3 pt-6 text-sm sm:text-[15px] font-medium text-brand-charcoal/75 w-full justify-center lg:justify-start"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -332,7 +332,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-xs font-bold text-brand-emerald tracking-tight">500+ Verified</p>
-                  <p className="text-[9px] font-semibold text-brand-charcoal/60 uppercase tracking-widest leading-none mt-0.5">Transformations</p>
+                  <p className="text-xs font-semibold text-brand-charcoal/60 uppercase tracking-widest leading-none mt-0.5">Transformations</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -365,7 +365,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-xs font-bold text-brand-gold tracking-tight">7+ Years</p>
-                  <p className="text-[9px] font-semibold text-[#b58552]/70 uppercase tracking-widest leading-none mt-0.5">Clinical Expertise</p>
+                  <p className="text-xs font-semibold text-[#b58552]/70 uppercase tracking-widest leading-none mt-0.5">Clinical Expertise</p>
                 </div>
               </motion.div>
             </motion.div>

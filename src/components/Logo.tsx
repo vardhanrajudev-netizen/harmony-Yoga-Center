@@ -55,9 +55,10 @@ interface LogoProps {
   variant?: 'light' | 'dark' | 'footer';
   className?: string;
   onClick?: (e: React.MouseEvent) => void;
+  isNavbar?: boolean;
 }
 
-export default function Logo({ variant = 'light', className = "", onClick }: LogoProps) {
+export default function Logo({ variant = 'light', className = "", onClick, isNavbar = false }: LogoProps) {
   const [imgError, setImgError] = useState(false);
 
   // Configured colors for consistency:
@@ -67,11 +68,25 @@ export default function Logo({ variant = 'light', className = "", onClick }: Log
   
   const iconColor = variant === 'footer' ? 'text-[#E3B777]' : variant === 'dark' ? 'text-white' : 'text-[#0F766E]';
   const titleColor = variant === 'footer' ? 'text-white' : variant === 'dark' ? 'text-white' : 'text-[#0F766E]';
-  const subtitleColor = variant === 'footer' ? 'text-[#E3B777]' : variant === 'dark' ? 'text-white/60' : 'text-[#1F2937]/50';
+  const subtitleColor = variant === 'footer' ? 'text-[#E3B777]' : variant === 'dark' ? 'text-white/60' : 'text-[#1F2937]/70';
+
+  const iconSizeClasses = isNavbar 
+    ? "h-10 w-10 lg:h-[54px] lg:w-[54px] transition-all duration-300"
+    : "h-9 w-9";
+
+  const titleSizeClasses = isNavbar
+    ? "font-serif font-bold tracking-tight text-[#0F766E] text-[15px] min-[360px]:text-[17px] sm:text-[20px] lg:text-[24px] xl:text-[26px] leading-[1.05]"
+    : `font-serif font-bold ${titleColor} tracking-tight text-[18px] sm:text-[22px] md:text-[24px] leading-[1.05]`;
+
+  const subtitleSizeClasses = isNavbar
+    ? "text-[6px] min-[360px]:text-[6.8px] sm:text-[8px] lg:text-[9.8px] xl:text-[10.6px]"
+    : "text-[7.2px] sm:text-[8.5px] md:text-[9.5px]";
+
+  const bulletColor = variant === 'footer' ? 'text-[#E3B777]' : variant === 'dark' ? 'text-white/40' : 'text-[#0F766E]/50';
 
   return (
     <div 
-      className={`flex items-center gap-3 select-none cursor-pointer ${className}`} 
+      className={`flex items-center gap-2.5 sm:gap-3 select-none cursor-pointer ${className}`} 
       id="brand-logo-container"
       onClick={onClick}
     >
@@ -91,36 +106,42 @@ export default function Logo({ variant = 'light', className = "", onClick }: Log
           <img
             src="/assets/images/yoga-icon.png"
             alt="Harmony Yoga Center Logo"
-            className="h-9 w-9 object-contain"
+            className={`${iconSizeClasses} object-contain shrink-0`}
             onError={() => setImgError(true)}
             referrerPolicy="no-referrer"
           />
         ) : (
-          <LogoIcon className={`h-9 w-9 ${iconColor}`} />
+          <LogoIcon className={`${iconSizeClasses} ${iconColor} shrink-0`} />
         )}
       </motion.div>
       
       {/* Brand Text on Right */}
-      <div className="flex flex-col whitespace-nowrap justify-center" style={{ gap: '1px' }}>
-        <div className="flex items-baseline" style={{ lineHeight: '1.1' }}>
-          <span 
-            className={`font-serif font-bold ${titleColor} tracking-tight`}
-            style={{ fontSize: '20px', fontWeight: 700 }}
-          >
+      <div 
+        className="flex flex-col justify-center shrink-0" 
+        style={{ gap: '2px', width: 'auto' }}
+        id="brand-text-container"
+      >
+        <div className="flex items-baseline w-full" id="brand-title-container">
+          <span className={titleSizeClasses}>
             Harmony Yoga Center
           </span>
         </div>
-        <span 
-          className={`font-sans font-bold ${subtitleColor} uppercase block tracking-[2px]`}
+        <div 
+          className={`w-full flex justify-between items-center font-sans font-bold ${subtitleColor} uppercase ${subtitleSizeClasses}`}
           style={{ 
-            fontSize: '8px', 
-            letterSpacing: '1.8px', 
-            lineHeight: '1.1',
+            lineHeight: '1.2',
             marginTop: '2.5px'
           }}
+          id="brand-subtitle-container"
         >
-          Premium Wellness Sanctuary
-        </span>
+          <span>ONLINE & OFFLINE</span>
+          <span className={`${bulletColor} px-0.5`}>•</span>
+          <span>365 DAYS</span>
+          <span className={`${bulletColor} px-0.5`}>•</span>
+          <span>VIJAYAWADA</span>
+          <span className={`${bulletColor} px-0.5`}>•</span>
+          <span>HYDERABAD</span>
+        </div>
       </div>
     </div>
   );

@@ -94,10 +94,10 @@ export default function TrustIndicators() {
                   </div>
                   
                   <div className="space-y-2">
-                    <h3 className="font-serif text-base font-bold text-brand-charcoal tracking-tight group-hover:text-brand-emerald transition-colors duration-300">
+                    <h3 className="font-serif text-lg sm:text-[19px] font-bold text-brand-charcoal tracking-tight group-hover:text-brand-emerald transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-brand-charcoal/70 leading-relaxed font-sans">
+                    <p className="text-[15px] sm:text-base text-brand-charcoal/75 leading-relaxed font-sans">
                       {item.description}
                     </p>
                   </div>

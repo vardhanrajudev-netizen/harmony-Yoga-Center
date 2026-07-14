@@ -272,7 +272,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#EEF8F4] border border-[#CFE8D5] text-[#0F766E] rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 shadow-3xs"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#EEF8F4] border border-[#CFE8D5] text-[#0F766E] rounded-full text-xs font-bold uppercase tracking-widest mb-4 shadow-3xs"
           >
             <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin-slow" />
             Curated Resources Hub
@@ -291,7 +291,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 max-w-2xl mx-auto text-sm text-brand-charcoal/65 leading-relaxed font-sans"
+            className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-brand-charcoal/70 leading-relaxed font-sans"
           >
             Utilize our scientific wellness tools designed by S. Anjaneyulu to estimate metabolic pace, caloric guidelines, and healthy transformation paths.
           </motion.p>
@@ -327,7 +327,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             `}</style>
             <div className="bg-white rounded-[24px] border border-brand-sage/40 p-5 shadow-[0_12px_40px_-12px_rgba(15,118,110,0.08)] relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-gold" />
-              <p className="text-[10px] font-bold text-brand-charcoal/45 uppercase tracking-widest mb-4 pl-2">SELECT ASSESSMENT</p>
+              <p className="text-xs font-bold text-brand-charcoal/45 uppercase tracking-widest mb-4 pl-2">SELECT ASSESSMENT</p>
               
               <div className="space-y-1.5 flex flex-col">
                 {tabs.map((tab) => {
@@ -346,9 +346,9 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       <div className={`p-1.5 rounded-xl shrink-0 transition-all duration-300 tab-icon-container ${isActive ? '' : 'bg-brand-sage/30 text-brand-emerald'}`}>
                         <Icon className={`h-4 w-4 transition-all duration-300 origin-center tab-icon ${isActive ? '' : 'group-hover/tab:scale-[1.08]'}`} />
                       </div>
-                      <div className="overflow-hidden">
-                        <span className={`block text-xs font-bold font-sans tracking-wide transition-colors ${isActive ? 'text-[#FFFFFF]' : 'text-brand-charcoal'}`}>{tab.label}</span>
-                        <span className={`block text-[10px] truncate leading-none mt-0.5 transition-colors ${isActive ? 'text-[rgba(255,255,255,0.8)]' : 'text-brand-charcoal/45 group-hover/tab:text-[#0F766E]/70'}`}>{tab.desc}</span>
+                      <div className="overflow-hidden font-sans">
+                        <span className={`block text-sm font-bold tracking-wide transition-colors ${isActive ? 'text-[#FFFFFF]' : 'text-brand-charcoal'}`}>{tab.label}</span>
+                        <span className={`block text-xs truncate leading-none mt-1 transition-colors ${isActive ? 'text-[rgba(255,255,255,0.85)]' : 'text-brand-charcoal/50 group-hover/tab:text-[#0F766E]/70'}`}>{tab.desc}</span>
                       </div>
                       <ChevronRight className={`ml-auto h-3.5 w-3.5 transition-transform duration-300 ${isActive ? 'rotate-90 text-brand-gold' : 'translate-x-0 group-hover/tab:translate-x-0.5 text-brand-charcoal/30'}`} />
                     </button>
@@ -357,11 +357,11 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
               </div>
 
               {/* VIP Trial Box */}
-              <div className="mt-6 pt-5 border-t border-brand-sage/40 text-center">
-                <p className="text-[11px] font-bold text-brand-charcoal/70 uppercase tracking-widest mb-3">Ready to proceed?</p>
+              <div className="mt-6 pt-5 border-t border-brand-sage/40 text-center font-sans">
+                <p className="text-xs font-bold text-brand-charcoal/70 uppercase tracking-widest mb-3">Ready to proceed?</p>
                 <button
                   onClick={() => onBookClick('Resources Consultation')}
-                  className="w-full h-[40px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-[10px] font-bold uppercase tracking-widest inline-flex items-center justify-center transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
+                  className="w-full h-[44px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-xs sm:text-sm font-bold uppercase tracking-widest inline-flex items-center justify-center transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>Claim Elite 3-Day Pass</span>
                 </button>
@@ -397,7 +397,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         <Activity className="h-5 w-5 text-brand-gold" />
                         BMI Vital Assessment
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         Find out if your body mass ratio is balanced, and read matching natural yoga advice.
                       </p>
                     </div>
@@ -408,8 +408,8 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         {/* Height slider */}
                         <div className="space-y-2">
                           <div className="flex justify-between items-baseline">
-                            <label className="text-xs font-bold text-brand-charcoal/85 uppercase tracking-wide">Height</label>
-                            <span className="font-serif text-lg font-bold text-brand-emerald">{bmiHeight} <span className="text-[11px] text-brand-charcoal/50 font-sans">cm</span></span>
+                            <label className="text-sm font-bold text-brand-charcoal/85 uppercase tracking-wide font-sans">Height</label>
+                            <span className="font-serif text-xl font-bold text-brand-emerald">{bmiHeight} <span className="text-xs sm:text-sm text-brand-charcoal/55 font-sans">cm</span></span>
                           </div>
                           <input 
                             type="range" 
@@ -419,7 +419,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                             onChange={(e) => setBmiHeight(parseInt(e.target.value))}
                             className="w-full accent-brand-emerald h-1 bg-brand-sage/60 rounded-lg cursor-pointer"
                           />
-                          <div className="flex justify-between text-[10px] text-brand-charcoal/40 font-mono">
+                          <div className="flex justify-between text-xs text-brand-charcoal/45 font-mono">
                             <span>120 cm</span>
                             <span>170 cm</span>
                             <span>220 cm</span>
@@ -429,8 +429,8 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         {/* Weight slider */}
                         <div className="space-y-2">
                           <div className="flex justify-between items-baseline">
-                            <label className="text-xs font-bold text-brand-charcoal/85 uppercase tracking-wide">Weight</label>
-                            <span className="font-serif text-lg font-bold text-brand-emerald">{bmiWeight} <span className="text-[11px] text-brand-charcoal/50 font-sans">kg</span></span>
+                            <label className="text-sm font-bold text-brand-charcoal/85 uppercase tracking-wide font-sans">Weight</label>
+                            <span className="font-serif text-xl font-bold text-brand-emerald">{bmiWeight} <span className="text-xs sm:text-sm text-brand-charcoal/55 font-sans">kg</span></span>
                           </div>
                           <input 
                             type="range" 
@@ -440,7 +440,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                             onChange={(e) => setBmiWeight(parseInt(e.target.value))}
                             className="w-full accent-brand-emerald h-1 bg-brand-sage/60 rounded-lg cursor-pointer"
                           />
-                          <div className="flex justify-between text-[10px] text-brand-charcoal/40 font-mono">
+                          <div className="flex justify-between text-xs text-brand-charcoal/45 font-mono">
                             <span>40 kg</span>
                             <span>95 kg</span>
                             <span>150 kg</span>
@@ -451,17 +451,17 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* Display Outcomes column */}
                       <div className="space-y-4 flex flex-col justify-between">
                         <div className="text-center p-5 rounded-2xl bg-brand-sage/20 border border-brand-sage/40 flex flex-col justify-center items-center relative overflow-hidden">
-                          <p className="text-[11px] font-bold uppercase tracking-widest text-brand-charcoal/40 font-sans">YOUR BODY MASS INDEX</p>
-                          <p className="font-serif text-5xl font-bold text-brand-emerald mt-1.5">{bmiValue}</p>
+                          <p className="text-xs font-bold uppercase tracking-widest text-brand-charcoal/40 font-sans">YOUR BODY MASS INDEX</p>
+                          <p className="font-serif text-5xl sm:text-6xl font-bold text-brand-emerald mt-1.5">{bmiValue}</p>
                           
-                          <div className={`mt-3 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-lg border ${bmiCategory.color}`}>
+                          <div className={`mt-3 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg border ${bmiCategory.color}`}>
                             {bmiCategory.name}
                           </div>
                         </div>
 
                         {/* Progress Bar representation */}
-                        <div className="space-y-1.5 px-1 bg-brand-ivory/30 p-4 rounded-xl border border-brand-sage/20">
-                          <div className="flex justify-between text-[10px] text-brand-charcoal/50 font-bold uppercase">
+                        <div className="space-y-1.5 px-1 bg-brand-ivory/30 p-4 rounded-xl border border-brand-sage/20 font-sans">
+                          <div className="flex justify-between text-xs text-brand-charcoal/50 font-bold uppercase">
                             <span>Category Scale</span>
                             <span>{bmiValue} BMI</span>
                           </div>
@@ -472,7 +472,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                               transition={{ type: "spring", stiffness: 100, damping: 15 }}
                             />
                           </div>
-                          <div className="flex justify-between text-[9px] text-brand-charcoal/40 font-mono">
+                          <div className="flex justify-between text-xs text-brand-charcoal/40 font-mono">
                             <span>Under 18.5</span>
                             <span>18.5 - 24.9</span>
                             <span>25.0 - 29.9</span>
@@ -483,12 +483,12 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                     </div>
 
                     {/* Expert therapist feedback block */}
-                    <div className="bg-brand-ivory/50 border-l-3 border-brand-gold p-4 rounded-r-xl rounded-l-xs space-y-2 relative overflow-hidden">
+                    <div className="bg-brand-ivory/50 border-l-3 border-brand-gold p-5 rounded-r-xl rounded-l-xs space-y-2.5 relative overflow-hidden font-sans">
                       <div className="flex items-center gap-2">
                         <Award className="h-4 w-4 text-brand-gold" />
-                        <span className="text-[11px] font-bold text-brand-gold uppercase tracking-wider">Master Companion Advice</span>
+                        <span className="text-xs font-bold text-[#b58552] uppercase tracking-wider">Master Companion Advice</span>
                       </div>
-                      <p className="text-xs text-brand-charcoal/80 leading-relaxed font-sans">
+                      <p className="text-sm sm:text-base text-brand-charcoal/80 leading-relaxed">
                         {bmiCategory.advice}
                       </p>
                     </div>
@@ -497,7 +497,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                     <div className="pt-2 flex justify-end">
                       <button
                         onClick={() => onBookClick(`BMI consultation: BMI ${bmiValue}`)}
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-emerald text-brand-ivory hover:bg-brand-emerald-hover text-xs font-bold uppercase tracking-wider cursor-pointer shadow-sm transition-colors"
+                        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-emerald text-brand-ivory hover:bg-brand-emerald-hover text-sm font-bold uppercase tracking-wider cursor-pointer shadow-sm transition-colors"
                       >
                         <span>Reserve therapist consultation for BMI {bmiValue}</span>
                         <ArrowRight className="h-3.5 w-3.5" />
@@ -514,7 +514,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         <TrendingDown className="h-5 w-5 text-brand-gold" />
                         Healthy Weight Slimming Timeline
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         Establish milestones for sustainable lipid release using realistic timelines.
                       </p>
                     </div>
@@ -523,8 +523,8 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* Input fields */}
                       <div className="space-y-4 bg-brand-ivory/40 p-5 rounded-2xl border border-brand-sage/30">
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="space-y-1.5">
-                            <label className="text-[11px] font-bold uppercase text-brand-charcoal/70 tracking-wider block">Current Weight</label>
+                          <div className="space-y-1.5 font-sans">
+                            <label className="text-xs font-bold uppercase text-brand-charcoal/70 tracking-wider block">Current Weight</label>
                             <div className="relative">
                               <input 
                                 type="number" 
@@ -532,12 +532,12 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                                 onChange={(e) => setCurrentW(Math.max(30, parseInt(e.target.value) || 0))}
                                 className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm font-bold text-brand-emerald focus:border-brand-gold focus:outline-hidden"
                               />
-                              <span className="absolute right-3 top-3 text-[10px] font-bold text-brand-charcoal/40 font-mono">KG</span>
+                              <span className="absolute right-3 top-3.5 text-xs font-bold text-brand-charcoal/40 font-mono">KG</span>
                             </div>
                           </div>
 
-                          <div className="space-y-1.5">
-                            <label className="text-[11px] font-bold uppercase text-brand-charcoal/70 tracking-wider block">Target Weight</label>
+                          <div className="space-y-1.5 font-sans">
+                            <label className="text-xs font-bold uppercase text-brand-charcoal/70 tracking-wider block">Target Weight</label>
                             <div className="relative">
                               <input 
                                 type="number" 
@@ -545,16 +545,16 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                                 onChange={(e) => setTargetW(Math.max(30, parseInt(e.target.value) || 0))}
                                 className="w-full rounded-xl border border-brand-sage/60 bg-white p-3 text-sm font-bold text-brand-emerald focus:border-brand-gold focus:outline-hidden"
                               />
-                              <span className="absolute right-3 top-3 text-[10px] font-bold text-brand-charcoal/40 font-mono">KG</span>
+                              <span className="absolute right-3 top-3.5 text-xs font-bold text-brand-charcoal/40 font-mono">KG</span>
                             </div>
                           </div>
                         </div>
 
                         {/* Pace Slider */}
-                        <div className="space-y-2 pt-1 border-t border-brand-sage/20">
+                        <div className="space-y-2 pt-1 border-t border-brand-sage/20 font-sans">
                           <div className="flex justify-between items-baseline">
-                            <label className="text-[11px] font-bold text-brand-charcoal/85 uppercase tracking-wide">Slimming Pace</label>
-                            <span className="font-serif text-[15px] font-bold text-[#b58552]">
+                            <label className="text-xs font-bold text-brand-charcoal/85 uppercase tracking-wide">Slimming Pace</label>
+                            <span className="font-serif text-sm sm:text-base font-bold text-[#b58552]">
                               {slimmingPace === 0.5 ? 'Gentle Flow (0.5 kg/wk)' : slimmingPace === 0.7 ? 'Optimal Harmony (0.7 kg/wk)' : 'Adhyatma Shift (1.0 kg/wk)'}
                             </span>
                           </div>
@@ -582,29 +582,29 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       <div className="space-y-4">
                         <div className="bg-brand-emerald/5 p-5 border border-brand-sage/35 rounded-2xl flex flex-col justify-between h-full">
                           
-                          <div className="space-y-4">
+                          <div className="space-y-4 font-sans">
                             <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2.5">
-                              <span className="text-xs font-semibold text-brand-charcoal/60">Total Target Release</span>
-                              <span className="font-serif text-xl font-bold text-brand-emerald">{goalResults.delta} kg</span>
+                              <span className="text-sm font-semibold text-brand-charcoal/60">Total Target Release</span>
+                              <span className="font-serif text-xl sm:text-2xl font-bold text-brand-emerald">{goalResults.delta} kg</span>
                             </div>
 
                             <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2.5">
-                              <span className="text-xs font-semibold text-brand-charcoal/60">Time Required</span>
-                              <span className="font-serif text-xl font-bold text-[#b58552]">{goalResults.weeks} weeks</span>
+                              <span className="text-sm font-semibold text-brand-charcoal/60">Time Required</span>
+                              <span className="font-serif text-xl sm:text-2xl font-bold text-[#b58552]">{goalResults.weeks} weeks</span>
                             </div>
 
                             <div className="flex justify-between items-center">
-                              <span className="text-xs font-semibold text-brand-charcoal/60">Estimated Target Date</span>
-                              <span className="font-serif text-[15px] font-bold text-brand-emerald text-right">{goalResults.dateString}</span>
+                              <span className="text-sm font-semibold text-brand-charcoal/60">Estimated Target Date</span>
+                              <span className="font-serif text-base sm:text-lg font-bold text-brand-emerald text-right">{goalResults.dateString}</span>
                             </div>
                           </div>
 
                           <div className="mt-4 pt-3 border-t border-brand-sage/20 bg-brand-sage/20 p-3 rounded-xl border border-brand-sage/25">
-                            <div className="flex items-center gap-1.5 text-brand-emerald font-bold text-[10px] uppercase tracking-widest">
+                            <div className="flex items-center gap-1.5 text-brand-emerald font-bold text-xs uppercase tracking-widest">
                               <CheckCircle2 className="h-3.5 w-3.5 text-brand-gold shrink-0" />
                               Therapeutic Slimming Schedule
                             </div>
-                            <p className="text-[11px] text-brand-charcoal/70 mt-1 font-sans leading-relaxed">
+                            <p className="text-xs sm:text-sm text-brand-charcoal/70 mt-1.5 font-sans leading-relaxed">
                               With {slimmingPace} kg/week active Posture realignment, thyroid stimulation and Agni fire reactivation will maintain progress without starvation rebound loops.
                             </p>
                           </div>
@@ -614,25 +614,25 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
                     {/* Timeline roadmap of stages */}
                     <div className="space-y-3 pt-2">
-                      <p className="text-[11px] font-bold text-brand-charcoal/50 uppercase tracking-widest pl-1">PREMIUM METABOLIC TIMELINE PROGRESSION</p>
+                      <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-widest pl-1 font-sans">PREMIUM METABOLIC TIMELINE PROGRESSION</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-brand-ivory rounded-xl border border-brand-sage/30 relative">
-                          <span className="absolute right-3 top-3 text-[10px] font-bold text-brand-gold/30 uppercase font-sans">PHASE 1</span>
-                          <p className="text-[11px] font-bold text-brand-emerald uppercase tracking-wider">Awakening (Wk 1-{goalResults.phase1})</p>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed mt-1">Realigning digestion pathways & purging internal fluids. Stagnant swelling fades.</p>
+                          <span className="absolute right-3 top-3 text-xs font-bold text-brand-gold/30 uppercase font-sans">PHASE 1</span>
+                          <p className="text-xs font-bold text-brand-emerald uppercase tracking-wider">Awakening (Wk 1-{goalResults.phase1})</p>
+                          <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed mt-1.5 font-sans">Realigning digestion pathways & purging internal fluids. Stagnant swelling fades.</p>
                         </div>
                         
                         <div className="p-4 bg-brand-ivory rounded-xl border border-brand-sage/30 relative">
-                          <span className="absolute right-3 top-3 text-[10px] font-bold text-brand-gold/30 uppercase font-sans">PHASE 2</span>
-                          <p className="text-[11px] font-bold text-brand-emerald uppercase tracking-wider">Active Spark (Wk {goalResults.phase1 + 1}-{goalResults.phase2})</p>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed mt-1">Deep active thyroid endocrine work & mitochondrial lipid oxidation triggers.</p>
+                          <span className="absolute right-3 top-3 text-xs font-bold text-brand-gold/30 uppercase font-sans">PHASE 2</span>
+                          <p className="text-xs font-bold text-brand-emerald uppercase tracking-wider">Active Spark (Wk {goalResults.phase1 + 1}-{goalResults.phase2})</p>
+                          <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed mt-1.5 font-sans">Deep active thyroid endocrine work & mitochondrial lipid oxidation triggers.</p>
                         </div>
 
                         <div className="p-4 bg-brand-ivory rounded-xl border border-brand-sage/30 relative">
-                          <span className="absolute right-3 top-3 text-[10px] font-bold text-brand-gold/30 uppercase font-sans">PHASE 3</span>
-                          <p className="text-[11px] font-bold text-brand-emerald uppercase tracking-wider">Set-Point Seal (Wk {goalResults.phase2 + 1}+)</p>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed mt-1">Calming nervous pathways to cement baseline drop weight for long term stability.</p>
+                          <span className="absolute right-3 top-3 text-xs font-bold text-brand-gold/30 uppercase font-sans">PHASE 3</span>
+                          <p className="text-xs font-bold text-brand-emerald uppercase tracking-wider">Set-Point Seal (Wk {goalResults.phase2 + 1}+)</p>
+                          <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed mt-1.5 font-sans">Calming nervous pathways to cement baseline drop weight for long term stability.</p>
                         </div>
                       </div>
                     </div>
@@ -647,18 +647,18 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         <Flame className="h-5 w-5 text-brand-gold" />
                         Daily Energy Guide Assessment
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         Identify maintenance baselines and custom weight-release targets based on thyroid speed and lifestyle.
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                       {/* Left Column Inputs */}
-                      <div className="space-y-4 bg-brand-ivory/40 p-5 rounded-2xl border border-brand-sage/30">
+                      <div className="space-y-4 bg-brand-ivory/40 p-5 rounded-2xl border border-brand-sage/30 font-sans">
                         {/* Gender & Age */}
                         <div className="grid grid-cols-2 gap-3 pb-3">
                           <div className="space-y-1">
-                            <label className="text-[10px] font-bold text-brand-charcoal/65 uppercase tracking-wider">Gender</label>
+                            <label className="text-xs font-bold text-brand-charcoal/65 uppercase tracking-wider">Gender</label>
                             <div className="flex gap-1">
                               {['female', 'male'].map((g) => (
                                 <button
@@ -678,7 +678,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                           </div>
 
                           <div className="space-y-1">
-                            <label className="text-[10px] font-bold text-brand-charcoal/65 uppercase tracking-wider block">Age</label>
+                            <label className="text-xs font-bold text-brand-charcoal/65 uppercase tracking-wider block">Age</label>
                             <input 
                               type="number" 
                               value={calAge} 
@@ -691,7 +691,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         {/* Height & Weight Inputs */}
                         <div className="grid grid-cols-2 gap-3 pb-3 border-t border-brand-sage/20 pt-3">
                           <div className="space-y-1">
-                            <label className="text-[10px] font-bold text-brand-charcoal/65 uppercase tracking-wider block">Height (CM)</label>
+                            <label className="text-xs font-bold text-brand-charcoal/65 uppercase tracking-wider block">Height (CM)</label>
                             <input 
                               type="number" 
                               value={calHeight} 
@@ -701,7 +701,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                           </div>
 
                           <div className="space-y-1">
-                            <label className="text-[10px] font-bold text-brand-charcoal/65 uppercase tracking-wider block">Weight (KG)</label>
+                            <label className="text-xs font-bold text-brand-charcoal/65 uppercase tracking-wider block">Weight (KG)</label>
                             <input 
                               type="number" 
                               value={calWeight} 
@@ -713,7 +713,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
                         {/* Activity Level Selector */}
                         <div className="space-y-1 border-t border-brand-sage/20 pt-3">
-                          <label className="text-[10px] font-bold text-brand-charcoal/65 uppercase tracking-wider block">Lifestyle Activity</label>
+                          <label className="text-xs font-bold text-brand-charcoal/65 uppercase tracking-wider block">Lifestyle Activity</label>
                           <select 
                             value={calActivity}
                             onChange={(e) => setCalActivity(e.target.value)}
@@ -731,43 +731,43 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       <div className="space-y-4">
                         <div className="bg-brand-sage/10 p-5 rounded-2xl border border-brand-sage/35 h-full flex flex-col justify-between">
                           <div>
-                            <p className="text-[10px] font-bold uppercase text-brand-charcoal/50 tracking-wider">YOUR LIFESTYLE GUIDELINES</p>
+                            <p className="text-xs font-bold uppercase text-brand-charcoal/50 tracking-wider font-sans">YOUR LIFESTYLE GUIDELINES</p>
                             
-                            <div className="mt-4 space-y-3">
-                              <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2">
-                                <span className="text-xs text-brand-charcoal/60">Estimated BMR (Resting Energy)</span>
-                                <span className="font-mono text-sm font-bold text-brand-emerald">{calorieResults.bmr} kcal</span>
+                            <div className="mt-4 space-y-3 font-sans">
+                              <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2.5">
+                                <span className="text-sm text-brand-charcoal/60 font-medium">Estimated BMR (Resting Energy)</span>
+                                <span className="font-mono text-sm sm:text-base font-bold text-brand-emerald">{calorieResults.bmr} kcal</span>
                               </div>
                               
-                              <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2">
-                                <span className="text-xs text-brand-charcoal/60">Maintenance Intake (TDEE)</span>
-                                <span className="font-mono text-sm font-bold text-brand-emerald">{calorieResults.maintenance} kcal</span>
+                              <div className="flex justify-between items-center border-b border-brand-sage/20 pb-2.5">
+                                <span className="text-sm text-brand-charcoal/60 font-medium">Maintenance Intake (TDEE)</span>
+                                <span className="font-mono text-sm sm:text-base font-bold text-brand-emerald">{calorieResults.maintenance} kcal</span>
                               </div>
 
-                              <div className="bg-brand-emerald text-brand-ivory rounded-xl p-3 flex justify-between items-center mt-3 shadow-xs">
-                                <span className="text-xs font-bold uppercase tracking-wider">Slimming Target</span>
-                                <span className="font-serif text-lg font-bold text-[#faf9f6]">{calorieResults.fatLossTarget} kcal</span>
+                              <div className="bg-brand-emerald text-brand-ivory rounded-xl p-4 flex justify-between items-center mt-3 shadow-xs">
+                                <span className="text-sm font-bold uppercase tracking-wider">Slimming Target</span>
+                                <span className="font-serif text-lg sm:text-xl font-bold text-[#faf9f6]">{calorieResults.fatLossTarget} kcal</span>
                               </div>
                             </div>
                           </div>
 
                           {/* Macronutrient Splits */}
-                          <div className="mt-4 pt-3 border-t border-brand-sage/20">
-                            <p className="text-[10px] font-bold text-brand-charcoal/50 uppercase tracking-widest mb-2 text-center">TAILORED MACRONUTRIENT COMBINATION</p>
+                          <div className="mt-4 pt-3 border-t border-brand-sage/20 font-sans">
+                            <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-widest mb-3.5 text-center">TAILORED MACRONUTRIENT COMBINATION</p>
                             <div className="grid grid-cols-3 gap-2">
                               <div className="p-2.5 rounded-lg bg-teal-50 border border-teal-100 text-center">
-                                <p className="text-[9px] font-bold text-teal-600 uppercase tracking-wider">Proteins</p>
-                                <p className="font-mono text-[13px] font-bold text-brand-emerald mt-1">{calorieResults.proteinGrams}g</p>
+                                <p className="text-xs font-bold text-teal-600 uppercase tracking-wider">Proteins</p>
+                                <p className="font-mono text-sm sm:text-base font-bold text-brand-emerald mt-1">{calorieResults.proteinGrams}g</p>
                               </div>
 
-                              <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-100 text-center">
-                                <p className="text-[9px] font-bold text-amber-600 uppercase tracking-wider font-sans">Slow Carbs</p>
-                                <p className="font-mono text-[13px] font-bold text-brand-gold mt-1">{calorieResults.carbGrams}g</p>
+                              <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-100 text-center font-sans">
+                                <p className="text-xs font-bold text-amber-600 uppercase tracking-wider font-sans">Slow Carbs</p>
+                                <p className="font-mono text-sm sm:text-base font-bold text-brand-gold mt-1">{calorieResults.carbGrams}g</p>
                               </div>
 
                               <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-100 text-center">
-                                <p className="text-[9px] font-bold text-emerald-600 uppercase tracking-wider">Healthy Fats</p>
-                                <p className="font-mono text-[13px] font-bold text-brand-emerald mt-1">{calorieResults.fatGrams}g</p>
+                                <p className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Healthy Fats</p>
+                                <p className="font-mono text-sm sm:text-base font-bold text-brand-emerald mt-1">{calorieResults.fatGrams}g</p>
                               </div>
                             </div>
                           </div>
@@ -775,7 +775,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       </div>
                     </div>
 
-                    <div className="bg-brand-emerald/5 border-l-3 border-brand-emerald p-4 rounded-r-xl rounded-l-xs text-xs text-brand-charcoal/80 font-sans leading-relaxed flex items-start gap-2.5">
+                    <div className="bg-brand-emerald/5 border-l-3 border-brand-emerald p-5 rounded-r-xl rounded-l-xs text-sm sm:text-base text-brand-charcoal/80 font-sans leading-relaxed flex items-start gap-2.5">
                       <ShieldCheck className="h-4.5 w-4.5 text-brand-emerald shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold text-brand-emerald uppercase tracking-wide block">Premium Nutritional Doctrine: </span>
@@ -787,66 +787,66 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
                 {/* Tab content 4: Weight Loss Guide */}
                 {activeTab === 'guide' && (
-                  <div className="space-y-6">
-                    <div className="border-b border-brand-sage/30 pb-4">
+                  <div className="space-y-6 font-sans">
+                    <div className="border-b border-brand-sage/30 pb-4 font-sans">
                       <h2 className="font-serif text-2xl font-bold text-brand-emerald flex items-center gap-2">
                         <BookOpen className="h-5 w-5 text-brand-gold" />
                         The Harmony Natural Slimming Handbook
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         Curated scientific advice and endocrine strategies designed by master therapists.
                       </p>
                     </div>
 
-                    <div className="prose prose-emerald max-w-none text-brand-charcoal/85 space-y-6 text-sm font-sans leading-relaxed">
+                    <div className="prose prose-emerald max-w-none text-brand-charcoal/85 space-y-6 text-base font-sans leading-relaxed">
                       
                       {/* Section 1 */}
-                      <div className="bg-brand-ivory/50 rounded-2xl border border-brand-sage/20 p-5 space-y-2.5">
-                        <span className="inline-block rounded-lg bg-brand-gold/15 px-2.5 py-0.5 text-[10px] font-bold text-[#b58552] uppercase tracking-widest">CHAPTER 1</span>
-                        <h3 className="font-serif text-lg font-bold text-brand-emerald">The Fallacy of Extreme Cardio & Caloric Starvation</h3>
-                        <p className="text-xs text-brand-charcoal/70 leading-relaxed">
+                      <div className="bg-brand-ivory/50 rounded-2xl border border-brand-sage/20 p-6 space-y-3">
+                        <span className="inline-block rounded-lg bg-brand-gold/15 px-2.5 py-0.5 text-xs font-bold text-[#b58552] uppercase tracking-widest">CHAPTER 1</span>
+                        <h3 className="font-serif text-xl font-bold text-brand-emerald">The Fallacy of Extreme Cardio & Caloric Starvation</h3>
+                        <p className="text-sm sm:text-base text-brand-charcoal/75 leading-relaxed font-sans">
                           Conventional weight loss commands high-heart-rate jogging and strict caloric deprivations. However, when the nervous system enters continuous high stress, the adrenal glands spike cortisol emissions. Elevated cortisol informs human cells to protect stubborn fat storage (primarily visceral bellies) to fuel survival. Our method centers around gentle spinal alignments and deep breathing to restore thyroid baseline health, unlocking cellular fat releases without triggers.
                         </p>
                       </div>
 
                       {/* Section 2 */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 rounded-xl border border-brand-sage/25 bg-brand-sage/5 space-y-2">
-                          <p className="font-serif text-[15px] font-bold text-brand-emerald flex items-center gap-1.5">
+                        <div className="p-5 rounded-xl border border-brand-sage/25 bg-brand-sage/5 space-y-2.5">
+                          <p className="font-serif text-base sm:text-lg font-bold text-brand-emerald flex items-center gap-1.5">
                             <span className="h-2 w-2 rounded-full bg-brand-gold" />
                             Agni: Restoring The Digestive Fire
                           </p>
-                          <p className="text-xs text-brand-charcoal/65 leading-relaxed">
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             Agni represents the heat within your digestive engine. When Agni is sluggish, heavy metals and toxic substances (Ama) settle around organs, stalling fat metabolism. Targeted twists (such as Ardha Matsyendrasana) physically compress abdominal arteries, sending oxygenated blood directly to organs on release, reviving core digestions.
                           </p>
                         </div>
 
-                        <div className="p-4 rounded-xl border border-brand-sage/25 bg-brand-sage/5 space-y-2">
-                          <p className="font-serif text-[15px] font-bold text-brand-emerald flex items-center gap-1.5">
+                        <div className="p-5 rounded-xl border border-brand-sage/25 bg-brand-sage/5 space-y-2.5">
+                          <p className="font-serif text-base sm:text-lg font-bold text-brand-emerald flex items-center gap-1.5">
                             <span className="h-2 w-2 rounded-full bg-brand-gold" />
                             Endocrine Throat Compression
                           </p>
-                          <p className="text-xs text-brand-charcoal/65 leading-relaxed">
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             Thyroid secretion hormones directly dictate metabolic speed. Utilizing deep throat closure pressure postures, including shoulder-stand supports or chin pressure locks (Jalandhara Bandha), stimulates standard thyroxine emissions, keeping basal thermic burn curves highly reactive.
                           </p>
                         </div>
                       </div>
 
                       {/* Summary callout quotes */}
-                      <div className="text-center py-6 px-4 border-t border-b border-brand-sage/35 max-w-xl mx-auto italic font-serif text-sm text-brand-emerald">
+                      <div className="text-center py-8 px-4 border-t border-b border-brand-sage/35 max-w-xl mx-auto italic font-serif text-base sm:text-lg text-brand-emerald leading-relaxed">
                         "Your weight is not a failure of character; it is a metabolic signal. Listen to the tissue alignments and hormonal plateaus, and balance them naturally."
-                        <span className="block mt-2 font-sans font-bold text-[10px] uppercase tracking-widest text-[#b58552] not-italic">— Master S. Anjaneyulu</span>
+                        <span className="block mt-2 font-sans font-bold text-xs uppercase tracking-widest text-[#b58552] not-italic">— Master S. Anjaneyulu</span>
                       </div>
 
-                      <div className="bg-brand-emerald text-brand-ivory p-5 rounded-2xl space-y-3">
-                        <p className="font-serif text-md font-bold text-[#faf9f6]">Claim Your Companion Blueprints</p>
-                        <p className="text-xs text-brand-sage leading-relaxed">
+                      <div className="bg-brand-emerald text-brand-ivory p-6 rounded-2xl space-y-4">
+                        <p className="font-serif text-lg sm:text-xl font-bold text-[#faf9f6]">Claim Your Companion Blueprints</p>
+                        <p className="text-sm sm:text-base text-brand-sage leading-relaxed font-sans">
                           Enter our elite VIP coaching cohort. This includes exact daily nutritional guides mapping to natural post-session thermic cycles, live video adjustments, and a customized routine folder.
                         </p>
                         <button
                           type="button"
                           onClick={() => onBookClick('Companion Blueprint Guide')}
-                          className="inline-flex items-center gap-2 rounded-lg bg-[#D4A373] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-charcoal hover:bg-brand-gold cursor-pointer transition-colors"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#D4A373] px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-charcoal hover:bg-brand-gold cursor-pointer transition-colors"
                         >
                           <span>Get Personalized Natural Slimming Pass</span>
                           <ArrowRight className="h-3.5 w-3.5 text-brand-charcoal" />
@@ -858,13 +858,13 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
                 {/* Tab content: Diet & PDF Charts */}
                 {activeTab === 'charts' && (
-                  <div className="space-y-6">
-                    <div className="border-b border-brand-sage/30 pb-4">
+                  <div className="space-y-6 font-sans">
+                    <div className="border-b border-brand-sage/30 pb-4 font-sans">
                       <h2 className="font-serif text-2xl font-bold text-brand-emerald flex items-center gap-2">
                         <Award className="h-5 w-5 text-brand-gold" />
                         Printable Diet Charts & Guides
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         High-contrast, expert-styled clinical brochures and Ayurvedic recipes curated by S. Anjaneyulu.
                       </p>
                     </div>
@@ -873,18 +873,18 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* PDF 1 */}
                       <div className="bg-brand-ivory/30 p-5 rounded-2xl border border-brand-sage/20 flex flex-col justify-between font-sans">
                         <div className="space-y-3">
-                          <span className="text-[9px] font-bold text-brand-emerald bg-brand-emerald/5 border border-brand-emerald/15 px-2.5 py-1 rounded-full uppercase tracking-wider">Ayurvedic Nutrition</span>
-                          <h3 className="font-serif text-lg font-bold text-brand-charcoal leading-snug">7-Day Metabolic Flush Diet Chart</h3>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed">
+                          <span className="inline-block text-xs font-bold text-[#0F766E] bg-[#EEF8F4] border border-[#CFE8D5] px-3 py-1 rounded-full uppercase tracking-wider font-sans">Ayurvedic Nutrition</span>
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-charcoal leading-snug">7-Day Metabolic Flush Diet Chart</h3>
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             Specific vegetarian ingredients, morning herbal brews, and metabolic timing schedules to spark your digestive fires (Agni) naturally.
                           </p>
                         </div>
-                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-brand-emerald uppercase tracking-wider">PDF Manual (1.8 MB)</span>
+                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between font-sans">
+                          <span className="text-xs font-bold text-[#0F766E] uppercase tracking-wider">PDF Manual (1.8 MB)</span>
                           <button 
                             type="button" 
                             onClick={() => setDownloadMessage("Success: Preparing '7-Day Metabolic Flush Diet Chart.pdf' file for instant download on your local device.")}
-                            className="px-4 py-2 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-lg font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer"
+                            className="px-4 py-2 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer"
                           >
                             Download PDF
                           </button>
@@ -894,18 +894,18 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* PDF 2 */}
                       <div className="bg-brand-ivory/30 p-5 rounded-2xl border border-brand-sage/20 flex flex-col justify-between font-sans">
                         <div className="space-y-3">
-                          <span className="text-[9px] font-bold text-brand-emerald bg-brand-emerald/5 border border-brand-emerald/15 px-2.5 py-1 rounded-full uppercase tracking-wider">Spinal Orthotics</span>
-                          <h3 className="font-serif text-lg font-bold text-brand-charcoal leading-snug">Corporate Lumbar Posture Routine</h3>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed">
+                          <span className="inline-block text-xs font-bold text-[#0F766E] bg-[#EEF8F4] border border-[#CFE8D5] px-3 py-1 rounded-full uppercase tracking-wider font-sans">Spinal Orthotics</span>
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-charcoal leading-snug">Corporate Lumbar Posture Routine</h3>
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             A highly visual sheet detailing 5 seated physical realignment stretches to release locked back metrics during hectic office schedules.
                           </p>
                         </div>
-                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-brand-emerald uppercase tracking-wider">PDF Manual (2.4 MB)</span>
+                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between font-sans">
+                          <span className="text-xs font-bold text-[#0F766E] uppercase tracking-wider">PDF Manual (2.4 MB)</span>
                           <button 
                             type="button" 
                             onClick={() => setDownloadMessage("Success: Preparing 'Corporate Lumbar Posture Stretching.pdf' file for instant download on your local device.")}
-                            className="px-4 py-2 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-lg font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer"
+                            className="px-4 py-2 bg-brand-emerald hover:bg-brand-emerald-hover text-brand-ivory rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer"
                           >
                             Download PDF
                           </button>
@@ -915,18 +915,18 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* PDF 3 */}
                       <div className="bg-brand-ivory/30 p-5 rounded-2xl border border-brand-sage/20 flex flex-col justify-between font-sans">
                         <div className="space-y-3">
-                          <span className="text-[9px] font-bold text-[#b58552] bg-brand-gold/10 border border-brand-gold/15 px-2.5 py-1 rounded-full uppercase tracking-wider">Metabolism loops</span>
-                          <h3 className="font-serif text-lg font-bold text-brand-charcoal leading-snug">Thyroid Activation Breathing sequence</h3>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed">
+                          <span className="inline-block text-xs font-bold text-[#b58552] bg-brand-gold/10 border border-brand-gold/15 px-3 py-1 rounded-full uppercase tracking-wider font-sans">Metabolism loops</span>
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-charcoal leading-snug">Thyroid Activation Breathing sequence</h3>
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             Respiratory maps and lock sequence durations mapped precisely to stimulate sluggish thyroid secretional pathways for weight plateaus.
                           </p>
                         </div>
-                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-[#b58552] uppercase tracking-wider">PDF Manual (1.2 MB)</span>
+                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between font-sans">
+                          <span className="text-xs font-bold text-[#b58552] uppercase tracking-wider">PDF Manual (1.2 MB)</span>
                           <button 
                             type="button" 
                             onClick={() => setDownloadMessage("Success: Preparing 'Thyroid Activation Breathing Blueprint.pdf' for instant download.")}
-                            className="px-4 py-2 bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory rounded-lg font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer"
+                            className="px-4 py-2 bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer"
                           >
                             Download PDF
                           </button>
@@ -936,18 +936,18 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* PDF 4 */}
                       <div className="bg-brand-ivory/30 p-5 rounded-2xl border border-brand-sage/20 flex flex-col justify-between font-sans">
                         <div className="space-y-3">
-                          <span className="text-[9px] font-bold text-brand-emerald bg-brand-emerald/5 border border-brand-emerald/15 px-2.5 py-1 rounded-full uppercase tracking-wider">Complete handbook</span>
-                          <h3 className="font-serif text-lg font-bold text-brand-charcoal leading-snug">Harmony Intake & Screening Questionnaire</h3>
-                          <p className="text-[11px] text-brand-charcoal/60 leading-relaxed">
+                          <span className="inline-block text-xs font-bold text-[#0F766E] bg-[#EEF8F4] border border-[#CFE8D5] px-3 py-1 rounded-full uppercase tracking-wider font-sans">Complete handbook</span>
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-charcoal leading-snug">Harmony Intake & Screening Questionnaire</h3>
+                          <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
                             Our standard clinical onboarding document. Assess your physical baseline, metabolic history, and submit it before your first trial batch.
                           </p>
                         </div>
-                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-brand-emerald uppercase tracking-wider">PDF Manual (900 KB)</span>
+                        <div className="pt-5 border-t border-brand-sage/10 mt-5 flex items-center justify-between font-sans">
+                          <span className="text-xs font-bold text-[#0F766E] uppercase tracking-wider">PDF Manual (900 KB)</span>
                           <button 
                             type="button" 
                             onClick={() => setDownloadMessage("Success: Preparing 'Harmony Onboarding Intake Questionnaire.pdf' download package.")}
-                            className="px-4 py-2 bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory rounded-lg font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer"
+                            className="px-4 py-2 bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer"
                           >
                             Download PDF
                           </button>
@@ -959,30 +959,30 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
                 {/* Tab content 5: FAQ */}
                 {activeTab === 'faq' && (
-                  <div className="space-y-6">
-                    <div className="border-b border-brand-sage/30 pb-4">
+                  <div className="space-y-6 font-sans">
+                    <div className="border-b border-brand-sage/30 pb-4 font-sans">
                       <h2 className="font-serif text-2xl font-bold text-brand-emerald flex items-center gap-2">
                         <HelpCircle className="h-5 w-5 text-brand-gold" />
                         FAQ Shield - Premium Wisdom
                       </h2>
-                      <p className="text-xs text-brand-charcoal/50 font-sans mt-1">
+                      <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
                         Find transparent clarity surrounding thyroid weight plateaus, joint safety, and Bansara Hills studio options.
                       </p>
                     </div>
 
                     {/* Search block */}
-                    <div className="relative">
+                    <div className="relative font-sans">
                       <input 
                         type="text"
                         placeholder="Search answers from the Master..."
                         value={faqSearch}
                         onChange={(e) => setFaqSearch(e.target.value)}
-                        className="w-full text-xs font-medium rounded-xl border border-brand-sage/50 bg-brand-ivory/50 px-4 py-3 text-brand-charcoal focus:border-brand-emerald focus:outline-hidden"
+                        className="w-full text-sm font-medium rounded-xl border border-brand-sage/50 bg-brand-ivory/50 px-4 py-3.5 text-brand-charcoal focus:border-brand-emerald focus:outline-hidden"
                       />
                     </div>
 
                     {/* FAQ Items */}
-                    <div className="space-y-3">
+                    <div className="space-y-3 font-sans">
                       {filteredFaqs.length > 0 ? (
                         filteredFaqs.map((faq, idx) => {
                           const isExpanded = expandedFaq === idx;
@@ -996,7 +996,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                                 onClick={() => setExpandedFaq(isExpanded ? null : idx)}
                                 className="w-full flex justify-between items-center text-left p-4 hover:bg-brand-sage/10 transition-colors cursor-pointer"
                               >
-                                <span className="font-serif text-sm font-bold text-brand-emerald pr-4">{faq.q}</span>
+                                <span className="font-serif text-base sm:text-lg font-bold text-brand-emerald pr-4">{faq.q}</span>
                                 <ChevronRight className={`h-4 w-4 shrink-0 text-brand-gold transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'rotate-0'}`} />
                               </button>
 
@@ -1008,7 +1008,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.3 }}
                                   >
-                                    <div className="p-4 pt-1 text-xs text-brand-charcoal/70 leading-relaxed border-t border-brand-sage/20 bg-white/60 font-sans">
+                                    <div className="p-4 pt-2.5 text-sm sm:text-base text-brand-charcoal/75 leading-relaxed border-t border-brand-sage/20 bg-white/60 font-sans">
                                       {faq.a}
                                     </div>
                                   </motion.div>
@@ -1018,16 +1018,16 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                           );
                         })
                       ) : (
-                        <div className="text-center py-8 text-xs text-brand-charcoal/40 font-sans">
+                        <div className="text-center py-8 text-sm text-brand-charcoal/50 font-sans">
                           No matching answer found. Click button below to contact Master S. Anjaneyulu directly.
                         </div>
                       )}
                     </div>
 
                     {/* FAQ Quick Helpline */}
-                    <div className="p-5 rounded-2xl bg-brand-sage/10 border border-brand-sage/25 text-center space-y-3">
-                      <p className="text-xs font-bold uppercase text-brand-emerald tracking-wider font-sans">Have a direct question for our master?</p>
-                      <p className="text-xs text-brand-charcoal/65 max-w-md mx-auto leading-relaxed">
+                    <div className="p-5 rounded-2xl bg-brand-sage/10 border border-brand-sage/25 text-center space-y-3 font-sans">
+                      <p className="text-sm font-bold uppercase text-brand-emerald tracking-wider font-sans">Have a direct question for our master?</p>
+                      <p className="text-sm sm:text-base text-brand-charcoal/65 max-w-md mx-auto leading-relaxed">
                         If you have active neck injuries, disc slip plateaus, or targeted metabolic concerns, speak directly with S. Anjaneyulu in Vijayawada.
                       </p>
                       <div className="flex justify-center gap-3">
@@ -1035,7 +1035,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                           href="https://wa.me/917036711097?text=Hi%20Master%20Anjaneyulu,%20I%20have%20a%20specific%20health%20question..."
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 font-bold uppercase text-white rounded-lg text-[10px] tracking-wider transition-colors shadow-sm"
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 font-bold uppercase text-white rounded-full text-xs tracking-wider transition-colors shadow-sm"
                         >
                           <Flame className="h-3.5 w-3.5 text-white animate-pulse" />
                           <span>Direct WhatsApp Line</span>
