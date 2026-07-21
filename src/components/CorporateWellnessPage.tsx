@@ -4,7 +4,6 @@ import {
   Cpu, 
   Heart, 
   ShieldCheck, 
-  Sparkles, 
   ArrowRight, 
   CheckCircle2, 
   ChevronRight,
@@ -180,7 +179,7 @@ export default function CorporateWellnessPage() {
               <div className="absolute top-0 left-0 w-full h-[4px] bg-brand-emerald" />
 
               <div className="flex items-center gap-1.5 text-[#B47F43] font-bold text-xs uppercase tracking-wider mb-2 font-sans">
-                <Sparkles className="h-3.5 w-3.5" />
+                <Award className="h-3.5 w-3.5" />
                 Custom Corporate Solutions
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#065F5B] mb-1 leading-tight">Request a Proposal</h3>

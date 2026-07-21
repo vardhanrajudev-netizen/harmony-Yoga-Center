@@ -3,6 +3,7 @@ import TrustIndicators from './TrustIndicators';
 import Trainer from './Trainer';
 import Programs from './Programs';
 import Testimonials from './Testimonials';
+import GalleryPreview from './GalleryPreview';
 import CTASection from './CTASection';
 import SEO from './SEO';
 import AnimatedSection from './AnimatedSection';
@@ -47,6 +48,12 @@ export default function HomePage({ onBookClick }: HomePageProps) {
         </AnimatedSection>
 
         <SectionDivider variant="lotus" className="my-2" />
+
+        <AnimatedSection variant="fade-up">
+          <GalleryPreview />
+        </AnimatedSection>
+
+        <SectionDivider variant="line" className="my-4" />
 
         <AnimatedSection variant="reveal-mask">
           <CTASection onBookClick={onBookClick} />

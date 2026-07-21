@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Sparkles, 
   ArrowRight, 
   TrendingDown, 
   Heart, 
@@ -255,7 +254,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
         <div className="absolute inset-0 bg-[#EEF8F4]/40 -z-10" />
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="inline-flex p-3 bg-brand-gold-bright/15 text-brand-gold rounded-full mb-2">
-            <Sparkles className="h-6 w-6 text-brand-gold" />
+            <Award className="h-6 w-6 text-brand-gold" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#065F5B] tracking-tight leading-tight">
             Achieve Your Personal Clinical Best

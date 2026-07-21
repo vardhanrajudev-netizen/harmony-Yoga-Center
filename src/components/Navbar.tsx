@@ -12,7 +12,7 @@ import {
   HelpCircle, 
   ArrowRight,
   ChevronRight,
-  Sparkles
+  FileText
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -99,7 +99,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
       id: 'charts' as const,
       title: 'Diet Charts & PDF Plan',
       description: 'Printable Ayurvedic nutritional checklists and menus.',
-      icon: Sparkles,
+      icon: FileText,
     },
     {
       id: 'faq' as const,
@@ -182,18 +182,17 @@ export default function Navbar({ onBookClick }: NavbarProps) {
 
         {/* Max width container */}
         <div className="w-full max-w-[1500px] h-full mx-auto px-4 sm:px-[clamp(24px,3vw,56px)]">
-          <div className="flex h-full items-center justify-between">
-            
-            {/* Left side wrapper combining Brand block and Desktop Nav Links with fixed gap */}
-            <div className="flex items-center h-full min-w-0 flex-1">
-              {/* Brand block */}
-              <div className="flex justify-start items-center shrink-0 mr-12">
-                <Logo variant="light" onClick={handleLogoClick} isNavbar={true} className="group shrink-0 transition-transform duration-300" />
-              </div>
+          
+          {/* Desktop Navbar Layout: grid-cols-[auto_1fr_auto] for min-[1400px] */}
+          <div className="hidden min-[1400px]:grid h-full items-center grid-cols-[auto_1fr_auto] gap-[32px]">
+            {/* BRAND */}
+            <div className="flex justify-start items-center shrink-0">
+              <Logo variant="light" onClick={handleLogoClick} isNavbar={true} className="group shrink-0 transition-transform duration-300" />
+            </div>
 
-              {/* Desktop Navigation Links (Uniform typography, perfectly aligned) */}
-              <div className="hidden min-[1400px]:flex items-center gap-[clamp(10px,1vw,20px)] h-full shrink-0" id="desktop-nav-menu">
-                
+            {/* NAVIGATION */}
+            <div className="flex items-center justify-center h-full" id="desktop-nav-menu">
+              <div className="flex items-center gap-[clamp(18px,1.25vw,28px)] h-full">
                 {navLinks.map((link) => {
                   const active = isNavActive(link.path);
                   return (
@@ -201,8 +200,8 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                       key={link.name}
                       href="#"
                       onClick={(e) => handleLinkClick(e, link.path)}
-                      className={`font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer ${
-                        active ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
+                      className={`font-sans text-[14px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer font-semibold ${
+                        active ? 'text-[#0F766E]' : 'text-brand-charcoal/80 hover:text-[#0F766E]'
                       }`}
                     >
                       {link.name}
@@ -226,8 +225,8 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                       e.preventDefault();
                       setIsDropdownOpen(!isDropdownOpen);
                     }}
-                    className={`flex items-center gap-1 font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 uppercase group cursor-pointer ${
-                      location.pathname.startsWith('/resources') ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
+                    className={`flex items-center gap-1 font-sans text-[14px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 uppercase group cursor-pointer font-semibold ${
+                      location.pathname.startsWith('/resources') ? 'text-[#0F766E]' : 'text-brand-charcoal/80 hover:text-[#0F766E]'
                     }`}
                   >
                     <span>Resources</span>
@@ -253,10 +252,10 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                           backgroundColor: '#FAF9F6',
                           transformOrigin: 'top'
                         }}
-                        className="absolute left-1/2 -translate-x-1/2 mt-3 border border-brand-sage/20 z-50 transform-gpu"
+                        className="absolute left-1/2 -translate-x-1/2 mt-3 border border-brand-sage/20 z-50 transform-gpu text-left"
                       >
                         <div className="flex items-center gap-1 text-[9px] uppercase tracking-widest text-[#B47F43] font-bold border-b border-brand-sage/15 pb-2 mb-2">
-                          <Sparkles className="h-3 w-3" />
+                          <BookOpen className="h-3 w-3" />
                           Interactive Guides
                         </div>
 
@@ -297,8 +296,8 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                       key={link.name}
                       href="#"
                       onClick={(e) => handleLinkClick(e, link.path)}
-                      className={`font-sans text-[14px] min-[1400px]:text-[14.5px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer ${
-                        active ? 'text-[#0F766E] font-bold' : 'text-brand-charcoal/80 font-semibold hover:text-[#0F766E]'
+                      className={`font-sans text-[14px] leading-none tracking-[0.5px] whitespace-nowrap transition-colors duration-250 relative py-2 block uppercase group cursor-pointer font-semibold ${
+                        active ? 'text-[#0F766E]' : 'text-brand-charcoal/80 hover:text-[#0F766E]'
                       }`}
                     >
                       {link.name}
@@ -308,12 +307,11 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                     </a>
                   );
                 })}
-
               </div>
             </div>
 
             {/* Desktop Action Button */}
-            <div className="hidden min-[1400px]:flex justify-end items-center shrink-0">
+            <div className="flex justify-end items-center shrink-0">
               <motion.button
                 type="button"
                 id="navbar-cta-btn"
@@ -323,17 +321,25 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                   y: -1.5,
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="h-[42px] rounded-full bg-[#0F766E] px-4.5 text-[11px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(15,118,110,0.2)] hover:bg-[#0D6962] transition-colors group tracking-wider border border-[#E3B777]/20 whitespace-nowrap"
+                className="h-[48px] rounded-full bg-[#0F766E] pl-6 pr-4 text-[13px] font-bold text-[#FAF9F6] uppercase cursor-pointer flex items-center justify-center gap-2.5 shadow-[0_4px_15px_rgba(15,118,110,0.2)] hover:bg-[#0D6962] transition-colors group tracking-wider border border-[#E3B777]/20 whitespace-nowrap"
               >
                 <span>BOOK FREE TRIAL</span>
-                <div className="h-5.5 w-5.5 rounded-full bg-brand-accent-vibrant flex items-center justify-center shrink-0 ml-0.5 shadow-[0_0_12px_rgba(255,83,43,0.6)]">
+                <div className="h-6 w-6 rounded-full bg-brand-accent-vibrant flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(255,83,43,0.6)]">
                   <ArrowRight className="h-3 w-3 text-white stroke-[3.5] transition-transform duration-300 transform group-hover:translate-x-0.5" />
                 </div>
               </motion.button>
             </div>
+          </div>
+
+          {/* Mobile / Tablet Navbar Layout: flex justify-between items-center */}
+          <div className="min-[1400px]:hidden flex h-full items-center justify-between">
+            {/* BRAND */}
+            <div className="flex justify-start items-center shrink-0">
+              <Logo variant="light" onClick={handleLogoClick} isNavbar={true} className="group shrink-0 transition-transform duration-300" />
+            </div>
 
             {/* Mobile / Tablet Toggle Button */}
-            <div className="min-[1400px]:hidden flex items-center">
+            <div className="flex items-center">
               <button
                 type="button"
                 id="mobile-menu-toggle"

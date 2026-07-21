@@ -1,4 +1,4 @@
-import { Award, Trophy, Users, Quote, Sparkles } from 'lucide-react';
+import { Award, Trophy, Users, Quote } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Trainer() {
@@ -155,7 +155,7 @@ export default function Trainer() {
                     className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-brand-sage/40 flex items-center gap-3 z-20 shadow-lg"
                   >
                     <div className="h-9 w-9 rounded-xl bg-brand-emerald flex items-center justify-center text-brand-ivory shrink-0">
-                      <Sparkles className="h-5 w-5 text-brand-gold-bright" />
+                      <Award className="h-5 w-5 text-brand-gold-bright" />
                     </div>
                     <div className="text-left">
                       <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-wider font-sans leading-none">Professional Registry</p>

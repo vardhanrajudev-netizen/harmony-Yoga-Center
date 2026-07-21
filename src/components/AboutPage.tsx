@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Trophy, Users, Quote, Sparkles, Smile, ShieldAlert, Heart, Calendar } from 'lucide-react';
+import { Award, Trophy, Users, Quote, Smile, ShieldAlert, Heart, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
 interface AboutPageProps {
@@ -127,7 +127,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-brand-sage/30 flex items-center gap-3 shadow-md">
                     <div className="h-8.5 w-8.5 rounded-full bg-brand-emerald flex items-center justify-center">
-                      <Sparkles className="h-4.5 w-4.5 text-brand-gold-bright" />
+                      <Award className="h-4.5 w-4.5 text-brand-gold-bright" />
                     </div>
                     <div className="text-left font-sans">
                       <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest">Global Standards</p>
@@ -308,7 +308,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             >
               <span>Schedule Free Trial Session</span>
               <div className="h-6 w-6 rounded-full bg-[#D4A373] flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform">
-                <Sparkles className="h-3.5 w-3.5 stroke-[3]" />
+                <Calendar className="h-3.5 w-3.5 stroke-[3]" />
               </div>
             </button>
           </div>

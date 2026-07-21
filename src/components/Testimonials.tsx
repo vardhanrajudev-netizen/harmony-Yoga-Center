@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, Play, X, Heart, ShieldCheck, Sparkles, ChevronDown, ChevronUp, Quote } from 'lucide-react';
+import { Star, Play, X, Heart, ShieldCheck, ChevronDown, ChevronUp, Quote } from 'lucide-react';
 import { Testimonial } from '../types';
 
 const testimonial01 = '/assets/images/testimonial-01.mp4';

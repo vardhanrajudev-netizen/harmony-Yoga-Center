@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Sparkles, Flame, Wind, Sunrise, Clock, ChevronRight, X, Heart, ShieldCheck, Award, MessageSquare, ArrowRight, UserCheck, Phone } from 'lucide-react';
+import { Play, Flame, Wind, Sunrise, Clock, ChevronRight, X, Heart, ShieldCheck, Award, MessageSquare, ArrowRight, UserCheck, Phone } from 'lucide-react';
 import SEO from './SEO';
 
 interface Tutorial {
@@ -248,7 +248,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full bg-brand-emerald/10 px-3.5 py-1 text-xs sm:text-sm font-bold text-brand-emerald tracking-[0.2em] uppercase url-badge"
             >
-              <Sparkles className="h-3 w-3 text-brand-gold fill-current" />
+              <Award className="h-3.5 w-3.5 text-brand-gold" />
               PREMIUM YOGA LEARNING EXPERIENCE
             </motion.div>
 
@@ -786,7 +786,7 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
               onClick={() => onBookClick()}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#0F766E] to-[#115E59] hover:from-[#115E59] hover:to-[#0F766E] text-white text-base md:text-[18px] font-bold uppercase tracking-wider shadow-lg border border-[#F2C66D]/45 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
             >
-              <Sparkles className="h-4.5 w-4.5 text-[#F2C66D] group-hover:scale-110 transition-transform duration-300 shrink-0" />
+              <Play className="h-4 w-4 text-[#F2C66D] group-hover:scale-110 transition-transform duration-300 shrink-0" />
               <span>Start Your Plan</span>
               <ArrowRight className="h-4.5 w-4.5 text-[#F2C66D] group-hover:translate-x-1 transition-transform duration-300 shrink-0" />
             </button>

@@ -1,4 +1,4 @@
-import { MessageCircle, Sparkles, ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
+import { MessageCircle, Award, ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface CTASectionProps {
@@ -40,7 +40,7 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
             }}
             className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-brand-gold-bright border border-brand-gold-bright/30 mb-8 z-10 relative"
           >
-            <Sparkles className="h-7 w-7 text-brand-gold-bright" />
+            <Heart className="h-7 w-7 text-brand-gold-bright" />
           </motion.div>
 
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
@@ -114,7 +114,7 @@ export default function CTASection({ onBookClick }: CTASectionProps) {
               </motion.span>
               <span className="hidden sm:inline h-1 w-1 rounded-full bg-brand-gold-bright/50" />
               <motion.span variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} className="flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4 text-brand-gold-bright shrink-0" />
+                <Award className="h-4 w-4 text-brand-gold-bright shrink-0" />
                 Free 3-Day Pass
               </motion.span>
             </motion.div>

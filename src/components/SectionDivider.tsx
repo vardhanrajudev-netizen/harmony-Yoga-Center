@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Flower2, Sparkles } from 'lucide-react';
+import { Flower2 } from 'lucide-react';
 
 interface SectionDividerProps {
   variant?: 'lotus' | 'wave' | 'line';
@@ -80,15 +80,7 @@ export default function SectionDivider({ variant = 'lotus', className = '' }: Se
         >
           <Flower2 className="h-5 w-5 text-brand-gold" />
         </motion.div>
-        
-        {/* Decorative mini sparkles floating */}
-        <motion.div
-          animate={{ opacity: [0.4, 0.9, 0.4], y: [-2, 2, -2] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-1 -right-1"
-        >
-          <Sparkles className="h-2 w-2 text-brand-gold-bright" />
-        </motion.div>
+
       </motion.div>
 
       {/* Right elegant fade-in line */}

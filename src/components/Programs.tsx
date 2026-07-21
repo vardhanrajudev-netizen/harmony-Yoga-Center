@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Check, Sparkles, Scale, Heart, Apple, ArrowRight } from 'lucide-react';
+import { Clock, Check, Scale, Heart, Apple, ArrowRight, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ProgramsProps {
@@ -161,7 +161,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                     {/* Decorative luxury tag overlay */}
                     <div className="absolute top-4 left-4 z-10" id={`card-tag-${track.id}`}>
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-accent-vibrant to-brand-gold-bright px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-widest text-brand-ivory shadow-lg border border-white/20">
-                        <Sparkles className="h-3 w-3 text-white fill-white/25 animate-spin-slow" />
+                        <Award className="h-3.5 w-3.5 text-white" />
                         {track.tag}
                       </span>
                     </div>

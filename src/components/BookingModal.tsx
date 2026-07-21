@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Check, Calendar, MapPin, Globe, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Check, Calendar, MapPin, Globe, AlertCircle } from 'lucide-react';
 import { BookingDetails } from '../types';
 
 interface BookingModalProps {
@@ -121,7 +121,7 @@ export default function BookingModal({ isOpen, onClose, selectedProgram = 'Weigh
             {/* Header */}
             <div className="px-6 py-5 flex items-center justify-between border-b border-brand-sage/20 bg-[#fbfbfa]">
               <div className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-brand-gold" />
+                <Calendar className="h-5 w-5 text-brand-gold" />
                 <h3 className="font-serif text-xl font-bold text-brand-emerald">
                   {isSubmitted ? 'Reservation Confirmed' : 'Book Luxury Free Trial'}
                 </h3>
@@ -285,7 +285,7 @@ export default function BookingModal({ isOpen, onClose, selectedProgram = 'Weigh
                       </span>
                     ) : (
                       <span className="flex items-center justify-center gap-1.5 font-display text-sm font-semibold tracking-wide">
-                        Activate Free 3-Day Passes <Sparkles className="h-4 w-4 text-brand-gold animate-bounce" />
+                        Activate Free 3-Day Passes <Check className="h-4 w-4 text-brand-gold animate-pulse" />
                       </span>
                     )}
                   </button>

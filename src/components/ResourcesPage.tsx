@@ -7,7 +7,6 @@ import {
   BookOpen, 
   HelpCircle,
   ArrowRight,
-  Sparkles,
   Award,
   ChevronRight,
   ShieldCheck,
@@ -274,7 +273,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#EEF8F4] border border-[#CFE8D5] text-[#0F766E] rounded-full text-xs font-bold uppercase tracking-widest mb-4 shadow-3xs"
           >
-            <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin-slow" />
+            <Award className="h-3.5 w-3.5 text-brand-gold animate-pulse" />
             Curated Resources Hub
           </motion.div>
           <motion.h1

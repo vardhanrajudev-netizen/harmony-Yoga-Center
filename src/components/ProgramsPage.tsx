@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Sparkles, 
   ArrowRight, 
   Flame, 
   User, 
@@ -158,7 +157,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
               >
                 {/* Accent Banner badge */}
                 <div className="absolute top-6 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-gold-bright/15 px-3.5 py-1.5 text-[10px] font-bold text-[#b58552] uppercase tracking-wider font-sans border border-brand-gold-bright/20">
-                  <Sparkles className="h-3 w-3" />
+                  <Award className="h-3.5 w-3.5" />
                   {track.tag}
                 </div>
 

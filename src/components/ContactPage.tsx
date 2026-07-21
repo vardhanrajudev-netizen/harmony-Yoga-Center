@@ -7,7 +7,6 @@ import {
   Send, 
   Smile, 
   MessageCircle, 
-  Sparkles, 
   AlertCircle,
   CheckCircle2,
   Calendar,
@@ -251,7 +250,7 @@ export default function ContactPage() {
 
               <h3 className="font-serif text-2xl font-bold text-[#0F766E] mb-1">General Inquiry</h3>
               <p className="text-sm sm:text-base text-brand-charcoal/60 mb-6 font-sans">Have questions? Drop us a clinical or general administrative note.</p>
- 
+
               <AnimatePresence mode="wait">
                 {!formSubmitted ? (
                   <motion.form 
@@ -273,7 +272,7 @@ export default function ContactPage() {
                         placeholder="Aditi Sharma"
                       />
                     </div>
- 
+
                     <div>
                       <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-xs">Email Address *</label>
                       <input 
@@ -286,7 +285,7 @@ export default function ContactPage() {
                         placeholder="aditi@example.com"
                       />
                     </div>
- 
+
                     <div>
                       <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-xs">Phone (Optional)</label>
                       <input 
@@ -298,7 +297,7 @@ export default function ContactPage() {
                         placeholder="+91 99999 88888"
                       />
                     </div>
- 
+
                     <div>
                       <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-xs">Topic Subject</label>
                       <select 
@@ -313,7 +312,7 @@ export default function ContactPage() {
                         <option value="Collaborations">Collaborations</option>
                       </select>
                     </div>
- 
+
                     <div>
                       <label className="block text-brand-charcoal/60 font-semibold mb-1 uppercase tracking-wider text-xs">Message Payload *</label>
                       <textarea 
@@ -326,14 +325,14 @@ export default function ContactPage() {
                         placeholder="Tell us what you'd like to ask..."
                       />
                     </div>
- 
+
                     {errorMessage && (
                       <div className="p-3 bg-red-50 text-red-600 rounded-xl text-xs sm:text-sm flex items-center gap-2 font-semibold">
                         <AlertCircle className="h-4.5 w-4.5 shrink-0" />
                         <span>{errorMessage}</span>
                       </div>
                     )}
- 
+
                     <button
                       type="submit"
                       className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest inline-flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
@@ -391,7 +390,7 @@ export default function ContactPage() {
               <div className="absolute top-0 left-0 w-full h-[4px] bg-[#0F766E]" />
 
               <div className="flex items-center gap-1.5 text-[#b58552] font-bold text-xs sm:text-sm uppercase tracking-widest mb-1 font-sans">
-                <Sparkles className="h-3.5 w-3.5 text-brand-gold animate-spin-slow" />
+                <Calendar className="h-3.5 w-3.5 text-brand-gold" />
                 Enroll for Free Training
               </div>
               <h3 className="font-serif text-2xl font-bold text-[#0F766E] mb-6">Trial Registration</h3>
@@ -498,7 +497,7 @@ export default function ContactPage() {
                       className="w-full h-[52px] rounded-full bg-[#0F766E] hover:bg-[#0D6962] text-brand-ivory text-sm sm:text-base font-bold uppercase tracking-widest inline-flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_12px_rgba(15,118,110,0.15)] hover:shadow-[0_8px_24px_rgba(15,118,110,0.25)] hover:-translate-y-0.5 cursor-pointer"
                     >
                       <span>Claim Free Session Pass</span>
-                      <Sparkles className="h-4.5 w-4.5 text-brand-gold animate-spin-slow" />
+                      <CheckCircle2 className="h-4.5 w-4.5 text-brand-gold animate-pulse" />
                     </button>
                   </motion.form>
                 ) : (
