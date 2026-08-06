@@ -6,9 +6,7 @@ import { urlFor } from '../sanity/client';
 export default function Trainer() {
   const { data: aboutData } = useAboutData();
 
-  const trainerImgSrc = aboutData.founderImage
-    ? urlFor(aboutData.founderImage)
-    : "/assets/images/trainer-yoga.jpeg";
+ const trainerImgSrc = "/assets/images/trainer-yoga.jpeg";
 
   const stats = [
     {
