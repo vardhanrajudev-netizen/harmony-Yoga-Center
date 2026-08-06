@@ -14,8 +14,14 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import SEO from './SEO';
+import { useContactSettings } from '../sanity/useSanity';
 
 export default function ContactPage() {
+  const { data: contactSettings } = useContactSettings();
+  const phone = contactSettings.phone || "+91 70367 11097";
+  const whatsapp = contactSettings.whatsapp || "917036711097";
+  const email = contactSettings.email || "harmonyyogacenter07@gmail.com";
+  const address = contactSettings.address || "Main Road, Near Benz Circle, Vijayawada, AP 520010";
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [trialFormSubmitted, setTrialFormSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -109,7 +115,7 @@ export default function ContactPage() {
     >
       <SEO 
         title="Contact Us & Register For Free Trial Slots | Harmony Yoga"
-        description="Connect with our Vijayawada sanctuary studio behind SV Ranga Rao Hospital in Mogalrajapuram. Register for a free therapeutic trial batch or send general inquiries to Master S. Anjaneyulu directly."
+        description="Connect with our Vijayawada sanctuary studio behind SV Ranga Rao Hospital in Mogalrajapuram. Register for a free therapeutic trial batch or send general inquiries to S. Veeranjaneyulu (Yoga Therapist) directly."
         path="/contact"
       />
 
@@ -513,7 +519,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-serif text-lg font-bold text-brand-emerald">Trial Registration Confirmed</h4>
                       <p className="text-sm sm:text-base text-brand-charcoal/70 mt-1.5 leading-relaxed font-sans">
-                        Your free 1-on-1 therapeutic session and baseline assessment slot is officially held. S. Anjaneyulu will review your physical remarks and contact you prior. See you soon!
+                        Your free 1-on-1 therapeutic session and baseline assessment slot is officially held. S. Veeranjaneyulu (Yoga Therapist) will review your physical remarks and contact you prior. See you soon!
                       </p>
                     </div>
                     {lastSubmittedTrial && (

@@ -81,7 +81,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       timeline: '8 Weeks',
       metricBefore: 'Unstable posture & severe spine pain',
       metricAfter: 'Full skeletal recovery & mobility',
-      quote: "Sitting in front of a laptop for ten hours daily left me with crippling lumbar stiffness. Under S. Anjaneyulu's direct clinical oversight, my posture metrics are fully back to center. Unbelievable relief.",
+      quote: "Sitting in front of a laptop for ten hours daily left me with crippling lumbar stiffness. Under S. Veeranjaneyulu's (Yoga Therapist) direct clinical oversight, my posture metrics are fully back to center. Unbelievable relief.",
       image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
       statLabel: 'Spine Decompression',
       statValue: '100% Pain-free',
@@ -260,7 +260,7 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
             Achieve Your Personal Clinical Best
           </h2>
           <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
-            Work directly with S. Anjaneyulu to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
+            Work directly with S. Veeranjaneyulu (Yoga Therapist) to analyze your core joint structure, hormonal plateaus, and construct a metabolic blueprint.
           </p>
           <div className="pt-6 flex justify-center">
             <button

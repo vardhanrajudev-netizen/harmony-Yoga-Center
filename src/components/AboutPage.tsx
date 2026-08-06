@@ -2,29 +2,38 @@ import React from 'react';
 import { Award, Trophy, Users, Quote, Smile, ShieldAlert, Heart, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
+import { useAboutData } from '../sanity/useSanity';
+import { urlFor } from '../sanity/client';
+
 interface AboutPageProps {
   onBookClick: () => void;
 }
 
 export default function AboutPage({ onBookClick }: AboutPageProps) {
+  const { data: aboutData } = useAboutData();
+
+  const founderImgSrc = aboutData.founderImage
+    ? urlFor(aboutData.founderImage)
+    : "/assets/images/trainer-yoga.jpeg";
+
   // Stats
   const StatsList = [
     {
       icon: Award,
-      value: 'M.Sc. Yoga Science',
-      label: 'Academic Degrees & Research',
+      value: aboutData.achievementCounters?.[0]?.value || 'M.Sc. Yoga Science',
+      label: aboutData.achievementCounters?.[0]?.label || 'Academic Degrees & Research',
       color: 'bg-brand-emerald/10 text-brand-emerald',
     },
     {
       icon: Trophy,
-      value: '7+ Years',
-      label: 'Clinical Case Experiences',
+      value: aboutData.achievementCounters?.[1]?.value || '7+ Years',
+      label: aboutData.achievementCounters?.[1]?.label || 'Clinical Case Experiences',
       color: 'bg-brand-gold-bright/15 text-[#b58552]',
     },
     {
       icon: Users,
-      value: '500+ Clients',
-      label: 'Successful Transitions',
+      value: aboutData.achievementCounters?.[2]?.value || '500+ Clients',
+      label: aboutData.achievementCounters?.[2]?.label || 'Successful Transitions',
       color: 'bg-[#CFE8D5]/60 text-brand-emerald',
     },
   ];
@@ -58,8 +67,8 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       id="about-page-container"
     >
       <SEO 
-        title="About Master S. Anjaneyulu | Harmony Yoga Center"
-        description="Learn about Master S. Anjaneyulu (M.Sc. Yoga Science) and his 7+ years of clinical yogic research into slimming and endocrine normalization in Vijayawada."
+        title="About S. Veeranjaneyulu - Founder & Chief Yoga Therapist | Harmony Yoga Center"
+        description="Learn about S. Veeranjaneyulu (Yoga Therapist, M.Sc. Yoga Science) and his 7+ years of clinical yogic research into slimming and endocrine normalization in Vijayawada."
         path="/about"
       />
 
@@ -107,7 +116,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Meet S. Anjaneyulu Section (The Master Biography) */}
+      {/* Meet S. Veeranjaneyulu Section (Founder & Chief Yoga Therapist) */}
       <section className="py-20 bg-luxury-glow-e border-y border-brand-sage/20 px-6 sm:px-10 lg:px-16 animate-none" id="about-trainer-showcase">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -120,8 +129,8 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 
                 <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-brand-ivory border border-brand-sage/30">
                   <img
-                    src="/assets/images/trainer-yoga.jpeg"
-                    alt="S. Anjaneyulu"
+                    src={founderImgSrc}
+                    alt={`${aboutData.founderName || "S. Veeranjaneyulu"} - ${aboutData.founderDesignation || "Yoga Therapist"}`}
                     className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
                     referrerPolicy="no-referrer"
                   />
@@ -141,32 +150,40 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             {/* Right Column: Bio details */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs sm:text-sm font-bold tracking-[2px] text-[#b58552] uppercase block font-sans">
-                ✦ THE FOUNDER & MASTER COACH ✦
+                ✦ {aboutData.founderDesignation ? aboutData.founderDesignation.toUpperCase() : "FOUNDER & CHIEF YOGA THERAPIST"} ✦
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald leading-tight">
-                S. Anjaneyulu
+                {aboutData.founderName || "S. Veeranjaneyulu"}
               </h2>
-              <p className="text-sm sm:text-base font-semibold uppercase text-brand-charcoal/50 tracking-wider font-sans -mt-3">
-                M.Sc. Yoga Science & Natural Healing Therapy
+              <p className="text-base font-bold text-[#B58552] tracking-wider font-sans -mt-3">
+                {aboutData.degreeTitle || "Yoga Therapist"}
               </p>
               
               <div className="space-y-4 text-base sm:text-lg text-brand-charcoal/80 leading-relaxed font-sans">
-                <p>
-                  With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Anjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
-                </p>
-                <p>
-                  At Harmony, S. Anjaneyulu actively consults with every client. By establishing customized daily 30-minute sequences, he stimulates metabolic functions without resorting to aggressive food diets or joint-straining workouts.
-                </p>
+                {aboutData.biography && aboutData.biography.length > 0 ? (
+                  aboutData.biography.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))
+                ) : (
+                  <>
+                    <p>
+                      With an esteemed <span className="font-semibold text-brand-emerald">Master of Science (M.Sc.)</span> in Yoga Science, S. Veeranjaneyulu is one of India's leading authorities on clinical yoga therapy. Over seven years of dedicated diagnostic and consulting experiences, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.
+                    </p>
+                    <p>
+                      At Harmony, S. Veeranjaneyulu actively consults with every client. By establishing customized daily 30-minute sequences, he stimulates metabolic functions without resorting to aggressive food diets or joint-straining workouts.
+                    </p>
+                  </>
+                )}
               </div>
 
               {/* Quote Block */}
               <div className="relative border-l-2 border-[#D4A373] pl-6 py-4 bg-white/70 rounded-r-2xl pr-4 shadow-sm border border-brand-sage/25">
                 <Quote className="absolute right-4 top-2 h-8 w-8 text-brand-gold/10 pointer-events-none" />
                 <p className="italic text-[15px] sm:text-base text-brand-charcoal/80 leading-relaxed">
-                  "Yoga shouldn't be about executing painful shapes on a mat. It is a precise science of internal organ activation. Guided sequence timing regulates the nervous complex, sparking the thyroid to manage natural energy synthesis."
+                  "{aboutData.quote || "Yoga shouldn't be about executing painful shapes on a mat. It is a precise science of internal organ activation. Guided sequence timing regulates the nervous complex, sparking the thyroid to manage natural energy synthesis."}"
                 </p>
                 <span className="block text-xs font-bold uppercase tracking-wider text-brand-emerald mt-2">
-                  — S. Anjaneyulu, Founder
+                  — {aboutData.founderName || "S. Veeranjaneyulu"}, {aboutData.founderDesignation || "Founder & Chief Yoga Therapist"}
                 </span>
               </div>
 
@@ -299,7 +316,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             Are You Ready to Begin Your Realignment?
           </h2>
           <p className="text-base sm:text-lg text-brand-charcoal/70 font-sans max-w-md mx-auto leading-relaxed">
-            Book an introductory clinical consultation and 1-on-1 trial class directly with our master therapist S. Anjaneyulu.
+            Book an introductory clinical consultation and 1-on-1 trial class directly with our Founder & Chief Yoga Therapist, S. Veeranjaneyulu.
           </p>
           <div className="pt-4 flex justify-center">
             <button

@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import StickyMobileCTA from './components/StickyMobileCTA';
 
-// Lazy loaded page components for optimal production build bundlings and SEO crawl structures
+// Lazy loaded page components
 const HomePage = lazy(() => import('./components/HomePage'));
 const AboutPage = lazy(() => import('./components/AboutPage'));
 const ProgramsPage = lazy(() => import('./components/ProgramsPage'));
@@ -17,7 +17,13 @@ const GalleryPage = lazy(() => import('./components/GalleryPage'));
 const ResourcesPage = lazy(() => import('./components/ResourcesPage'));
 const ContactPage = lazy(() => import('./components/ContactPage'));
 
-// A luxurious, minimalist skeleton loading view reflecting Aman Resorts style guidelines
+// Embedded Sanity Studio Page
+const SanityStudioPage = lazy(() => import('./components/SanityStudioPage'));
+
+const env = (import.meta as any).env || {};
+const studioPath = env.VITE_SANITY_STUDIO_PATH || '/secure-control-panel-7f8a92';
+
+// A luxurious, minimalist skeleton loading view reflecting sanctuary style guidelines
 function PageSkeletonLoader() {
   return (
     <div className="min-h-screen bg-brand-ivory flex flex-col items-center justify-center font-sans space-y-4">
@@ -46,8 +52,25 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
+  // Check if current route is the private CMS studio
+  const isCmsRoute = location.pathname.startsWith(studioPath);
+
   // CTA triggers are active only on primary decision interfaces
-  const isCtaAllowed = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/programs';
+  const isCtaAllowed = !isCmsRoute && (location.pathname === '/' || location.pathname === '/about' || location.pathname === '/programs');
+
+  if (isCmsRoute) {
+    return (
+      <Suspense fallback={<PageSkeletonLoader />}>
+        <Routes>
+          <Route
+            path={`${studioPath}/*`}
+            element={<SanityStudioPage />}
+          />
+          <Route path="*" element={<Navigate to={studioPath} replace />} />
+        </Routes>
+      </Suspense>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-brand-ivory font-sans" id="studio-app-root">

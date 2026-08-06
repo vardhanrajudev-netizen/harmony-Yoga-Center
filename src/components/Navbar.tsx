@@ -104,7 +104,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
     {
       id: 'faq' as const,
       title: 'FAQ Shield',
-      description: 'Master S. Anjaneyulu answers academic concerns.',
+      description: 'S. Veeranjaneyulu (Yoga Therapist) answers academic concerns.',
       icon: HelpCircle,
     },
   ];

@@ -106,7 +106,7 @@ export default function GalleryPreview() {
       y: 0,
       transition: {
         duration: 0.75,
-        ease: [0.16, 1, 0.3, 1] // Custom luxury ease-out (Aman Resorts signature motion)
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number] // Custom luxury ease-out (Aman Resorts signature motion)
       }
     }
   };

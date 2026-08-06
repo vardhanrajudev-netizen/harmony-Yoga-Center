@@ -89,7 +89,7 @@ export default function CorporateWellnessPage() {
             <div className="h-[1.5px] w-12 bg-brand-gold/40" />
           </div>
           <p className="text-base sm:text-lg text-brand-charcoal/70 max-w-2xl mx-auto leading-relaxed">
-            Empower your team with S. Anjaneyulu’s clinical posture alignment routines, targeted physical decompression therapy, and custom mindfulness modules suited for high-stress corporate pipelines.
+            Empower your team with S. Veeranjaneyulu’s clinical posture alignment routines, targeted physical decompression therapy, and custom mindfulness modules suited for high-stress corporate pipelines.
           </p>
         </div>
       </section>

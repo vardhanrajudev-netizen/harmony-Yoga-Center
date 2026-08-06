@@ -59,7 +59,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
       case 'weight-goal':
         return {
           title: "Weight Loss Goal & Milestone Calculator | Harmony Yoga Center",
-          description: "Map out custom target weights and healthy paces. Let S. Anjaneyulu help you calculate exact metabolic milestones.",
+          description: "Map out custom target weights and healthy paces. Let S. Veeranjaneyulu (Yoga Therapist) help you calculate exact metabolic milestones.",
           path: "/resources/weight-loss-goal-calculator"
         };
       case 'calorie':
@@ -83,7 +83,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
       case 'faq':
         return {
           title: "Frequently Answered Questions | Harmony Yoga Center",
-          description: "Read S. Anjaneyulu's direct answers regarding thyroid weight plateaus, offline studio options, and joint longevity.",
+          description: "Read S. Veeranjaneyulu's direct answers regarding thyroid weight plateaus, offline studio options, and joint longevity.",
           path: "/resources/faq"
         };
       default:
@@ -225,7 +225,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
     },
     {
       q: "Am I flexible enough? I have not practiced yoga in years.",
-      a: "Our programs are therapeutically personalized. Master S. Anjaneyulu utilizes anatomical supports and incremental posture scales. Alignment is relative to your joint longevity; we build stability first, then flexibility."
+      a: "Our programs are therapeutically personalized. S. Veeranjaneyulu (Yoga Therapist) utilizes anatomical supports and incremental posture scales. Alignment is relative to your joint longevity; we build stability first, then flexibility."
     },
     {
       q: "Do you offer physical in-studio coaching in Vijayawada?",
@@ -292,7 +292,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-brand-charcoal/70 leading-relaxed font-sans"
           >
-            Utilize our scientific wellness tools designed by S. Anjaneyulu to estimate metabolic pace, caloric guidelines, and healthy transformation paths.
+            Utilize our scientific wellness tools designed by S. Veeranjaneyulu (Yoga Therapist) to estimate metabolic pace, caloric guidelines, and healthy transformation paths.
           </motion.p>
         </div>
       </section>
@@ -834,7 +834,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                       {/* Summary callout quotes */}
                       <div className="text-center py-8 px-4 border-t border-b border-brand-sage/35 max-w-xl mx-auto italic font-serif text-base sm:text-lg text-brand-emerald leading-relaxed">
                         "Your weight is not a failure of character; it is a metabolic signal. Listen to the tissue alignments and hormonal plateaus, and balance them naturally."
-                        <span className="block mt-2 font-sans font-bold text-xs uppercase tracking-widest text-[#b58552] not-italic">— Master S. Anjaneyulu</span>
+                        <span className="block mt-2 font-sans font-bold text-xs uppercase tracking-widest text-[#b58552] not-italic">— S. Veeranjaneyulu, Founder & Chief Yoga Therapist</span>
                       </div>
 
                       <div className="bg-brand-emerald text-brand-ivory p-6 rounded-2xl space-y-4">
@@ -864,7 +864,7 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         Printable Diet Charts & Guides
                       </h2>
                       <p className="text-sm sm:text-base text-brand-charcoal/60 font-sans mt-1 leading-relaxed">
-                        High-contrast, expert-styled clinical brochures and Ayurvedic recipes curated by S. Anjaneyulu.
+                        High-contrast, expert-styled clinical brochures and Ayurvedic recipes curated by S. Veeranjaneyulu (Yoga Therapist).
                       </p>
                     </div>
 
@@ -1018,20 +1018,20 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
                         })
                       ) : (
                         <div className="text-center py-8 text-sm text-brand-charcoal/50 font-sans">
-                          No matching answer found. Click button below to contact Master S. Anjaneyulu directly.
+                          No matching answer found. Click button below to contact S. Veeranjaneyulu (Yoga Therapist) directly.
                         </div>
                       )}
                     </div>
 
                     {/* FAQ Quick Helpline */}
                     <div className="p-5 rounded-2xl bg-brand-sage/10 border border-brand-sage/25 text-center space-y-3 font-sans">
-                      <p className="text-sm font-bold uppercase text-brand-emerald tracking-wider font-sans">Have a direct question for our master?</p>
+                      <p className="text-sm font-bold uppercase text-brand-emerald tracking-wider font-sans">Have a direct question for our Founder & Yoga Therapist?</p>
                       <p className="text-sm sm:text-base text-brand-charcoal/65 max-w-md mx-auto leading-relaxed">
-                        If you have active neck injuries, disc slip plateaus, or targeted metabolic concerns, speak directly with S. Anjaneyulu in Vijayawada.
+                        If you have active neck injuries, disc slip plateaus, or targeted metabolic concerns, speak directly with S. Veeranjaneyulu in Vijayawada.
                       </p>
                       <div className="flex justify-center gap-3">
                         <a
-                          href="https://wa.me/917036711097?text=Hi%20Master%20Anjaneyulu,%20I%20have%20a%20specific%20health%20question..."
+                          href="https://wa.me/917036711097?text=Hi%20S.%20Veeranjaneyulu%20Garu,%20I%20have%20a%20specific%20health%20question..."
                           target="_blank"
                           rel="noreferrer noopener"
                           className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 font-bold uppercase text-white rounded-full text-xs tracking-wider transition-colors shadow-sm"

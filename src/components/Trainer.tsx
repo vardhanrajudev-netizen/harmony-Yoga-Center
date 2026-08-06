@@ -1,24 +1,32 @@
 import { Award, Trophy, Users, Quote } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useAboutData } from '../sanity/useSanity';
+import { urlFor } from '../sanity/client';
 
 export default function Trainer() {
+  const { data: aboutData } = useAboutData();
+
+  const trainerImgSrc = aboutData.founderImage
+    ? urlFor(aboutData.founderImage)
+    : "/assets/images/trainer-yoga.jpeg";
+
   const stats = [
     {
       icon: Award,
-      value: 'MSC Degree',
-      label: 'Yoga Science & Tech',
+      value: aboutData.achievementCounters?.[0]?.value || 'MSC Degree',
+      label: aboutData.achievementCounters?.[0]?.label || 'Yoga Science & Tech',
       color: 'bg-brand-emerald/10 text-brand-emerald',
     },
     {
       icon: Trophy,
-      value: '7+ Years',
-      label: 'Clinical Experience',
+      value: aboutData.achievementCounters?.[1]?.value || '7+ Years',
+      label: aboutData.achievementCounters?.[1]?.label || 'Clinical Experience',
       color: 'bg-brand-gold/10 text-[#B58552]',
     },
     {
       icon: Users,
-      value: '500+ Clients',
-      label: 'Transformations Guided',
+      value: aboutData.achievementCounters?.[2]?.value || '500+ Clients',
+      label: aboutData.achievementCounters?.[2]?.label || 'Transformations Guided',
       color: 'bg-brand-emerald/10 text-brand-emerald',
     },
   ];
@@ -39,7 +47,7 @@ export default function Trainer() {
       y: 0,
       transition: {
         duration: 0.65,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       },
     },
   };
@@ -51,7 +59,7 @@ export default function Trainer() {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       },
     },
   };
@@ -64,7 +72,7 @@ export default function Trainer() {
       transition: {
         delay: idx * 0.08,
         duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       }
     })
   };
@@ -140,8 +148,8 @@ export default function Trainer() {
                     initial={{ scale: 1.0 }}
                     whileHover={{ scale: 1.04 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    src="/assets/images/trainer-yoga.jpeg"
-                    alt="S. Anjaneyulu - Head Trainer at Harmony Yoga Center"
+                    src={trainerImgSrc}
+                    alt={`${aboutData.founderName || "S. Veeranjaneyulu"} - ${aboutData.founderDesignation || "Yoga Therapist"}`}
                     className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 brightness-[98%] group-hover:brightness-100"
                     referrerPolicy="no-referrer"
                   />
@@ -159,7 +167,7 @@ export default function Trainer() {
                     </div>
                     <div className="text-left">
                       <p className="text-xs font-bold text-brand-charcoal/50 uppercase tracking-wider font-sans leading-none">Professional Registry</p>
-                      <p className="text-sm font-bold text-brand-emerald mt-0.5">Registered MSC Yoga Therapist</p>
+                      <p className="text-sm font-bold text-brand-emerald mt-0.5">Registered M.Sc. Yoga Therapist</p>
                     </div>
                   </motion.div>
                 </div>
@@ -176,24 +184,32 @@ export default function Trainer() {
             >
               <div className="space-y-4">
                 <motion.span variants={bioItemVariants} className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-4 py-1.5 text-xs sm:text-sm font-bold text-[#b58552] uppercase tracking-wider shadow-2xs">
-                  ✦ Founder, Head Coach
+                  ✦ {aboutData.founderDesignation || "Founder & Chief Yoga Therapist"}
                 </motion.span>
-                <motion.h3 variants={bioItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald tracking-tight">
-                  S. Anjaneyulu
+                <motion.h3 variants={bioItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-emerald tracking-tight leading-none">
+                  {aboutData.founderName || "S. Veeranjaneyulu"}
                 </motion.h3>
-                <motion.p variants={bioItemVariants} className="text-xs sm:text-sm font-bold text-brand-charcoal/50 tracking-widest uppercase font-sans -mt-2">
-                  M.Sc. Yoga Science & Natural healing therapy
+                <motion.p variants={bioItemVariants} className="text-base font-bold text-[#B58552] tracking-wider font-sans -mt-2">
+                  {aboutData.degreeTitle || "Yoga Therapist"}
                 </motion.p>
               </div>
 
               {/* Custom Narrative */}
               <motion.div variants={bioItemVariants} className="story-paragraphs space-y-4 text-base sm:text-lg text-brand-charcoal/85 leading-relaxed font-sans">
-                <p>
-                  Combining deep academic knowledge in <span className="font-semibold text-brand-emerald">Yoga Science</span> with seven years of practical teaching, S. Anjaneyulu formulated the Harmony Natural Slimming blueprint—a methodology utilizing specialized 30-minute daily routines to stimulate metabolic speed without aggressive dieting.
-                </p>
-                <p>
-                  His tailored guidance addresses cellular core strength, digestion fire (Agni), and joint longevity to assist clients who have struggled with stubborn hormonal plateau curves or daily time shortages.
-                </p>
+                {aboutData.biography && aboutData.biography.length > 0 ? (
+                  aboutData.biography.map((pText, pIdx) => (
+                    <p key={pIdx}>{pText}</p>
+                  ))
+                ) : (
+                  <>
+                    <p>
+                      Combining deep academic knowledge in <span className="font-semibold text-brand-emerald">Yoga Science</span> with seven years of practical teaching, S. Veeranjaneyulu formulated the Harmony Natural Slimming blueprint—a methodology utilizing specialized 30-minute daily routines to stimulate metabolic speed without aggressive dieting.
+                    </p>
+                    <p>
+                      His tailored guidance addresses cellular core strength, digestion fire (Agni), and joint longevity to assist clients who have struggled with stubborn hormonal plateau curves or daily time shortages.
+                    </p>
+                  </>
+                )}
               </motion.div>
 
               {/* Quote Block using distinct slide-in transition */}
@@ -203,10 +219,10 @@ export default function Trainer() {
               >
                 <Quote className="absolute right-5 top-3 h-12 w-12 text-brand-gold/10 pointer-events-none" />
                 <p className="italic text-[15px] sm:text-base text-brand-charcoal/80 leading-relaxed font-serif">
-                  "Yoga is not simply an artistic stretch; it is a metabolic realignment. By activating internal thyroid secretions and calming the nervous system for 30 purposeful minutes daily, we unlock true natural weight regulation."
+                  "{aboutData.quote || "Yoga is not simply an artistic stretch; it is a metabolic realignment. By activating internal thyroid secretions and calming the nervous system for 30 purposeful minutes daily, we unlock true natural weight regulation."}"
                 </p>
                 <span className="block text-xs font-bold uppercase tracking-widest text-brand-emerald mt-3">
-                  — S. Anjaneyulu
+                  — {aboutData.founderName || "S. Veeranjaneyulu"}, {aboutData.founderDesignation || "Yoga Therapist"}
                 </span>
               </motion.div>
 

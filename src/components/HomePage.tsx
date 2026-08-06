@@ -18,7 +18,7 @@ export default function HomePage({ onBookClick }: HomePageProps) {
     <>
       <SEO 
         title="Premium Weight Loss Yoga & Personal Training | Harmony Yoga Center Vijayawada"
-        description="Experience personalized yoga alignments, natural slimming solutions, and Ayurvedic nutrition schedules under Master S. Anjaneyulu in Mogalrajapuram, Vijayawada."
+        description="Experience personalized yoga alignments, natural slimming solutions, and Ayurvedic nutrition schedules under S. Veeranjaneyulu (Yoga Therapist) in Mogalrajapuram, Vijayawada."
         path="/"
       />
       <main id="main-content-flow">

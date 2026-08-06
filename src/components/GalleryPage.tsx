@@ -52,7 +52,7 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
       category: 'training',
       title: 'Therapeutic Alignment Pose',
       location: 'Mogalrajapuram Sanctuary',
-      desc: 'S. Anjaneyulu guiding precise shoulder-girdle retraction to alleviate thoracic stress and occupational desk strain.',
+      desc: 'S. Veeranjaneyulu (Yoga Therapist) guiding precise shoulder-girdle retraction to alleviate thoracic stress and occupational desk strain.',
       url: '/assets/yoga_gallery/IMG-20260718-WA0005.jpg'
     },
     {
@@ -370,9 +370,9 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
     {
       id: 41,
       category: 'workshops',
-      title: 'S. Anjaneyulu Live Alignment Seminar',
+      title: 'S. Veeranjaneyulu Live Alignment Seminar',
       location: 'Vijayawada Sanctuary',
-      desc: 'S. Anjaneyulu demonstrating physical posture biomechanics and customized joint-angle tracking on active trainers.',
+      desc: 'S. Veeranjaneyulu (Yoga Therapist) demonstrating physical posture biomechanics and customized joint-angle tracking on active trainers.',
       url: '/assets/yoga_gallery/IMG-20260718-WA0087.jpg'
     },
     {

@@ -3,14 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { MapPin, Mail, Phone, Instagram, Facebook, Youtube } from 'lucide-react';
 import Logo from './Logo';
+import { useSiteSettings } from '../sanity/useSanity';
 
 export default function Footer() {
   const navigate = useNavigate();
+  const { data: siteSettings } = useSiteSettings();
 
+  const socialObj = (siteSettings as any).socialLinks || {};
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/harmony_yogacenter/?hl=en', label: 'Instagram' },
-    { icon: Facebook, href: 'https://www.facebook.com/anji.sykam', label: 'Facebook' },
-    { icon: Youtube, href: 'https://www.youtube.com/@Harmony-yoga-center/', label: 'YouTube' },
+    { icon: Instagram, href: socialObj.instagram || 'https://www.instagram.com/harmony_yogacenter/?hl=en', label: 'Instagram' },
+    { icon: Facebook, href: socialObj.facebook || 'https://www.facebook.com/anji.sykam', label: 'Facebook' },
+    { icon: Youtube, href: socialObj.youtube || 'https://www.youtube.com/@Harmony-yoga-center/', label: 'YouTube' },
   ];
 
   const handleLinkClick = (
@@ -151,26 +154,25 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4.5 w-4.5 text-[#E3B777] shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-xs sm:text-sm">
-                  D.no. 39-17-10/1, behind SV Ranga Rao Hospital,<br />
-                  Mogalrajapuram, Vijayawada, AP — 520010
+                  {siteSettings.address || "D.no. 39-17-10/1, behind SV Ranga Rao Hospital, Mogalrajapuram, Vijayawada, AP — 520010"}
                 </span>
               </li>
               <li className="flex items-center gap-2.5 text-xs sm:text-sm">
                 <Phone className="h-4.5 w-4.5 text-[#E3B777] shrink-0" />
-                <span>+91 70367 11097</span>
+                <span>{siteSettings.phone || "+91 70367 11097"}</span>
               </li>
               <li className="flex items-center gap-2.5 text-xs sm:text-sm">
                 <Mail className="h-4.5 w-4.5 text-[#E3B777] shrink-0" />
                 <a 
-                  href="mailto:harmonyyogacenter11@gmail.com" 
+                  href={`mailto:${siteSettings.email || "harmonyyogacenter11@gmail.com"}`} 
                   className="hover:text-brand-gold transition-colors font-semibold"
                 >
-                  harmonyyogacenter11@gmail.com
+                  {siteSettings.email || "harmonyyogacenter11@gmail.com"}
                 </a>
               </li>
               <li className="pt-1.5 select-none">
                 <motion.a
-                  href="https://wa.me/917036711097?text=Hello%20Harmony%20Yoga%20Center!%20I'd%20like%20to%20learn%20more%20about%20your%20therapeutic%20slimming%20sessions."
+                  href={`https://wa.me/${siteSettings.whatsappNumber || "917036711097"}?text=Hello%20Harmony%20Yoga%20Center!%20I'd%20like%20to%20learn%20more%20about%20your%20therapeutic%20slimming%20sessions.`}
                   target="_blank"
                   rel="noreferrer noopener"
                   whileHover={{ scale: 1.03, y: -1, boxShadow: '0 0 15px rgba(34,197,94,0.3)' }}

@@ -11,7 +11,7 @@ This platform provides an immersive, high-end digital journey designed with a mi
 - **Personalized Program Discovery**: Showcases specialized wellness programs such as *Harmony Slimming*, *Core & joint Restoration*, and *Personal Therapeutics*.
 - **Wellness Calculators**: Interactive tools to calculate BMI, daily calorie needs, and target weights, guiding users with personalized health parameters.
 - **Success Stories & Galleries**: Rich visual journals showcasing clinical client achievements and sanctuary media.
-- **Booking Concierge**: A polished modal interface to schedule trials, book sessions, or secure direct WhatsApp/Phone consultations with Master S. Yoga Anjaneyulu.
+- **Booking Concierge**: A polished modal interface to schedule trials, book sessions, or secure direct WhatsApp/Phone consultations with Founder & Chief Yoga Therapist S. Veeranjaneyulu.
 - **SEO & Performance Tuned**: Built for high-speed responsiveness, optimized asset references, and clean structured schema metadata.
 
 ---

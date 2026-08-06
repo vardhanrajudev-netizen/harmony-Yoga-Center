@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Play, X, Heart, ShieldCheck, ChevronDown, ChevronUp, Quote } from 'lucide-react';
 import { Testimonial } from '../types';
+import { useTestimonialsData } from '../sanity/useSanity';
+import { urlFor } from '../sanity/client';
 
 const testimonial01 = '/assets/images/testimonial-01.mp4';
 const testimonial02 = '/assets/images/testimonial-02.mp4';
@@ -10,6 +12,16 @@ const testimonial04 = '/assets/images/testimonial-04.mp4';
 const testimonial05 = '/assets/images/testimonial-05.mp4';
 const testimonial06 = '/assets/images/testimonial-06.mp4';
 const testimonial07 = '/assets/images/testimonial-07.mp4';
+
+const defaultVideos = [
+  testimonial01,
+  testimonial02,
+  testimonial06,
+  testimonial03,
+  testimonial04,
+  testimonial05,
+  testimonial07,
+];
 
 const containerVariants = {
   hidden: {},
@@ -27,7 +39,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     }
   }
 };
@@ -35,15 +47,28 @@ const cardVariants = {
 export default function Testimonials() {
   const [activeVideo, setActiveVideo] = useState<Testimonial | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const { data: sanityTestimonials } = useTestimonialsData();
 
-  const testimonialsList: Testimonial[] = [
+  const testimonialsList: Testimonial[] = (sanityTestimonials && sanityTestimonials.length > 0)
+    ? sanityTestimonials.map((t, idx) => ({
+        id: t._id || `t-${idx}`,
+        name: t.clientName,
+        age: t.age || 30,
+        weightLost: t.resultAchieved || '8+ Kg',
+        rating: t.rating || 5,
+        quote: t.quote,
+        program: t.programCategory || 'Weight Loss Programs',
+        videoUrl: defaultVideos[idx % defaultVideos.length],
+        avatarUrl: t.clientImage ? urlFor(t.clientImage) : undefined
+      }))
+    : [
     {
       id: '1',
       name: 'Neha Sharma',
       age: 29,
       weightLost: '8.2 Kg',
       rating: 5,
-      quote: "As an IT professional, I barely had time for exercise. The 30-minute daily slimming routines designed by S. Anjaneyulu changed everything. I lost 8.2 Kg in 2 months without fatigue, and my stress handles literally vanished.",
+      quote: "As an IT professional, I barely had time for exercise. The 30-minute daily slimming routines designed by S. Veeranjaneyulu (Yoga Therapist) changed everything. I lost 8.2 Kg in 2 months without fatigue, and my stress handles literally vanished.",
       program: 'Weight Loss Programs',
       videoUrl: testimonial01,
     },
@@ -53,7 +78,7 @@ export default function Testimonials() {
       age: 41,
       weightLost: '11.5 Kg',
       rating: 5,
-      quote: "I was suffering from stiff lower back joints and clinical thyroid lag. The personalized live corrections and custom posture alterations from S. Anjaneyulu rehabilitated my back and helped me shed 11 Kg naturally. Highly recommend online live yoga!",
+      quote: "I was suffering from stiff lower back joints and clinical thyroid lag. The personalized live corrections and custom posture alterations from S. Veeranjaneyulu rehabilitated my back and helped me shed 11 Kg naturally. Highly recommend online live yoga!",
       program: 'Personalized Yoga Sessions',
       videoUrl: testimonial02,
     },
@@ -73,7 +98,7 @@ export default function Testimonials() {
       age: 34,
       weightLost: '10.1 Kg',
       rating: 5,
-      quote: "I tried multiple commercial gyms, but the deep therapeutic endocrine lunges and customized thyroid compression sequences under Master Anjaneyulu restored my metabolism. I lost 10.1 Kg and completely reset my energy.",
+      quote: "I tried multiple commercial gyms, but the deep therapeutic endocrine lunges and customized thyroid compression sequences under S. Veeranjaneyulu (Yoga Therapist) restored my metabolism. I lost 10.1 Kg and completely reset my energy.",
       program: 'Weight Loss Programs',
       videoUrl: testimonial03,
     },
@@ -123,7 +148,7 @@ export default function Testimonials() {
     //   age: 42,
     //   weightLost: '11.0 Kg',
     //   rating: 5,
-    //   quote: "Struggling with menopause-linked metabolic slows was exhausting. S. Anjaneyulu designed a bespoke hormonal balancing and digestion stimulation track. I lost 11 Kg, recovered my deep sleep patterns, and feels brand new.",
+    //   quote: "Struggling with menopause-linked metabolic slows was exhausting. S. Veeranjaneyulu (Yoga Therapist) designed a bespoke hormonal balancing and digestion stimulation track. I lost 11 Kg, recovered my deep sleep patterns, and feels brand new.",
     //   program: 'Nutrition Guidance',
     //   videoUrl: testimonial07,
     // }, 
@@ -177,7 +202,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                 whileHover={{ 
                   y: -10,
                   boxShadow: '0 25px 50px -15px rgba(15, 118, 110, 0.15), 0 0 0 1px rgba(20, 168, 154, 0.2)',
@@ -358,7 +383,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <p className="text-sm sm:text-base text-brand-charcoal/70 leading-relaxed font-sans">
-                  S. Anjaneyulu modified {activeVideo.name}'s daily 30-minute metabolic routine to reduce thyroid-linked fluid retention and naturally activate lower back stabilization.
+                  S. Veeranjaneyulu (Yoga Therapist) modified {activeVideo.name}'s daily 30-minute metabolic routine to reduce thyroid-linked fluid retention and naturally activate lower back stabilization.
                 </p>
               </div>
             </motion.div>

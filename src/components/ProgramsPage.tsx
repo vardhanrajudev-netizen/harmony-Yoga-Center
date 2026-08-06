@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
+import { useProgramsData } from '../sanity/useSanity';
+import { urlFor } from '../sanity/client';
 
 interface ProgramsPageProps {
   onSelectProgram: (programName: string) => void;
@@ -19,9 +21,27 @@ interface ProgramsPageProps {
 
 export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
   const [activeTab, setActiveTab2] = useState<'weight-loss' | 'personalized' | 'nutrition'>('weight-loss');
+  const { data: sanityPrograms } = useProgramsData();
 
-  // Interactive Programs Definition
-  const tracks = [
+  // Map Sanity programs or use local defaults if mapping is preferred
+  const tracks = (sanityPrograms && sanityPrograms.length > 0) ? sanityPrograms.map((p, idx) => ({
+    id: p.programId || `program-${idx}`,
+    title: p.title,
+    tag: p.category || 'Specialized Track',
+    subtitle: p.timeframe || '30 Mins Daily',
+    timeframe: p.timeframe || '30 days minimum',
+    duration: p.duration || '30 mins / day',
+    bulletPoints: p.bulletPoints || [],
+    description: p.description,
+    image: p.featuredImage ? urlFor(p.featuredImage) : (
+      idx === 0
+        ? 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'
+        : idx === 1
+        ? 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+        : 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80'
+    ),
+    clinicalGoal: p.category || 'Metabolic & Organic realignment'
+  })) : [
     {
       id: 'weight-loss',
       title: 'Weight Loss Programs',
@@ -49,7 +69,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
       timeframe: 'Custom schedules',
       duration: 'Schedules vary',
       bulletPoints: [
-        'A thorough diagnostic review with master S. Anjaneyulu',
+        'A thorough diagnostic review with S. Veeranjaneyulu (Yoga Therapist)',
         'Custom joint therapy sequences designed around chronic pains',
         'Direct posture correction to ensure full skeletal health',
         'Flexible 1-on-1 private scheduling (Physical or HD stream)',
@@ -211,7 +231,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
                     <div className="text-left space-y-1.5 max-w-md">
                       <p className="text-xs font-bold text-brand-emerald tracking-wide uppercase">Includes Master Session Consult</p>
                       <p className="text-xs text-brand-charcoal/70 leading-relaxed font-sans">
-                        Enjoy a complimentary 1-on-1 baseline metabolic screening & joint health consultation with S. Anjaneyulu during your first week.
+                        Enjoy a complimentary 1-on-1 baseline metabolic screening & joint health consultation with S. Veeranjaneyulu (Yoga Therapist) during your first week.
                       </p>
                     </div>
 
@@ -284,7 +304,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-brand-emerald">Interactive HD Live Stream</h3>
                 <p className="text-xs sm:text-sm text-brand-charcoal/70 leading-relaxed font-sans">
-                  Join our active slimming sequences live from anywhere globally. Secure zoom streams combined with physical visual screening from S. Anjaneyulu to answer sequence questions during active practice.
+                  Join our active slimming sequences live from anywhere globally. Secure zoom streams combined with physical visual screening from S. Veeranjaneyulu (Yoga Therapist) to answer sequence questions during active practice.
                 </p>
                 <div className="pt-2 space-y-2.5">
                   <div className="flex items-center gap-2.5 text-xs text-brand-charcoal/75 font-sans">
@@ -311,7 +331,7 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
             Activate Your Direct 3-Day Companion Trial Pass
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-brand-charcoal/75 font-sans max-w-2xl mx-auto leading-relaxed mt-2">
-            Review physical structures, test our custom heated mats, and claim a personalized body Dosha analysis with master coach S. Anjaneyulu.
+            Review physical structures, test our custom heated mats, and claim a personalized body Dosha analysis with Founder & Yoga Therapist S. Veeranjaneyulu.
           </p>
           <div className="pt-6 flex justify-center">
             <button

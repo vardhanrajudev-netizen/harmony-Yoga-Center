@@ -1,13 +1,34 @@
 import React from 'react';
 import { Clock, Check, Scale, Heart, Apple, ArrowRight, Award } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useProgramsData } from '../sanity/useSanity';
+import { urlFor } from '../sanity/client';
 
 interface ProgramsProps {
   onSelectProgram: (programName: string) => void;
 }
 
 export default function Programs({ onSelectProgram }: ProgramsProps) {
-  const tracks = [
+  const { data: sanityPrograms } = useProgramsData();
+
+  const tracks = (sanityPrograms && sanityPrograms.length > 0) ? sanityPrograms.map((p, idx) => ({
+    id: p.programId || `program-${idx}`,
+    title: p.title,
+    tag: p.category || 'Specialized Track',
+    category: p.category || 'Clinical Yoga',
+    description: p.description,
+    image: p.featuredImage ? urlFor(p.featuredImage) : (
+      idx === 0
+        ? 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80'
+        : idx === 1
+        ? 'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=600&q=80'
+        : 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80'
+    ),
+    icon: idx === 0 ? Scale : idx === 1 ? Heart : Apple,
+    benefits: p.bulletPoints || [],
+    intensity: p.timeframe || 'Moderate-High',
+    duration: p.duration || '30 mins / day',
+  })) : [
     {
       id: 'weight-loss',
       title: 'Weight Loss Programs',
@@ -78,7 +99,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1], // Premium luxury ultra-smooth ease
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number], // Premium luxury ultra-smooth ease
       }
     }
   };
