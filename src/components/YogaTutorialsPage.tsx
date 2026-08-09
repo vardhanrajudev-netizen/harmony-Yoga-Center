@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, Flame, Wind, Sunrise, Clock, ChevronRight, X, Heart, ShieldCheck, Award, MessageSquare, ArrowRight, UserCheck, Phone } from 'lucide-react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 
 interface Tutorial {
   id: string;
@@ -231,9 +232,11 @@ export default function YogaTutorialsPage({ onBookClick }: YogaTutorialsPageProp
   return (
     <div className="bg-premium-light text-[#1F2937] min-h-screen pt-[80px] font-sans overflow-x-hidden" id="tutorials-page-root">
       <SEO 
-        title="Yoga Pose Library & Tutorial Videos | Harmony Yoga Center"
-        description="Master your alignments via custom streaming video tutorials guiding morning sun salutations, endocrine weight loss pose adjustments and calming pranayamas."
-        path="/yoga-tutorials"
+        title={PAGE_METADATA.yogaTutorials.title}
+        description={PAGE_METADATA.yogaTutorials.description}
+        path={PAGE_METADATA.yogaTutorials.path}
+        keywords={PAGE_METADATA.yogaTutorials.keywords}
+        breadcrumbs={PAGE_METADATA.yogaTutorials.breadcrumbs}
       />
       
       {/* 1. LUXURY HERO SECTION */}

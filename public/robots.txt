@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Private & Non-Indexable Routes
+Disallow: /login
+Disallow: /api/
+Disallow: /secure-control-panel-7f8a92
+
+# Sitemap Location
+Sitemap: https://www.harmonyyogacenter.in/sitemap.xml

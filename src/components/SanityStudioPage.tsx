@@ -13,6 +13,7 @@ export default function SanityStudioPage() {
         title="Content Management Studio | Harmony Yoga Center"
         description="Internal content management system studio for Harmony Yoga Center."
         path={studioPath}
+        noindex={true}
       />
 
       {/* Embedded Sanity Studio View */}

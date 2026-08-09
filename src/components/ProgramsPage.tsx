@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 import { useProgramsData } from '../sanity/useSanity';
 import { urlFor } from '../sanity/client';
 
@@ -111,9 +112,11 @@ export default function ProgramsPage({ onSelectProgram }: ProgramsPageProps) {
       id="programs-page"
     >
       <SEO 
-        title="Sanctuary Yoga Programs & Schedulings | Harmony Yoga Center"
-        description="Browse professional weight loss yoga tracks, 1-on-1 personalized physical consultations, and metabolic Agni diet plans curated for Vijayawada students."
-        path="/programs"
+        title={PAGE_METADATA.programs.title}
+        description={PAGE_METADATA.programs.description}
+        path={PAGE_METADATA.programs.path}
+        keywords={PAGE_METADATA.programs.keywords}
+        breadcrumbs={PAGE_METADATA.programs.breadcrumbs}
       />
 
       {/* Decorative Blur Ambient Elements */}

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import SEO from './SEO';
 import { useAboutData } from '../sanity/useSanity';
 import { urlFor } from '../sanity/client';
+import { PAGE_METADATA } from '../seo/metadata';
 
 interface AboutPageProps {
   onBookClick: () => void;
@@ -11,6 +12,7 @@ interface AboutPageProps {
 
 export default function AboutPage({ onBookClick }: AboutPageProps) {
   const { data: aboutData } = useAboutData();
+  const meta = PAGE_METADATA.about;
 
   const founderImgSrc = aboutData.founderImage
     ? urlFor(aboutData.founderImage)
@@ -67,12 +69,14 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
       id="about-page-container"
     >
       <SEO 
-        title="About S. Veeranjaneyulu - Founder & Chief Yoga Therapist | Harmony Yoga Center"
-        description="Learn about S. Veeranjaneyulu (Yoga Therapist, M.Sc. Yoga Science) and his 7+ years of clinical yogic research into slimming and endocrine normalization in Vijayawada."
-        path="/about"
+        title={meta.title}
+        description={meta.description}
+        path={meta.path}
+        keywords={meta.keywords}
+        breadcrumbs={meta.breadcrumbs}
       />
 
-      {/* Absolute Decorative Background Elements with continuous ambient drift */}
+      {/* Absolute Decorative Background Elements */}
       <div className="absolute right-0 top-[10%] w-[500px] h-[500px] rounded-full bg-[#CFE8D5]/15 blur-3xl pointer-events-none ambient-glow-1" />
       <div className="absolute -left-1/4 bottom-[15%] w-[400px] h-[400px] rounded-full bg-brand-gold-bright/8 blur-3xl pointer-events-none ambient-glow-2" />
 
@@ -116,7 +120,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Meet S. Veeranjaneyulu Section (Founder & Chief Yoga Therapist) */}
+      {/* Meet S. Veeranjaneyulu Section */}
       <section className="py-20 bg-luxury-glow-e border-y border-brand-sage/20 px-6 sm:px-10 lg:px-16 animate-none" id="about-trainer-showcase">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -124,7 +128,6 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
             {/* Left Column: Framed Portrait */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group max-w-sm w-full">
-                {/* Visual border outline decor */}
                 <div className="absolute inset-4 border border-[#b58552]/40 rounded-[24px] transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 pointer-events-none z-10 shadow-lg" />
                 
                 <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-brand-ivory border border-brand-sage/30">
@@ -133,6 +136,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                     alt={`${aboutData.founderName || "S. Veeranjaneyulu"} - ${aboutData.founderDesignation || "Yoga Therapist"}`}
                     className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-brand-sage/30 flex items-center gap-3 shadow-md">
                     <div className="h-8.5 w-8.5 rounded-full bg-brand-emerald flex items-center justify-center">
@@ -290,17 +294,19 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
               <div className="rounded-2xl overflow-hidden shadow-lg border border-brand-sage/20 aspect-square">
                 <img 
                   src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" 
-                  alt="Yoga Studio Interior" 
+                  alt="Harmony Yoga Center Studio Interior in Vijayawada" 
                   className="w-full h-full object-cover filter brightness-[95%] hover:scale-105 transition-transform duration-700" 
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg border border-brand-sage/20 aspect-square mt-6">
                 <img 
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
-                  alt="Personal Yoga Consulting" 
+                  alt="Personalized Yoga Consultation with S. Veeranjaneyulu" 
                   className="w-full h-full object-cover filter brightness-[95%] hover:scale-105 transition-transform duration-700" 
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
             </div>

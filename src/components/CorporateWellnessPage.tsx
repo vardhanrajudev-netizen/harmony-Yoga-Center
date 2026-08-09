@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 
 export default function CorporateWellnessPage() {
   const [employeesCount, setEmployeesCount] = useState(50);
@@ -65,9 +66,11 @@ export default function CorporateWellnessPage() {
       id="corporate-wellness-page"
     >
       <SEO 
-        title="Corporate Yoga Programs & Employee Wellness | Harmony Yoga Center"
-        description="Decrease workplace fatigue, combat sitting stress, and maximize focus. We provide bespoke posture realignment and breathwork sessions for modern workspaces in Vijayawada."
-        path="/corporate-wellness"
+        title={PAGE_METADATA.corporateWellness.title}
+        description={PAGE_METADATA.corporateWellness.description}
+        path={PAGE_METADATA.corporateWellness.path}
+        keywords={PAGE_METADATA.corporateWellness.keywords}
+        breadcrumbs={PAGE_METADATA.corporateWellness.breadcrumbs}
       />
 
       {/* Decorative Blur Backgrounds */}

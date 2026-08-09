@@ -1,119 +1,115 @@
-import { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { SITE_CONFIG } from '../seo/config';
+import { getLocalBusinessSchema, getBreadcrumbSchema, BreadcrumbItem } from '../seo/structuredData';
 
-interface SEOProps {
+export interface SEOProps {
   title: string;
   description: string;
   path: string;
-  schema?: Record<string, any>;
+  canonicalUrl?: string;
+  noindex?: boolean;
+  keywords?: string | string[];
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  schema?: Record<string, any> | Record<string, any>[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
-export default function SEO({ title, description, path, schema }: SEOProps) {
-  useEffect(() => {
-    // 1. Update Document Title
-    document.title = title;
+export default function SEO({
+  title,
+  description,
+  path,
+  canonicalUrl,
+  noindex = false,
+  keywords,
+  ogImage,
+  ogImageAlt,
+  ogType = 'website',
+  schema,
+  breadcrumbs,
+}: SEOProps) {
+  // Normalize canonical URL
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const fullCanonical = canonicalUrl || `${SITE_CONFIG.url}${cleanPath === '/' ? '' : cleanPath}`;
 
-    // Helper to get or create head element
-    const getOrCreateMeta = (attrName: string, attrVal: string) => {
-      let element = document.querySelector(`meta[${attrName}="${attrVal}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attrName, attrVal);
-        document.head.appendChild(element);
-      }
-      return element;
-    };
+  // Image Fallbacks
+  const imageUrl = ogImage || SITE_CONFIG.defaultOgImage;
+  const imageAltText = ogImageAlt || SITE_CONFIG.defaultOgImageAlt;
 
-    const getOrCreateLink = (rel: string) => {
-      let element = document.querySelector(`link[rel="${rel}"]`);
-      if (!element) {
-        element = document.createElement('link');
-        element.setAttribute('rel', rel);
-        document.head.appendChild(element);
-      }
-      return element;
-    };
+  // Formatting Keywords
+  const formattedKeywords = Array.isArray(keywords)
+    ? keywords.join(', ')
+    : keywords;
 
-    const getOrCreateScript = (type: string, id: string) => {
-      let element = document.getElementById(id);
-      if (!element) {
-        element = document.createElement('script');
-        element.setAttribute('type', type);
-        element.setAttribute('id', id);
-        document.head.appendChild(element);
-      }
-      return element;
-    };
+  // RobotsDirective
+  const robotsContent = noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
-    // 2. Update Meta Description
-    const metaDesc = getOrCreateMeta('name', 'description');
-    metaDesc.setAttribute('content', description);
+  // Construct Structured Data Array
+  const structuredDataList: Record<string, any>[] = [];
 
-    // 3. Update Canonical URL
-    const canonicalBase = 'https://harmonyyoga.in';
-    const canonicalUrl = `${canonicalBase}${path}`;
-    const linkCanonical = getOrCreateLink('canonical');
-    linkCanonical.setAttribute('href', canonicalUrl);
+  // Default LocalBusiness/Organization Schema for Indexable Pages
+  if (!noindex) {
+    structuredDataList.push(getLocalBusinessSchema());
+  }
 
-    // 4. Update Open Graph Tags
-    const ogTitle = getOrCreateMeta('property', 'og:title');
-    ogTitle.setAttribute('content', title);
+  // Add Breadcrumbs schema if provided
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    structuredDataList.push(getBreadcrumbSchema(breadcrumbs));
+  }
 
-    const ogDesc = getOrCreateMeta('property', 'og:description');
-    ogDesc.setAttribute('content', description);
-
-    const ogUrl = getOrCreateMeta('property', 'og:url');
-    ogUrl.setAttribute('content', canonicalUrl);
-
-    const ogType = getOrCreateMeta('property', 'og:type');
-    ogType.setAttribute('content', 'website');
-
-    const ogImage = getOrCreateMeta('property', 'og:image');
-    ogImage.setAttribute('content', `${canonicalBase}/og-harmony-wellness.jpg`);
-
-    // 5. Update JSON-LD Schema (Structured Data)
-    const schemaScript = getOrCreateScript('application/ld+json', 'seo-structured-data');
-    if (schemaScript) {
-      const defaultSchema = {
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'YogaStudio',
-            '@id': `${canonicalBase}/#organization`,
-            'name': 'Harmony Yoga Center',
-            'url': canonicalBase,
-            'logo': `${canonicalBase}/logo.png`,
-            'description': 'Premium Yoga Center & Metabolic Weight Loss Sanctuary in Mogalrajapuram, Vijayawada',
-            'address': {
-              '@type': 'PostalAddress',
-              'streetAddress': 'D.no. 39-17-10/1, behind SV Ranga Rao Hospital, Mogalrajapuram, Mogalrajpuram, Labbipet',
-              'addressLocality': 'Vijayawada',
-              'addressRegion': 'Andhra Pradesh',
-              'postalCode': '520010',
-              'addressCountry': 'IN'
-            },
-            'telephone': '+91-7036711097',
-            'openingHoursSpecification': [
-              {
-                '@type': 'OpeningHoursSpecification',
-                'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                'opens': '06:00',
-                'closes': '20:30'
-              }
-            ]
-          },
-          schema ? schema : {
-            '@type': 'WebPage',
-            '@id': `${canonicalUrl}/#webpage`,
-            'url': canonicalUrl,
-            'name': title,
-            'description': description,
-            'isPartOf': { '@id': `${canonicalBase}/#website` }
-          }
-        ]
-      };
-      schemaScript.textContent = JSON.stringify(defaultSchema, null, 2);
+  // Add custom page schemas if provided
+  if (schema) {
+    if (Array.isArray(schema)) {
+      structuredDataList.push(...schema);
+    } else {
+      structuredDataList.push(schema);
     }
-  }, [title, description, path, schema]);
+  }
 
-  return null;
+  return (
+    <Helmet>
+      {/* Primary HTML Language Attribute */}
+      <html lang={SITE_CONFIG.language} />
+
+      {/* Primary Page Title */}
+      <title>{title}</title>
+
+      {/* Page Meta Tags */}
+      <meta name="description" content={description} />
+      <meta name="robots" content={robotsContent} />
+      {formattedKeywords && <meta name="keywords" content={formattedKeywords} />}
+      <meta name="author" content={SITE_CONFIG.founder.name} />
+
+      {/* Canonical Link */}
+      <link rel="canonical" href={fullCanonical} />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:site_name" content={SITE_CONFIG.name} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={fullCanonical} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:alt" content={imageAltText} />
+      <meta property="og:locale" content={SITE_CONFIG.locale} />
+
+      {/* Twitter Cards */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={imageAltText} />
+
+      {/* JSON-LD Structured Data Scripts */}
+      {structuredDataList.map((sd, index) => (
+        <script key={`jsonld-${index}`} type="application/ld+json">
+          {JSON.stringify(sd)}
+        </script>
+      ))}
+    </Helmet>
+  );
 }

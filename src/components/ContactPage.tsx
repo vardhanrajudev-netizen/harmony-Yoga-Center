@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 import { useContactSettings } from '../sanity/useSanity';
 
 export default function ContactPage() {
@@ -114,9 +115,11 @@ export default function ContactPage() {
       id="contact-page"
     >
       <SEO 
-        title="Contact Us & Register For Free Trial Slots | Harmony Yoga"
-        description="Connect with our Vijayawada sanctuary studio behind SV Ranga Rao Hospital in Mogalrajapuram. Register for a free therapeutic trial batch or send general inquiries to S. Veeranjaneyulu (Yoga Therapist) directly."
-        path="/contact"
+        title={PAGE_METADATA.contact.title}
+        description={PAGE_METADATA.contact.description}
+        path={PAGE_METADATA.contact.path}
+        keywords={PAGE_METADATA.contact.keywords}
+        breadcrumbs={PAGE_METADATA.contact.breadcrumbs}
       />
 
       {/* Background elements */}

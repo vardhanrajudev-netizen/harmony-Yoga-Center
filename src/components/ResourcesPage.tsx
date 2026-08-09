@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 
 interface ResourcesPageProps {
   onBookClick: (programName?: string) => void;
@@ -51,47 +52,19 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
   const seoConfig = useMemo(() => {
     switch (activeTab) {
       case 'bmi':
-        return {
-          title: "BMI Assessment Calculator | Harmony Yoga Center",
-          description: "Estimate body mass index ratios accurately. Read clinical recommendations and gentle slimming posture advices tailored for Vijayawada locals.",
-          path: "/resources/bmi-calculator"
-        };
+        return PAGE_METADATA.resourcesBmi;
       case 'weight-goal':
-        return {
-          title: "Weight Loss Goal & Milestone Calculator | Harmony Yoga Center",
-          description: "Map out custom target weights and healthy paces. Let S. Veeranjaneyulu (Yoga Therapist) help you calculate exact metabolic milestones.",
-          path: "/resources/weight-loss-goal-calculator"
-        };
+        return PAGE_METADATA.resourcesWeightGoal;
       case 'calorie':
-        return {
-          title: "Daily Calorie & Maintenance Calculator | Harmony Yoga Center",
-          description: "Determine individual metabolic thresholds (active thermodynamic output) and precise protein/carb profiles.",
-          path: "/resources/calorie-calculator"
-        };
+        return PAGE_METADATA.resourcesCalorie;
       case 'guide':
-        return {
-          title: "Slimming Guide & Educational Insights | Harmony Yoga Center",
-          description: "Examine detailed guides on Agni rebooting, lymph decongestion twists, and endocrine compression routines for standard weight plateaus.",
-          path: "/resources/guide"
-        };
+        return PAGE_METADATA.resourcesGuide;
       case 'charts':
-        return {
-          title: "Diet Charts & PDF Resources | Harmony Yoga Center",
-          description: "Download printable 7-day metabolic flush planners, corporate posture alignment templates, and breathing maps.",
-          path: "/resources/diet-charts"
-        };
+        return PAGE_METADATA.resourcesCharts;
       case 'faq':
-        return {
-          title: "Frequently Answered Questions | Harmony Yoga Center",
-          description: "Read S. Veeranjaneyulu's direct answers regarding thyroid weight plateaus, offline studio options, and joint longevity.",
-          path: "/resources/faq"
-        };
+        return PAGE_METADATA.resourcesFaq;
       default:
-        return {
-          title: "Wellness Resource Assessments | Harmony Yoga Center",
-          description: "Unlock calculated assessments regarding metabolic speeds, endocrine throat pressure alignments, and offline Banjara Hills options.",
-          path: "/resources"
-        };
+        return PAGE_METADATA.resources;
     }
   }, [activeTab]);
 
@@ -244,6 +217,13 @@ export default function ResourcesPage({ onBookClick }: ResourcesPageProps) {
 
   return (
     <div className="pt-24 min-h-screen bg-luxury-glow-e relative overflow-hidden" id="resources-page-container">
+      <SEO 
+        title={seoConfig.title}
+        description={seoConfig.description}
+        path={seoConfig.path}
+        keywords={seoConfig.keywords}
+        breadcrumbs={seoConfig.breadcrumbs}
+      />
       {/* Decorative Blur Backgrounds */}
       <div className="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-sage/20 filter blur-3xl pointer-events-none ambient-glow-1" />
       <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-brand-gold-bright/8 filter blur-3xl pointer-events-none ambient-glow-2" />

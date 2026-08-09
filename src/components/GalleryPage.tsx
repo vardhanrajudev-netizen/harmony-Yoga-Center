@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Camera, Eye, MapPin, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 
 interface GalleryItem {
   id: number;
@@ -472,9 +473,11 @@ export default function GalleryPage({ onBookClick }: GalleryPageProps) {
   return (
     <div className="pt-24 min-h-screen bg-[#FAF9F6] relative overflow-hidden" id="gallery-page-root">
       <SEO
-        title="Bespoke Studio Gallery & Retreat Events | Harmony Yoga Center"
-        description="Explore 40+ high-end therapeutic photographs of our Mogalrajapuram Sanctuary, personalized consults, and intensive outdoor sessions."
-        path="/gallery"
+        title={PAGE_METADATA.gallery.title}
+        description={PAGE_METADATA.gallery.description}
+        path={PAGE_METADATA.gallery.path}
+        keywords={PAGE_METADATA.gallery.keywords}
+        breadcrumbs={PAGE_METADATA.gallery.breadcrumbs}
       />
 
       {/* Subtle Background Glows */}

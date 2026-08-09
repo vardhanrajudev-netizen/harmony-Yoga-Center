@@ -8,21 +8,27 @@ import CTASection from './CTASection';
 import SEO from './SEO';
 import AnimatedSection from './AnimatedSection';
 import SectionDivider from './SectionDivider';
+import { PAGE_METADATA } from '../seo/metadata';
+import { getWebSiteSchema } from '../seo/structuredData';
 
 interface HomePageProps {
   onBookClick: (programName?: string) => void;
 }
 
 export default function HomePage({ onBookClick }: HomePageProps) {
+  const meta = PAGE_METADATA.home;
+
   return (
     <>
       <SEO 
-        title="Premium Weight Loss Yoga & Personal Training | Harmony Yoga Center Vijayawada"
-        description="Experience personalized yoga alignments, natural slimming solutions, and Ayurvedic nutrition schedules under S. Veeranjaneyulu (Yoga Therapist) in Mogalrajapuram, Vijayawada."
-        path="/"
+        title={meta.title}
+        description={meta.description}
+        path={meta.path}
+        keywords={meta.keywords}
+        schema={getWebSiteSchema()}
       />
       <main id="main-content-flow">
-        {/* Hero Section has its own built-in high-fidelity lines reveal and parallax elements */}
+        {/* Hero Section */}
         <Hero onBookClick={onBookClick} />
         
         <AnimatedSection variant="scale-in">

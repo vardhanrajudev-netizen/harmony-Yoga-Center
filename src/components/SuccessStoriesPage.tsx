@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from './SEO';
+import { PAGE_METADATA } from '../seo/metadata';
 
 interface SuccessStoriesPageProps {
   onBookClick: () => void;
@@ -118,9 +119,11 @@ export default function SuccessStoriesPage({ onBookClick }: SuccessStoriesPagePr
       id="success-stories-page"
     >
       <SEO 
-        title="Student Success Stories & Testimonials | Harmony Yoga Center"
-        description="Browse peer-reviewed metabolic progress charts, actual fat loss logs, thyroid recovery testimonies, and postural restoration reviews from Vijayawada residents."
-        path="/success-stories"
+        title={PAGE_METADATA.successStories.title}
+        description={PAGE_METADATA.successStories.description}
+        path={PAGE_METADATA.successStories.path}
+        keywords={PAGE_METADATA.successStories.keywords}
+        breadcrumbs={PAGE_METADATA.successStories.breadcrumbs}
       />
 
       {/* Decorative Blur Overlays with continuous luxury ambient movement */}
