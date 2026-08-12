@@ -47,7 +47,6 @@ export const defaultAboutSection: SanityAboutSection = {
   founderName: 'S. Veeranjaneyulu',
   founderDesignation: 'Founder & Chief Yoga Therapist',
   degreeTitle: 'M.Sc. in Yoga Science',
-  founderImage: '/assets/yoga_gallery/IMG-20260718-WA0005.jpg',
   biography: [
     'With an esteemed Master of Science (M.Sc.) in Yoga Science, S. Veeranjaneyulu is one of India’s leading authorities on clinical yoga therapy and natural weight loss.',
     'Over seven years of dedicated diagnostic and consulting experience, he has designed custom recovery blueprints addressing stubborn hormonal plateau curves, thyroid metabolism dysfunctions, and chronic stress retention.',

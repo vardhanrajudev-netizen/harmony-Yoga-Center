@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
 
   founder: {
     name: 'S. Veeranjaneyulu',
-    title: 'Yoga Therapist & Founder',
+    title: 'Founder & Chief Yoga Therapist',
     qualification: 'M.Sc. Yoga Therapy',
     experienceYears: 15,
   },

@@ -3,8 +3,8 @@ import { Award, Trophy, Users, Quote, Smile, ShieldAlert, Heart, Calendar } from
 import { motion } from 'motion/react';
 import SEO from './SEO';
 import { useAboutData } from '../sanity/useSanity';
-import { urlFor } from '../sanity/client';
 import { PAGE_METADATA } from '../seo/metadata';
+import { FOUNDER_IMAGE, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_ALT } from '../constants/founder';
 
 interface AboutPageProps {
   onBookClick: () => void;
@@ -14,9 +14,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
   const { data: aboutData } = useAboutData();
   const meta = PAGE_METADATA.about;
 
-  const founderImgSrc = aboutData.founderImage
-    ? urlFor(aboutData.founderImage)
-    : "/assets/images/trainer-yoga.jpeg";
+  const founderImgSrc = FOUNDER_IMAGE;
 
   // Stats
   const StatsList = [
@@ -133,7 +131,7 @@ export default function AboutPage({ onBookClick }: AboutPageProps) {
                 <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-brand-ivory border border-brand-sage/30">
                   <img
                     src={founderImgSrc}
-                    alt={`${aboutData.founderName || "S. Veeranjaneyulu"} - ${aboutData.founderDesignation || "Yoga Therapist"}`}
+                    alt={FOUNDER_ALT}
                     className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-103"
                     referrerPolicy="no-referrer"
                     loading="lazy"

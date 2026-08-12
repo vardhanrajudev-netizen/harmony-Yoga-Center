@@ -59,7 +59,6 @@ export interface SanityAboutSection {
   founderName: string;
   founderDesignation: string;
   degreeTitle: string;
-  founderImage?: SanityImage | string;
   biography: string[];
   quote: string;
   qualifications: string[];

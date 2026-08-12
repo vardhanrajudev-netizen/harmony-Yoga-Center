@@ -23,14 +23,6 @@ export default {
       description: 'e.g. "M.Sc. in Yoga Science"',
     },
     {
-      name: 'founderImage',
-      title: 'Founder Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: 'biography',
       title: 'Founder Biography Paragraphs',
       type: 'array',

@@ -29,7 +29,6 @@ export const ABOUT_SECTION_QUERY = `*[_type == "aboutSection"][0]{
   founderName,
   founderDesignation,
   degreeTitle,
-  founderImage,
   biography,
   quote,
   qualifications,

@@ -1,14 +1,12 @@
 import { Award, Trophy, Users, Quote } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useAboutData } from '../sanity/useSanity';
-import { urlFor } from '../sanity/client';
+import { FOUNDER_IMAGE, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_ALT } from '../constants/founder';
 
 export default function Trainer() {
   const { data: aboutData } = useAboutData();
 
-  const trainerImgSrc = aboutData.founderImage
-    ? urlFor(aboutData.founderImage)
-    : "/assets/images/trainer-yoga.jpeg";
+  const trainerImgSrc = FOUNDER_IMAGE;
 
   const stats = [
     {
@@ -149,7 +147,7 @@ export default function Trainer() {
                     whileHover={{ scale: 1.04 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     src={trainerImgSrc}
-                    alt={`${aboutData.founderName || "S. Veeranjaneyulu"} - ${aboutData.founderDesignation || "Yoga Therapist"}`}
+                    alt={FOUNDER_ALT}
                     className="w-full aspect-[4/5] object-cover filter grayscale-[10%] transition-all duration-700 ease-out group-hover:grayscale-0 brightness-[98%] group-hover:brightness-100"
                     referrerPolicy="no-referrer"
                   />
